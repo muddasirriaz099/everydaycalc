@@ -1,17 +1,66 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EverydayCalc</title></head>
-<body style="font-family:Arial;text-align:center;padding:30px">
-<h1 style="color:#4285f4">EverydayCalc is LIVE!</h1>
-<h2>Age Calculator</h2>
-<input type="date" id="dob" onchange="calc()"><p id="res"></p>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EverydayCalc - Free Age, Hours & Paycheck Calculators</title>
+<meta name="description" content="Free everyday calculators - Age, Work Hours, Paycheck, Percentage, BMI">
+<style>
+*{box-sizing:border-box}body{font-family:system-ui,Arial;margin:0;background:#f8f9fa;color:#222}
+header{background:#fff;padding:15px;text-align:center;border-bottom:1px solid #ddd;position:sticky;top:0}
+.logo{color:#4285f4;font-size:26px;font-weight:800} .tag{color:#666;font-size:14px}
+.container{max-width:900px;margin:auto;padding:15px} .card{background:#fff;border-radius:12px;padding:20px;margin:15px 0;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.card h2{margin-top:0;color:#1a73e8} input,button{padding:10px;border-radius:8px;border:1px solid #ccc;width:100%;margin:6px 0;font-size:16px}
+button{background:#1a73e8;color:#fff;border:none;font-weight:600;cursor:pointer} button:hover{background:#1557b0}
+.result{background:#e8f0fe;padding:12px;border-radius:8px;margin-top:10px;font-weight:600}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px} @media(max-width:600px){.grid{grid-template-columns:1fr}}
+footer{text-align:center;padding:20px;color:#666;font-size:13px}
+</style>
+</head>
+<body>
+<header><div class="logo">EverydayCalc</div><div class="tag">Simple calculators for everyday life</div></header>
+<div class="container">
+
+<div class="card"><h2>🎂 Age Calculator</h2>
+<input type="date" id="dob"><button onclick="ageCalc()">Calculate Age</button>
+<div id="ageRes" class="result" style="display:none"></div></div>
+
+<div class="card"><h2>⏰ Hours Worked Calculator</h2>
+<div class="grid"><div><label>Start</label><input type="time" id="sTime" value="09:00"></div><div><label>End</label><input type="time" id="eTime" value="17:00"></div></div>
+<button onclick="hourCalc()">Calculate Hours</button><div id="hourRes" class="result" style="display:none"></div></div>
+
+<div class="card"><h2>💰 Paycheck Calculator</h2>
+<div class="grid"><div><input type="number" id="rate" placeholder="Hourly Rate $ e.g 20"></div><div><input type="number" id="hrs" placeholder="Hours e.g 40"></div></div>
+<button onclick="payCalc()">Calculate Pay</button><div id="payRes" class="result" style="display:none"></div></div>
+
+<div class="card"><h2>📊 Percentage Calculator</h2>
+<div class="grid"><div><input type="number" id="perc" placeholder="What % e.g 20"></div><div><input type="number" id="num" placeholder="Of what number e.g 150"></div></div>
+<button onclick="percCalc()">Calculate</button><div id="percRes" class="result" style="display:none"></div></div>
+
+<div class="card"><h2>About</h2><p>EverydayCalc is a free tool collection to help with daily calculations. No ads, no signup, works on mobile.</p></div>
+
+</div>
+<footer>© 2026 EverydayCalc | Contact: everydaycalc@gmail.com | Privacy Policy - We don't store your data</footer>
 <script>
-function calc(){
-let d=new Date(document.getElementById('dob').value);
-let n=new Date();
-let y=n.getFullYear()-d.getFullYear();
-document.getElementById('res').innerHTML="Age: "+y+" Years";
+function ageCalc(){
+let d=new Date(document.getElementById('dob').value); if(!d.getTime()){alert('Select date');return}
+let n=new Date(); let y=n.getFullYear()-d.getFullYear(); let m=n.getMonth()-d.getMonth(); if(m<0||(m==0&&n.getDate()<d.getDate()))y--;
+document.getElementById('ageRes').style.display='block'; document.getElementById('ageRes').innerText='You are '+y+' years old';
+}
+function hourCalc(){
+let s=document.getElementById('sTime').value, e=document.getElementById('eTime').value;
+let [sh,sm]=s.split(':').map(Number); let [eh,em]=e.split(':').map(Number);
+let mins=(eh*60+em)-(sh*60+sm); if(mins<0)mins+=1440; let h=Math.floor(mins/60), mm=mins%60;
+document.getElementById('hourRes').style.display='block'; document.getElementById('hourRes').innerText=h+' hours '+mm+' minutes';
+}
+function payCalc(){
+let r=parseFloat(document.getElementById('rate').value), h=parseFloat(document.getElementById('hrs').value);
+if(!r||!h){alert('Enter rate and hours');return}
+document.getElementById('payRes').style.display='block'; document.getElementById('payRes').innerText='Total Pay: $'+(r*h).toFixed(2);
+}
+function percCalc(){
+let p=parseFloat(document.getElementById('perc').value), num=parseFloat(document.getElementById('num').value);
+document.getElementById('percRes').style.display='block'; document.getElementById('percRes').innerText=p+'% of '+num+' = '+(num*p/100);
 }
 </script>
-<p>Full version coming soon - If you see this, GitHub Pages is working!</p>
-</body></html>
+</body>
+  </html>
