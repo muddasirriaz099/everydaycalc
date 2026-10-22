@@ -2,64 +2,128 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EverydayCalc - Free Age, Hours & Paycheck Calculators</title>
-<meta name="description" content="Free everyday calculators - Age, Work Hours, Paycheck, Percentage, BMI">
+<title>EverydayCalc Pro - Advanced Calculators</title>
 <style>
-*{box-sizing:border-box}body{font-family:system-ui,Arial;margin:0;background:#f8f9fa;color:#222}
-header{background:#fff;padding:15px;text-align:center;border-bottom:1px solid #ddd;position:sticky;top:0}
-.logo{color:#4285f4;font-size:26px;font-weight:800} .tag{color:#666;font-size:14px}
-.container{max-width:900px;margin:auto;padding:15px} .card{background:#fff;border-radius:12px;padding:20px;margin:15px 0;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-.card h2{margin-top:0;color:#1a73e8} input,button{padding:10px;border-radius:8px;border:1px solid #ccc;width:100%;margin:6px 0;font-size:16px}
-button{background:#1a73e8;color:#fff;border:none;font-weight:600;cursor:pointer} button:hover{background:#1557b0}
-.result{background:#e8f0fe;padding:12px;border-radius:8px;margin-top:10px;font-weight:600}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px} @media(max-width:600px){.grid{grid-template-columns:1fr}}
-footer{text-align:center;padding:20px;color:#666;font-size:13px}
+*{box-sizing:border-box}body{font-family:system-ui,Arial;margin:0;background:#f1f5f9;color:#1e293b}
+header{background:#fff;padding:16px;text-align:center;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:10}
+.logo{color:#2563eb;font-size:28px;font-weight:900;letter-spacing:-1px} .tag{color:#64748b;font-size:14px;margin-top:4px}
+.container{max-width:850px;margin:auto;padding:16px}
+.card{background:#fff;border-radius:16px;padding:22px;margin:18px 0;box-shadow:0 4px 12px rgba(0,0,0,.06);border:1px solid #e2e8f0}
+.card h2{margin:0 0 12px;color:#1d4ed8;font-size:22px}
+input,select{padding:12px 14px;border-radius:10px;border:1.5px solid #cbd5e1;width:100%;margin:8px 0;font-size:16px;background:#f8fafc}
+button{background:#2563eb;color:#fff;border:none;font-weight:700;padding:14px;border-radius:10px;width:100%;font-size:16px;cursor:pointer;margin-top:8px}
+button:active{transform:scale(.98)}
+.result{background:#eff6ff;border:1px solid #bfdbfe;padding:16px;border-radius:12px;margin-top:14px;line-height:1.7}
+.result b{color:#1e40af}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #e2e8f0}
+.stat:last-child{border:none}
+.badge{display:inline-block;background:#dbeafe;color:#1e40af;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700;margin:4px 4px 0 0}
+footer{text-align:center;padding:24px;color:#94a3b8;font-size:13px}
 </style>
 </head>
 <body>
-<header><div class="logo">EverydayCalc</div><div class="tag">Simple calculators for everyday life</div></header>
+<header><div class="logo">EverydayCalc Pro</div><div class="tag">Advanced calculators you can't do in your head</div></header>
 <div class="container">
 
-<div class="card"><h2>🎂 Age Calculator</h2>
-<input type="date" id="dob"><button onclick="ageCalc()">Calculate Age</button>
-<div id="ageRes" class="result" style="display:none"></div></div>
+<!-- AGE PRO -->
+<div class="card">
+<h2>🎂 Age Calculator Pro</h2>
+<p style="color:#64748b;font-size:14px;margin-top:0">Exact age down to seconds + next birthday + zodiac</p>
+<input type="date" id="dob">
+<button onclick="agePro()">Calculate My Exact Age</button>
+<div id="ageRes" class="result" style="display:none"></div>
+</div>
 
-<div class="card"><h2>⏰ Hours Worked Calculator</h2>
-<div class="grid"><div><label>Start</label><input type="time" id="sTime" value="09:00"></div><div><label>End</label><input type="time" id="eTime" value="17:00"></div></div>
-<button onclick="hourCalc()">Calculate Hours</button><div id="hourRes" class="result" style="display:none"></div></div>
+<!-- HOURS PRO -->
+<div class="card">
+<h2>⏰ Work Hours Pro</h2>
+<div class="grid">
+<div><label>Start</label><input type="time" id="sTime" value="09:00"></div>
+<div><label>End</label><input type="time" id="eTime" value="18:00"></div>
+<div><label>Break (mins)</label><input type="number" id="breakM" value="60"></div>
+<div><label>Hourly Rate $</label><input type="number" id="rateH" value="20"></div>
+</div>
+<button onclick="hoursPro()">Calculate Pay + Hours</button>
+<div id="hoursRes" class="result" style="display:none"></div>
+</div>
 
-<div class="card"><h2>💰 Paycheck Calculator</h2>
-<div class="grid"><div><input type="number" id="rate" placeholder="Hourly Rate $ e.g 20"></div><div><input type="number" id="hrs" placeholder="Hours e.g 40"></div></div>
-<button onclick="payCalc()">Calculate Pay</button><div id="payRes" class="result" style="display:none"></div></div>
-
-<div class="card"><h2>📊 Percentage Calculator</h2>
-<div class="grid"><div><input type="number" id="perc" placeholder="What % e.g 20"></div><div><input type="number" id="num" placeholder="Of what number e.g 150"></div></div>
-<button onclick="percCalc()">Calculate</button><div id="percRes" class="result" style="display:none"></div></div>
-
-<div class="card"><h2>About</h2><p>EverydayCalc is a free tool collection to help with daily calculations. No ads, no signup, works on mobile.</p></div>
+<!-- PAYCHECK PRO -->
+<div class="card">
+<h2>💰 Paycheck Pro (Overtime + Tax)</h2>
+<div class="grid">
+<div><input type="number" id="hoursW" placeholder="Hours this week e.g 45"></div>
+<div><input type="number" id="rateW" placeholder="Rate $/hr e.g 20"></div>
+</div>
+<select id="countryTax"><option value="0">No Tax</option><option value="10">Pakistan Avg 10%</option><option value="20">US/UK Avg 20%</option></select>
+<button onclick="payPro()">Calculate Salary</button>
+<div id="payRes" class="result" style="display:none"></div>
+</div>
 
 </div>
-<footer>© 2026 EverydayCalc | Contact: everydaycalc@gmail.com | Privacy Policy - We don't store your data</footer>
+<footer>© 2026 EverydayCalc Pro | Built for real life calculations</footer>
+
 <script>
-function ageCalc(){
-let d=new Date(document.getElementById('dob').value); if(!d.getTime()){alert('Select date');return}
-let n=new Date(); let y=n.getFullYear()-d.getFullYear(); let m=n.getMonth()-d.getMonth(); if(m<0||(m==0&&n.getDate()<d.getDate()))y--;
-document.getElementById('ageRes').style.display='block'; document.getElementById('ageRes').innerText='You are '+y+' years old';
+function getZodiac(d,m){
+const z=[["Capricorn",19],["Aquarius",18],["Pisces",20],["Aries",19],["Taurus",20],["Gemini",20],["Cancer",22],["Leo",22],["Virgo",22],["Libra",22],["Scorpio",21],["Sagittarius",21],["Capricorn",31]];
+if(d<=z[m-1][1])return z[m-1][0]; else return z[m][0];
 }
-function hourCalc(){
+function agePro(){
+let v=document.getElementById('dob').value; if(!v){alert('Pick your birthday');return}
+let dob=new Date(v); let now=new Date();
+let diff=now-dob;
+let years=now.getFullYear()-dob.getFullYear();
+let months=now.getMonth()-dob.getMonth();
+let days=now.getDate()-dob.getDate();
+if(days<0){months--; let prevM=new Date(now.getFullYear(),now.getMonth(),0).getDate(); days+=prevM;}
+if(months<0){years--; months+=12;}
+let totalDays=Math.floor(diff/(1000*60*60*24));
+let totalHours=Math.floor(diff/(1000*60*60));
+let totalMins=Math.floor(diff/(1000*60));
+let nextB=new Date(now.getFullYear(),dob.getMonth(),dob.getDate()); if(nextB<now)nextB.setFullYear(now.getFullYear()+1);
+let nextDiff=Math.ceil((nextB-now)/(1000*60*60*24));
+let dayNames=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+let bornDay=dayNames[dob.getDay()];
+let zodiac=getZodiac(dob.getDate(),dob.getMonth()+1);
+let leap=(dob.getFullYear()%4==0)?"Yes":"No";
+
+document.getElementById('ageRes').style.display='block';
+document.getElementById('ageRes').innerHTML=`
+<div class="stat"><span>Exact Age</span><b>${years} Y, ${months} M, ${days} D</b></div>
+<div class="stat"><span>Total Lived</span><b>${totalDays.toLocaleString()} days / ${totalHours.toLocaleString()} hours</b></div>
+<div class="stat"><span>Next Birthday</span><b>In ${nextDiff} days (${nextB.toDateString()})</b></div>
+<div class="stat"><span>Born On</span><b>${bornDay}</b></div>
+<div class="stat"><span>Zodiac Sign</span><b>${zodiac}</b></div>
+<div class="stat"><span>Leap Year Born?</span><b>${leap}</b></div>
+<div style="margin-top:10px"><span class="badge">You are ${years*12+months} total months old</span> <span class="badge"> ${totalMins.toLocaleString()} minutes old</span></div>
+`;
+}
+
+function hoursPro(){
 let s=document.getElementById('sTime').value, e=document.getElementById('eTime').value;
+let br=parseInt(document.getElementById('breakM').value)||0; let rate=parseFloat(document.getElementById('rateW')||document.getElementById('rateH').value)||0;
+if(!s||!e){alert('Select time');return}
 let [sh,sm]=s.split(':').map(Number); let [eh,em]=e.split(':').map(Number);
-let mins=(eh*60+em)-(sh*60+sm); if(mins<0)mins+=1440; let h=Math.floor(mins/60), mm=mins%60;
-document.getElementById('hourRes').style.display='block'; document.getElementById('hourRes').innerText=h+' hours '+mm+' minutes';
+let start=sh*60+sm, end=eh*60+em; let mins=end-start; if(mins<0)mins+=1440; mins-=br;
+let h=(mins/60).toFixed(2);
+let pay=(mins/60*rate).toFixed(2);
+document.getElementById('hoursRes').style.display='block';
+document.getElementById('hoursRes').innerHTML=`<div class="stat"><span>Net Work</span><b>${h} hours (${mins} mins)</b></div><div class="stat"><span>Break Deducted</span><b>${br} mins</b></div><div class="stat"><span>Today's Pay @ $${rate}/hr</span><b>$${pay}</b></div>`;
 }
-function payCalc(){
-let r=parseFloat(document.getElementById('rate').value), h=parseFloat(document.getElementById('hrs').value);
-if(!r||!h){alert('Enter rate and hours');return}
-document.getElementById('payRes').style.display='block'; document.getElementById('payRes').innerText='Total Pay: $'+(r*h).toFixed(2);
-}
-function percCalc(){
-let p=parseFloat(document.getElementById('perc').value), num=parseFloat(document.getElementById('num').value);
-document.getElementById('percRes').style.display='block'; document.getElementById('percRes').innerText=p+'% of '+num+' = '+(num*p/100);
+
+function payPro(){
+let hrs=parseFloat(document.getElementById('hoursW').value)||0; let rate=parseFloat(document.getElementById('rateW').value)||0; let tax=parseFloat(document.getElementById('countryTax').value)||0;
+if(!hrs||!rate){alert('Enter hours & rate');return}
+let regular=Math.min(hrs,40); let ot=Math.max(hrs-40,0);
+let gross=regular*rate + ot*rate*1.5; let taxAmt=gross*tax/100; let net=gross-taxAmt;
+document.getElementById('payRes').style.display='block';
+document.getElementById('payRes').innerHTML=`
+<div class="stat"><span>Regular (40h)</span><b>$${(regular*rate).toFixed(2)}</b></div>
+<div class="stat"><span>Overtime (${ot}h x 1.5x)</span><b>$${(ot*rate*1.5).toFixed(2)}</b></div>
+<div class="stat"><span>Gross Pay</span><b>$${gross.toFixed(2)}</b></div>
+<div class="stat"><span>Tax (${tax}%)</span><b>-$${taxAmt.toFixed(2)}</b></div>
+<div class="stat"><span>Net Take-Home</span><b style="font-size:18px;color:#16a34a">$${net.toFixed(2)}</b></div>
+`;
 }
 </script>
 </body>
