@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EverydayCalc - Age, Hours & Paycheck Calculators</title>
-<meta name="description" content="Free calculators for everyday life: Age calculator, Hours calculator, Paycheck calculator. Fast, private, accurate.">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#fff;text-align:center;padding-top:70px}
-.logo{font-size:52px;font-weight:400;margin-bottom:25px;letter-spacing:-1px}
-.logo b{color:#4285f4}.logo .r{color:#ea4335}.logo .y{color:#fbbc05}.logo .g{color:#34a853}
-.box{width:92%;max-width:600px;margin:0 auto 20px;border:1px solid #dfe1e5;border-radius:24px;padding:12px 20px;display:flex;box-shadow:0 1px 6px rgba(32,33,36,.28)}
-.box input{border:none;outline:none;width:100%;font-size:16px}
-.pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
-.pill{border:1px solid #dadce0;border-radius
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EverydayCalc</title></head>
+<body style="font-family:Arial;text-align:center;padding:30px">
+<h1 style="color:#4285f4">EverydayCalc is LIVE!</h1>
+<h2>Age Calculator</h2>
+<input type="date" id="dob" onchange="calc()"><p id="res"></p>
+<script>
+function calc(){
+let d=new Date(document.getElementById('dob').value);
+let n=new Date();
+let y=n.getFullYear()-d.getFullYear();
+document.getElementById('res').innerHTML="Age: "+y+" Years";
+}
+</script>
+<p>Full version coming soon - If you see this, GitHub Pages is working!</p>
+</body></html>
