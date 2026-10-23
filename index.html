@@ -19,6 +19,7 @@ input,select{width:100%;padding:12px;border:1px solid var(--border);border-radiu
 .btn{margin-top:12px;width:100%;padding:12px;background:var(--primary);color:#fff;border:0;border-radius:10px;font-weight:700;cursor:pointer}
 .result{margin-top:12px;background:#eff6ff;border-radius:10px;padding:12px;font-size:14px;line-height:1.6}
 .badge{background:#dbeafe;color:var(--primary);padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;margin-left:6px}
+.toggle{display:flex;gap:6px;margin-top:8px}.toggle button{flex:1;padding:8px;border:1px solid var(--border);border-radius:8px;background:#fff;cursor:pointer;font-weight:600;font-size:12px}.toggle button.active{background:var(--primary);color:#fff;border-color:var(--primary)}
 footer{text-align:center;color:var(--muted);font-size:12px;margin:40px 0}
 </style>
 </head>
@@ -30,17 +31,47 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin:40px 0}
 <div class="card"><h2>⏰ Work Hours Pro <span class="badge">PRO</span></h2><div class="sub">9 AM to 6 PM, Break 60, Rate $30</div><div class="row"><div><label>Start</label><input type="time" id="sTime" value="09:00"></div><div><label>End</label><input type="time" id="eTime" value="18:00"></div></div><div class="row"><div><label>Break mins</label><input type="number" id="breakM" value="60"></div><div><label>Rate $</label><input type="number" id="rate" value="30"></div></div><button class="btn" onclick="calcWork()">Calculate Pay + Hours</button><div class="result" id="workRes">-</div></div>
 <div class="card"><h2>💰 Paycheck Pro <span class="badge">Overtime + Tax</span></h2><div class="sub">60/80 hours + No Tax</div><div class="row"><div><label>Hours</label><input type="number" id="hWorked" value="45"></div><div><label>Rate</label><input type="number" id="hRate" value="25"></div></div><label>Tax</label><select id="taxMode"><option>No Tax</option><option value="10">10% Tax</option><option value="20">20% Tax</option></select><button class="btn" onclick="calcPay()">Calculate Paycheck</button><div class="result" id="payRes">-</div></div>
 <div class="card"><h2>📊 Percentage</h2><div class="row"><div><label>%</label><input type="number" id="p1" value="20"></div><div><label>Of</label><input type="number" id="p2" value="150"></div></div><button class="btn" onclick="calcPer()">Calculate</button><div class="result" id="perRes">-</div></div>
-<div class="card"><h2>⚖️ BMI</h2><div class="row"><div><label>Weight kg</label><input id="w" value="70"></div><div><label>Height cm</label><input id="ht" value="175"></div></div><button class="btn" onclick="calcBMI()">Calculate BMI</button><div class="result" id="bmiRes">-</div></div>
+<div class="card"><h2>⚖️ BMI</h2>
+<div class="toggle"><button id="btnCm" class="active" onclick="setHeightMode('cm')">CM</button><button id="btnFt" onclick="setHeightMode('ft')">FT / INCH</button></div>
+<div class="row"><div><label>Weight kg</label><input id="w" value="70"></div>
+<div id="heightCmBox"><label>Height cm</label><input id="ht" value="175"></div>
+<div id="heightFtBox" style="display:none"><label>Height</label><div class="row"><input id="ft" placeholder="ft" value="5"><input id="inch" placeholder="inch" value="7"></div></div>
+</div>
+<button class="btn" onclick="calcBMI()">Calculate BMI</button><div class="result" id="bmiRes">-</div></div>
 <div class="card"><h2>📅 Date Difference</h2><div class="row"><div><label>From</label><input type="date" id="d1"></div><div><label>To</label><input type="date" id="d2"></div></div><button class="btn" onclick="calcDate()">Calculate Difference</button><div class="result" id="dateRes">-</div></div>
 </div>
 <footer>© 2026 EverydayCalc Pro • muddasirriaz099.github.io/everydaycalc</footer>
 <script>
+let heightMode='cm';
+function setHeightMode(m){heightMode=m;document.getElementById('btnCm').classList.toggle('active',m==='cm');document.getElementById('btnFt').classList.toggle('active',m==='ft');document.getElementById('heightCmBox').style.display=m==='cm'?'block':'none';document.getElementById('heightFtBox').style.display=m==='ft'?'block':'none';}
 function calcAge(){const dob=new Date(document.getElementById('dob').value);const now=new Date();let y=now.getFullYear()-dob.getFullYear(),m=now.getMonth()-dob.getMonth(),d=now.getDate()-dob.getDate();if(d<0){m--;d+=30}if(m<0){y--;m+=12}const sec=Math.floor((now-dob)/1000);document.getElementById('ageRes').innerHTML=y+' Years, '+m+' Months, '+d+' Days<br>Total: '+Math.floor(sec/86400)+' days • '+sec.toLocaleString()+' sec<br>Zodiac: Aries ♈';}
 function calcWork(){let s=document.getElementById('sTime').value.split(':'),e=document.getElementById('eTime').value.split(':');let tot=(+e[0]*60+ +e[1])-(+s[0]*60+ +s[1])-parseInt(document.getElementById('breakM').value||0);let hrs=(tot/60).toFixed(2);let pay=(hrs*parseFloat(document.getElementById('rate').value||0)).toFixed(2);document.getElementById('workRes').innerHTML='Hours: '+hrs+'h<br>Pay: $'+pay;}
 function calcPay(){let h=+document.getElementById('hWorked').value,r=+document.getElementById('hRate').value;let ot=Math.max(0,h-40);let base=Math.min(h,40)*r+ot*r*1.5;let taxV=document.getElementById('taxMode').value=='No Tax'?0:base*parseInt(document.getElementById('taxMode').value)/100;document.getElementById('payRes').innerHTML='Gross: $'+base.toFixed(2)+' Net: $'+(base-taxV).toFixed(2);}
 function calcPer(){let a=+document.getElementById('p1').value,b=+document.getElementById('p2').value;document.getElementById('perRes').innerHTML=a+'% of '+b+' = '+(a*b/100).toFixed(2);}
-function calcBMI(){let w=+document.getElementById('w').value,h=+document.getElementById('ht').value/100;let bmi=(w/(h*h)).toFixed(1);document.getElementById('bmiRes').innerHTML='BMI: '+bmi;}
-function calcDate(){let d1=new Date(document.getElementById('d1').value),d2=new Date(document.getElementById('d2').value);let days=Math.floor(Math.abs(d2-d1)/86400000);document.getElementById('dateRes').innerHTML=days+' days';}
+function calcBMI(){
+ let w=+document.getElementById('w').value;
+ let hCm;
+ if(heightMode==='cm'){hCm=+document.getElementById('ht').value;}
+ else{let ft=+document.getElementById('ft').value||0;let inch=+document.getElementById('inch').value||0;let totalInch=ft*12+inch;hCm=totalInch*2.54;}
+ if(!hCm||!w){document.getElementById('bmiRes').innerHTML='Enter valid values';return;}
+ let h=hCm/100;let bmi=(w/(h*h)).toFixed(1);
+ let status=bmi<18.5?'Underweight':bmi<25?'Healthy':bmi<30?'Overweight':'Obese';
+ document.getElementById('bmiRes').innerHTML='BMI: '+bmi+' ('+status+')<br><small>'+hCm.toFixed(0)+' cm / '+w+' kg</small>';
+}
+function calcDate(){
+ let v1=document.getElementById('d1').value, v2=document.getElementById('d2').value;
+ if(!v1||!v2){document.getElementById('dateRes').innerHTML='Select both dates';return;}
+ let d1=new Date(v1), d2=new Date(v2);
+ if(d1>d2){let t=d1;d1=d2;d2=t;}
+ let y=d2.getFullYear()-d1.getFullYear();
+ let m=d2.getMonth()-d1.getMonth();
+ let d=d2.getDate()-d1.getDate();
+ if(d<0){m--;let prev=new Date(d2.getFullYear(),d2.getMonth(),0);d+=prev.getDate();}
+ if(m<0){y--;m+=12;}
+ let totalDays=Math.floor(Math.abs(d2-d1)/86400000);
+ let totalMonths=y*12+m;
+ document.getElementById('dateRes').innerHTML='<b>'+y+' Years, '+m+' Months, '+d+' Days</b><br>Total: '+totalDays.toLocaleString()+' days • '+totalMonths+' months • '+(totalDays/365).toFixed(1)+' years';
+}
 </script>
 </body>
   </html>
