@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact - EverydayCalc Pro</title>
+<style>
+:root{--bg:#f5f7ff;--card:#fff;--primary:#2563eb;--text:#0f172a;--muted:#64748b;--border:#e2e8f0}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui}
+body{background:var(--bg);color:var(--text);padding:16px}
+nav{display:flex;gap:18px;justify-content:center;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;max-width:800px;margin:0 auto}
+nav a{text-decoration:none;font-weight:700;color:var(--muted)}nav a.active{color:var(--primary)}
+.wrap{max-width:800px;margin:24px auto;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;line-height:1.7}
+input,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;margin-top:8px}
+label{font-size:12px;font-weight:600;color:var(--muted);margin-top:12px;display:block}
+button{margin-top:16px;padding:12px 20px;background:var(--primary);color:#fff;border:0;border-radius:10px;font-weight:700;cursor:pointer;width:100%}
+</style>
+</head>
+<body>
+<nav><a href="index.html">Home</a><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="contact.html" class="active">Contact</a></nav>
+<div class="wrap">
+<h1>Contact Us</h1>
+<p>Have an idea for a new calculator? Message us!</p>
+<label>Your Email</label><input type="email" placeholder="you@email.com">
+<label>Your Message</label><textarea rows="5" placeholder="Write your message..."></textarea>
+<button onclick="alert('Thanks! Message received. GitHub: muddasirriaz099')">Send Message</button>
+<p style="margin-top:20px;color:var(--muted)">GitHub: muddasirriaz099/everydaycalc</p>
+</div>
+</body>
+  </html>
