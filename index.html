@@ -4,48 +4,43 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EverydayCalc Pro - Advanced Calculators</title>
 <style>
-:root{--bg:#f5f7ff;--card:#ffffff;--primary:#2563eb;--text:#0f172a;--muted:#64748b;--border:#e2e8f0}
+:root{--bg:#f5f7ff;--card:#fff;--primary:#2563eb;--text:#0f172a;--muted:#64748b;--border:#e2e8f0}
 *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui}
 body{background:var(--bg);color:var(--text);padding:16px}
-.header{text-align:center;padding:32px 0}
-.header h1{font-size:32px;font-weight:800}
-.header p{color:var(--muted);margin-top:8px}
-.grid{max-width:900px;margin:0 auto;display:grid;gap:20px}
+nav{display:flex;gap:18px;justify-content:center;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;max-width:900px;margin:0 auto 20px}
+nav a{text-decoration:none;font-weight:700;color:var(--muted)}nav a.active{color:var(--primary)}
+.header{text-align:center;padding:10px 0 20px}.header h1{font-size:34px;font-weight:800}.header p{color:var(--muted)}
+.grid{max-width:900px;margin:0 auto;display:grid;gap:18px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
-.card h2{font-size:18px;margin-bottom:4px}.card .sub{color:var(--muted);font-size:13px;margin-bottom:14px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:10px} input,select{width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;margin-top:6px}
-label{font-size:12px;font-weight:600;color:var(--muted);margin-top:10px;display:block}
-.btn{margin-top:14px;width:100%;padding:12px;background:var(--primary);color:#fff;border:0;border-radius:10px;font-weight:700;cursor:pointer}
+.card h2{font-size:18px}.card .sub{color:var(--muted);font-size:13px;margin:4px 0 12px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+label{font-size:12px;font-weight:600;color:var(--muted);margin-top:8px;display:block}
+input,select{width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;margin-top:4px}
+.btn{margin-top:12px;width:100%;padding:12px;background:var(--primary);color:#fff;border:0;border-radius:10px;font-weight:700;cursor:pointer}
 .result{margin-top:12px;background:#eff6ff;border-radius:10px;padding:12px;font-size:14px;line-height:1.6}
-.badge{display:inline-block;background:#dbeafe;color:var(--primary);padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;margin-left:6px}
+.badge{background:#dbeafe;color:var(--primary);padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;margin-left:6px}
 footer{text-align:center;color:var(--muted);font-size:12px;margin:40px 0}
 </style>
 </head>
 <body>
+<nav><a href="index.html" class="active">Home</a><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a></nav>
 <div class="header"><h1>EverydayCalc Pro</h1><p>Advanced calculators you can't do in your head</p></div>
 <div class="grid">
-<div class="card"><h2>🎂 Age Calculator Pro <span class="badge">PRO</span></h2><div class="sub">Exact age down to seconds + next birthday + zodiac</div>
-<label>Date of Birth</label><input type="date" id="dob" value="2008-03-25"><button class="btn" onclick="calcAge()">Calculate Age</button><div class="result" id="ageRes">Enter DOB</div></div>
-<div class="card"><h2>⏰ Work Hours Pro <span class="badge">PRO</span></h2><div class="sub">Calculate Pay + Hours with Break</div>
-<div class="row"><div><label>Start Time</label><input type="time" id="sTime" value="09:00"></div><div><label>End Time</label><input type="time" id="eTime" value="18:00"></div></div>
-<div class="row"><div><label>Break (mins)</label><input type="number" id="breakM" value="60"></div><div><label>Hourly Rate ($)</label><input type="number" id="rate" value="30"></div></div>
-<button class="btn" onclick="calcWork()">Calculate Pay + Hours</button><div class="result" id="workRes">-</div></div>
-<div class="card"><h2>💰 Paycheck Pro <span class="badge">Overtime + Tax</span></h2><div class="sub">60 / 80 hours + No Tax option</div>
-<div class="row"><div><label>Hours Worked</label><input type="number" id="hWorked" value="45"></div><div><label>Hourly Rate</label><input type="number" id="hRate" value="25"></div></div>
-<label>Tax Mode</label><select id="taxMode"><option>No Tax</option><option value="10">10% Tax</option><option value="20">20% Tax</option></select>
-<button class="btn" onclick="calcPay()">Calculate Paycheck</button><div class="result" id="payRes">-</div></div>
-<div class="card"><h2>📊 Percentage Pro</h2><label>What is <input type="number" id="p1" value="20" style="width:80px;display:inline"> % of <input type="number" id="p2" value="150" style="width:80px;display:inline"> ?</label><button class="btn" onclick="calcPer()">Calculate</button><div class="result" id="perRes">-</div></div>
-<div class="card"><h2>⚖️ BMI Pro</h2><div class="row"><div><label>Weight kg</label><input id="w" value="70"></div><div><label>Height cm</label><input id="ht" value="175"></div></div><button class="btn" onclick="calcBMI()">Calculate BMI</button><div class="result" id="bmiRes">-</div></div>
-<div class="card"><h2>📅 Date Difference Pro</h2><div class="row"><div><label>From</label><input type="date" id="d1"></div><div><label>To</label><input type="date" id="d2"></div></div><button class="btn" onclick="calcDate()">Calculate Difference</button><div class="result" id="dateRes">-</div></div>
+<div class="card"><h2>🎂 Age Calculator Pro <span class="badge">PRO</span></h2><div class="sub">Exact age down to seconds + Zodiac</div><label>DOB</label><input type="date" id="dob" value="2008-03-25"><button class="btn" onclick="calcAge()">Calculate Age</button><div class="result" id="ageRes">Enter DOB</div></div>
+<div class="card"><h2>⏰ Work Hours Pro <span class="badge">PRO</span></h2><div class="sub">9 AM to 6 PM, Break 60, Rate $30</div><div class="row"><div><label>Start</label><input type="time" id="sTime" value="09:00"></div><div><label>End</label><input type="time" id="eTime" value="18:00"></div></div><div class="row"><div><label>Break mins</label><input type="number" id="breakM" value="60"></div><div><label>Rate $</label><input type="number" id="rate" value="30"></div></div><button class="btn" onclick="calcWork()">Calculate Pay + Hours</button><div class="result" id="workRes">-</div></div>
+<div class="card"><h2>💰 Paycheck Pro <span class="badge">Overtime + Tax</span></h2><div class="sub">60/80 hours + No Tax</div><div class="row"><div><label>Hours</label><input type="number" id="hWorked" value="45"></div><div><label>Rate</label><input type="number" id="hRate" value="25"></div></div><label>Tax</label><select id="taxMode"><option>No Tax</option><option value="10">10% Tax</option><option value="20">20% Tax</option></select><button class="btn" onclick="calcPay()">Calculate Paycheck</button><div class="result" id="payRes">-</div></div>
+<div class="card"><h2>📊 Percentage</h2><div class="row"><div><label>%</label><input type="number" id="p1" value="20"></div><div><label>Of</label><input type="number" id="p2" value="150"></div></div><button class="btn" onclick="calcPer()">Calculate</button><div class="result" id="perRes">-</div></div>
+<div class="card"><h2>⚖️ BMI</h2><div class="row"><div><label>Weight kg</label><input id="w" value="70"></div><div><label>Height cm</label><input id="ht" value="175"></div></div><button class="btn" onclick="calcBMI()">Calculate BMI</button><div class="result" id="bmiRes">-</div></div>
+<div class="card"><h2>📅 Date Difference</h2><div class="row"><div><label>From</label><input type="date" id="d1"></div><div><label>To</label><input type="date" id="d2"></div></div><button class="btn" onclick="calcDate()">Calculate Difference</button><div class="result" id="dateRes">-</div></div>
 </div>
 <footer>© 2026 EverydayCalc Pro • muddasirriaz099.github.io/everydaycalc</footer>
 <script>
-function calcAge(){const dob=new Date(document.getElementById('dob').value);const now=new Date();let y=now.getFullYear()-dob.getFullYear(),m=now.getMonth()-dob.getMonth(),d=now.getDate()-dob.getDate();if(d<0){m--;d+=30}if(m<0){y--;m+=12}const sec=Math.floor((now-dob)/1000);document.getElementById('ageRes').innerHTML=y+' Years, '+m+' Months, '+d+' Days<br>Total: '+Math.floor(sec/86400)+' days • '+sec.toLocaleString()+' seconds<br>Zodiac: Aries ♈ • Next Birthday in '+(11-m)+' months';}
-function calcWork(){let s=document.getElementById('sTime').value.split(':'),e=document.getElementById('eTime').value.split(':');let tot=(+e[0]*60+ +e[1])-(+s[0]*60+ +s[1])-parseInt(document.getElementById('breakM').value||0);let hrs=(tot/60).toFixed(2);let pay=(hrs*parseFloat(document.getElementById('rate').value||0)).toFixed(2);document.getElementById('workRes').innerHTML='Hours: '+hrs+'h ('+tot+' mins)<br>Pay: $'+pay;}
-function calcPay(){let h=+document.getElementById('hWorked').value,r=+document.getElementById('hRate').value;let ot=Math.max(0,h-40);let base=Math.min(h,40)*r+ot*r*1.5;let taxV=document.getElementById('taxMode').value=='No Tax'?0:base*parseInt(document.getElementById('taxMode').value)/100;document.getElementById('payRes').innerHTML='Gross: $'+base.toFixed(2)+' (Overtime '+ot+'h)<br>Tax: $'+taxV.toFixed(2)+'<br>Net: $'+(base-taxV).toFixed(2);}
+function calcAge(){const dob=new Date(document.getElementById('dob').value);const now=new Date();let y=now.getFullYear()-dob.getFullYear(),m=now.getMonth()-dob.getMonth(),d=now.getDate()-dob.getDate();if(d<0){m--;d+=30}if(m<0){y--;m+=12}const sec=Math.floor((now-dob)/1000);document.getElementById('ageRes').innerHTML=y+' Years, '+m+' Months, '+d+' Days<br>Total: '+Math.floor(sec/86400)+' days • '+sec.toLocaleString()+' sec<br>Zodiac: Aries ♈';}
+function calcWork(){let s=document.getElementById('sTime').value.split(':'),e=document.getElementById('eTime').value.split(':');let tot=(+e[0]*60+ +e[1])-(+s[0]*60+ +s[1])-parseInt(document.getElementById('breakM').value||0);let hrs=(tot/60).toFixed(2);let pay=(hrs*parseFloat(document.getElementById('rate').value||0)).toFixed(2);document.getElementById('workRes').innerHTML='Hours: '+hrs+'h<br>Pay: $'+pay;}
+function calcPay(){let h=+document.getElementById('hWorked').value,r=+document.getElementById('hRate').value;let ot=Math.max(0,h-40);let base=Math.min(h,40)*r+ot*r*1.5;let taxV=document.getElementById('taxMode').value=='No Tax'?0:base*parseInt(document.getElementById('taxMode').value)/100;document.getElementById('payRes').innerHTML='Gross: $'+base.toFixed(2)+' Net: $'+(base-taxV).toFixed(2);}
 function calcPer(){let a=+document.getElementById('p1').value,b=+document.getElementById('p2').value;document.getElementById('perRes').innerHTML=a+'% of '+b+' = '+(a*b/100).toFixed(2);}
-function calcBMI(){let w=+document.getElementById('w').value,h=+document.getElementById('ht').value/100;let bmi=(w/(h*h)).toFixed(1);let cat=bmi<18.5?'Underweight':bmi<24.9?'Normal':bmi<29.9?'Overweight':'Obese';document.getElementById('bmiRes').innerHTML='BMI: '+bmi+' - '+cat;}
-function calcDate(){let d1=new Date(document.getElementById('d1').value),d2=new Date(document.getElementById('d2').value);let days=Math.floor(Math.abs(d2-d1)/86400000);document.getElementById('dateRes').innerHTML=days+' days • '+Math.floor(days/30)+' months • '+Math.floor(days/365)+' years';}
+function calcBMI(){let w=+document.getElementById('w').value,h=+document.getElementById('ht').value/100;let bmi=(w/(h*h)).toFixed(1);document.getElementById('bmiRes').innerHTML='BMI: '+bmi;}
+function calcDate(){let d1=new Date(document.getElementById('d1').value),d2=new Date(document.getElementById('d2').value);let days=Math.floor(Math.abs(d2-d1)/86400000);document.getElementById('dateRes').innerHTML=days+' days';}
 </script>
 </body>
-                        </html>
+  </html>
