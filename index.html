@@ -1,77 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EverydayCalc Pro - Advanced Calculators</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USA Calculators - Work Hours, BMI, Paycheck Tools 2026</title>
+<meta name="description" content="Free USA calculators: Work hours with lunch, BMI in ft/inch lbs, Paycheck take-home 2026. Best tools for USA jobs.">
+<meta name="google-site-verification" content="PASTE_YOUR_SEARCH_CONSOLE_CODE_HERE">
 <style>
-:root{--bg:#f5f7ff;--card:#fff;--primary:#2563eb;--text:#0f172a;--muted:#64748b;--border:#e2e8f0}
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui}
-body{background:var(--bg);color:var(--text);padding:16px}
-nav{display:flex;gap:18px;justify-content:center;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;max-width:900px;margin:0 auto 20px}
-nav a{text-decoration:none;font-weight:700;color:var(--muted)}nav a.active{color:var(--primary)}
-.header{text-align:center;padding:10px 0 20px}.header h1{font-size:34px;font-weight:800}.header p{color:var(--muted)}
-.grid{max-width:900px;margin:0 auto;display:grid;gap:18px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
-.card h2{font-size:18px}.card .sub{color:var(--muted);font-size:13px;margin:4px 0 12px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-label{font-size:12px;font-weight:600;color:var(--muted);margin-top:8px;display:block}
-input,select{width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;margin-top:4px}
-.btn{margin-top:12px;width:100%;padding:12px;background:var(--primary);color:#fff;border:0;border-radius:10px;font-weight:700;cursor:pointer}
-.result{margin-top:12px;background:#eff6ff;border-radius:10px;padding:12px;font-size:14px;line-height:1.6}
-.badge{background:#dbeafe;color:var(--primary);padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;margin-left:6px}
-.toggle{display:flex;gap:6px;margin-top:8px}.toggle button{flex:1;padding:8px;border:1px solid var(--border);border-radius:8px;background:#fff;cursor:pointer;font-weight:600;font-size:12px}.toggle button.active{background:var(--primary);color:#fff;border-color:var(--primary)}
-footer{text-align:center;color:var(--muted);font-size:12px;margin:40px 0}
+body{font-family:Arial;max-width:900px;margin:0 auto;padding:20px;background:#f0f4ff;line-height:1.6}
+h1{color:#1e40af} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;margin:20px 0}
+.card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);text-decoration:none;color:#111}
+.card:hover{transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+.card h3{color:#2563eb;margin:0 0 10px}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"USA Calculators","url":"https://muddasirriaz099.github.io/","description":"Free USA calculators tools"}
+</script>
 </head>
 <body>
-<nav><a href="index.html" class="active">Home</a><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a></nav>
-<div class="header"><h1>EverydayCalc Pro</h1><p>Advanced calculators you can't do in your head</p></div>
+<h1>🇺🇸 USA Best Calculators 2026</h1>
+<p>Free, fast and accurate calculators for USA jobs & health. Trusted by workers.</p>
+
 <div class="grid">
-<div class="card"><h2>🎂 Age Calculator Pro <span class="badge">PRO</span></h2><div class="sub">Exact age down to seconds + Zodiac</div><label>DOB</label><input type="date" id="dob" value="2008-03-25"><button class="btn" onclick="calcAge()">Calculate Age</button><div class="result" id="ageRes">Enter DOB</div></div>
-<div class="card"><h2>⏰ Work Hours Pro <span class="badge">PRO</span></h2><div class="sub">9 AM to 6 PM, Break 60, Rate $30</div><div class="row"><div><label>Start</label><input type="time" id="sTime" value="09:00"></div><div><label>End</label><input type="time" id="eTime" value="18:00"></div></div><div class="row"><div><label>Break mins</label><input type="number" id="breakM" value="60"></div><div><label>Rate $</label><input type="number" id="rate" value="30"></div></div><button class="btn" onclick="calcWork()">Calculate Pay + Hours</button><div class="result" id="workRes">-</div></div>
-<div class="card"><h2>💰 Paycheck Pro <span class="badge">Overtime + Tax</span></h2><div class="sub">60/80 hours + No Tax</div><div class="row"><div><label>Hours</label><input type="number" id="hWorked" value="45"></div><div><label>Rate</label><input type="number" id="hRate" value="25"></div></div><label>Tax</label><select id="taxMode"><option>No Tax</option><option value="10">10% Tax</option><option value="20">20% Tax</option></select><button class="btn" onclick="calcPay()">Calculate Paycheck</button><div class="result" id="payRes">-</div></div>
-<div class="card"><h2>📊 Percentage</h2><div class="row"><div><label>%</label><input type="number" id="p1" value="20"></div><div><label>Of</label><input type="number" id="p2" value="150"></div></div><button class="btn" onclick="calcPer()">Calculate</button><div class="result" id="perRes">-</div></div>
-<div class="card"><h2>⚖️ BMI</h2>
-<div class="toggle"><button id="btnCm" class="active" onclick="setHeightMode('cm')">CM</button><button id="btnFt" onclick="setHeightMode('ft')">FT / INCH</button></div>
-<div class="row"><div><label>Weight kg</label><input id="w" value="70"></div>
-<div id="heightCmBox"><label>Height cm</label><input id="ht" value="175"></div>
-<div id="heightFtBox" style="display:none"><label>Height</label><div class="row"><input id="ft" placeholder="ft" value="5"><input id="inch" placeholder="inch" value="7"></div></div>
+<a class="card" href="work-hours-calculator.html">
+<h3>⏰ Work Hours Calculator</h3>
+<p>Calculate 9 to 5 with 1 hour lunch. Net hours + Full/Part-time solution.</p>
+<b>Open Tool →</b>
+</a>
+
+<a class="card" href="bmi-calculator.html">
+<h3>💪 BMI Calculator USA</h3>
+<p>With ft & inch + lbs. USA standard chart with solution.</p>
+<b>Open Tool →</b>
+</a>
+
+<a class="card" href="paycheck-calculator.html">
+<h3>💵 Paycheck Calculator 2026</h3>
+<p>Hourly to salary take-home pay after federal & state taxes.</p>
+<b>Open Tool →</b>
+</a>
 </div>
-<button class="btn" onclick="calcBMI()">Calculate BMI</button><div class="result" id="bmiRes">-</div></div>
-<div class="card"><h2>📅 Date Difference</h2><div class="row"><div><label>From</label><input type="date" id="d1"></div><div><label>To</label><input type="date" id="d2"></div></div><button class="btn" onclick="calcDate()">Calculate Difference</button><div class="result" id="dateRes">-</div></div>
-</div>
-<footer>© 2026 EverydayCalc Pro • muddasirriaz099.github.io/everydaycalc</footer>
-<script>
-let heightMode='cm';
-function setHeightMode(m){heightMode=m;document.getElementById('btnCm').classList.toggle('active',m==='cm');document.getElementById('btnFt').classList.toggle('active',m==='ft');document.getElementById('heightCmBox').style.display=m==='cm'?'block':'none';document.getElementById('heightFtBox').style.display=m==='ft'?'block':'none';}
-function calcAge(){const dob=new Date(document.getElementById('dob').value);const now=new Date();let y=now.getFullYear()-dob.getFullYear(),m=now.getMonth()-dob.getMonth(),d=now.getDate()-dob.getDate();if(d<0){m--;d+=30}if(m<0){y--;m+=12}const sec=Math.floor((now-dob)/1000);document.getElementById('ageRes').innerHTML=y+' Years, '+m+' Months, '+d+' Days<br>Total: '+Math.floor(sec/86400)+' days • '+sec.toLocaleString()+' sec<br>Zodiac: Aries ♈';}
-function calcWork(){let s=document.getElementById('sTime').value.split(':'),e=document.getElementById('eTime').value.split(':');let tot=(+e[0]*60+ +e[1])-(+s[0]*60+ +s[1])-parseInt(document.getElementById('breakM').value||0);let hrs=(tot/60).toFixed(2);let pay=(hrs*parseFloat(document.getElementById('rate').value||0)).toFixed(2);document.getElementById('workRes').innerHTML='Hours: '+hrs+'h<br>Pay: $'+pay;}
-function calcPay(){let h=+document.getElementById('hWorked').value,r=+document.getElementById('hRate').value;let ot=Math.max(0,h-40);let base=Math.min(h,40)*r+ot*r*1.5;let taxV=document.getElementById('taxMode').value=='No Tax'?0:base*parseInt(document.getElementById('taxMode').value)/100;document.getElementById('payRes').innerHTML='Gross: $'+base.toFixed(2)+' Net: $'+(base-taxV).toFixed(2);}
-function calcPer(){let a=+document.getElementById('p1').value,b=+document.getElementById('p2').value;document.getElementById('perRes').innerHTML=a+'% of '+b+' = '+(a*b/100).toFixed(2);}
-function calcBMI(){
- let w=+document.getElementById('w').value;
- let hCm;
- if(heightMode==='cm'){hCm=+document.getElementById('ht').value;}
- else{let ft=+document.getElementById('ft').value||0;let inch=+document.getElementById('inch').value||0;let totalInch=ft*12+inch;hCm=totalInch*2.54;}
- if(!hCm||!w){document.getElementById('bmiRes').innerHTML='Enter valid values';return;}
- let h=hCm/100;let bmi=(w/(h*h)).toFixed(1);
- let status=bmi<18.5?'Underweight':bmi<25?'Healthy':bmi<30?'Overweight':'Obese';
- document.getElementById('bmiRes').innerHTML='BMI: '+bmi+' ('+status+')<br><small>'+hCm.toFixed(0)+' cm / '+w+' kg</small>';
-}
-function calcDate(){
- let v1=document.getElementById('d1').value, v2=document.getElementById('d2').value;
- if(!v1||!v2){document.getElementById('dateRes').innerHTML='Select both dates';return;}
- let d1=new Date(v1), d2=new Date(v2);
- if(d1>d2){let t=d1;d1=d2;d2=t;}
- let y=d2.getFullYear()-d1.getFullYear();
- let m=d2.getMonth()-d1.getMonth();
- let d=d2.getDate()-d1.getDate();
- if(d<0){m--;let prev=new Date(d2.getFullYear(),d2.getMonth(),0);d+=prev.getDate();}
- if(m<0){y--;m+=12;}
- let totalDays=Math.floor(Math.abs(d2-d1)/86400000);
- let totalMonths=y*12+m;
- document.getElementById('dateRes').innerHTML='<b>'+y+' Years, '+m+' Months, '+d+' Days</b><br>Total: '+totalDays.toLocaleString()+' days • '+totalMonths+' months • '+(totalDays/365).toFixed(1)+' years';
-}
-</script>
+
+<h2>Why Our Calculators?</h2>
+<ul>
+<li>✅ <b>USA Standard:</b> ft/inch, lbs, $ dollar, federal/state taxes</li>
+<li>✅ <b>With Solution:</b> Shows full calculation steps</li>
+<li>✅ <b>Advantage/Disadvantage:</b> Explained for trust</li>
+<li>✅ <b>Fast & Free:</b> No signup, mobile friendly</li>
+</ul>
+
+<p>© 2026 USA Calculators - muddasirriaz099.github.io</p>
 </body>
-  </html>
+</html>
