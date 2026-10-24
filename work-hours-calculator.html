@@ -3,31 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work Hours Calculator with Lunch Break - 9 to 5 Hours Calculator</title>
-<meta name="description" content="Calculate work hours with lunch break. Find how many hours is 9 to 5 with 1 hour lunch.">
+<title>Work Hours Calculator - Calculate Daily, Weekly Hours | EverydayCalc</title>
+<meta name="description" content="Free work hours calculator to calculate daily, weekly work hours, overtime, and pay. Simple and fast.">
+<link rel="canonical" href="https://muddasirriaz099.github.io/everydaycalc/work-hours-calculator.html">
 <style>
-body{font-family:Arial,sans-serif;max-width:800px;margin:0 auto;padding:20px;line-height:1.6;background:#f8f9fa}
-.calc-box{background:#fff;padding:25px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.1);margin:20px 0}
-input,button{padding:12px;margin:5px;border:1px solid #ddd;border-radius:8px;width:100%;box-sizing:border-box}
-button{background:#2563eb;color:#fff;font-weight:bold;cursor:pointer}
-.result{background:#e0f2fe;padding:15px;border-radius:8px;margin-top:15px;font-size:18px;font-weight:bold}
-.solution{background:#e8f5e9;padding:12px;border-radius:8px;margin-top:10px;border-left:4px solid #4caf50}
-.adv-table{width:100%;border-collapse:collapse;margin:15px 0}
-.adv-table td{border:1px solid #ddd;padding:10px;width:50%}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f6f7fb;color:#111;line-height:1.6}
+.container{max-width:700px;margin:0 auto;padding:16px}
+.header{background:#fff;padding:14px 16px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.header a{color:#2563eb;text-decoration:none;font-weight:600}
+.card{background:#fff;padding:20px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+h1{font-size:22px;margin-bottom:8px}
+p.sub{color:#666;margin-bottom:18px;font-size:14px}
+label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}
+input{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;font-size:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{width:100%;margin-top:18px;background:#2563eb;color:#fff;border:0;padding:14px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer}
+.btn:active{transform:scale(.98)}
+.result{margin-top:18px;padding:16px;background:#eef2ff;border-radius:12px;display:none}
+.result h3{color:#1e40af;margin-bottom:8px}
+.result div{margin:6px 0}
+.small{font-size:12px;color:#777;margin-top:12px}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Work Hours Calculator with Lunch Break","applicationCategory":"CalculatorApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate work hours with lunch break."}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many hours is 9 to 5 with 1 hour lunch?","acceptedAnswer":{"@type":"Answer","text":"7 hours/day, 35/week. Part-time in USA."}}]}
-</script>
 </head>
 <body>
-<a href="/">← Back</a>
-<h1>Work Hours Calculator with Lunch Break</h1>
-<div class="calc-box">
-<input type="time" id="start" value="09:00">
-<input type="time" id="end" value="17:00">
-<input type="number" id="break" value="60">
-<button onclick="calculateHours()">Calculate Hours</button>
-<div id="result" class="result" style="display:none"></div
+<div class="container">
+  <div class="header">
+    <a href="./index.html">← Back to Home</a>
+    <a href="./index.html">EverydayCalc</a>
+  </div>
+
+  <div class="card">
+    <h1>Work Hours Calculator</h1>
+    <p class="sub">Calculate your daily work hours, break time, and total pay. 100% accurate.</p>
+
+    <div class="row">
+      <div>
+        <label>Clock In Time</label>
+        <input type="time" id="inTime" value="09:00">
+      </div>
+      <div>
+        <label>Clock Out Time</label>
+        <input type="time" id="outTime" value="17:00">
+      </div>
+    </div>
+
+    <label>Break Time (minutes)</label>
+    <input type="number" id="breakMin" value="60" placeholder="e.g. 30, 60">
+
+    <label>Hourly Rate ($) - Optional</label>
+    <input type="number" id="rate" value="15" placeholder="e.g. 20">
+
+    <button class="btn" onclick="calculateWork()">Calculate Hours</button>
+
+    <div class="result" id="resultBox">
+      <h3>Result:</h3>
+      <div id="totalHours"></div>
+      <div id="totalPay"></div>
+      <div id="weekHours"></div>
+    </div>
+    <p class="small">Tip: 8 hours = 1 work day. 40 hours = 1 work week (USA standard).</p>
+  </div>
+</div>
+
+<script>
+function calculateWork(){
+  const inVal = document.getElementById('inTime').value;
+  const outVal = document.getElementById('outTime').value;
+  const breakMin = parseFloat(document.getElementById('breakMin').value) || 0;
+  const rate = parseFloat(document.getElementById('rate').value) || 0;
+
+  if(!inVal || !outVal){
+    alert('Please select In and Out time');
+    return;
+  }
+
+  // Convert time to minutes
+  function toMin(t){
+    const parts = t.split(':');
+    return parseInt(parts[0])*60 + parseInt(parts[1]);
+  }
+
+  let inMin = toMin(inVal);
+  let outMin = toMin(outVal);
+  
+  // Night shift handling (e.g., 22:00 to 06:00)
+  if(outMin < inMin){
+    outMin += 24*60;
+  }
+
+  let workedMin = outMin - inMin - breakMin;
+  if(workedMin < 0) workedMin = 0;
+
+  const hours = Math.floor(workedMin / 60);
+  const mins = workedMin % 60;
+  const decimalHours = (workedMin / 60).toFixed(2);
+  const weeklyHours = (workedMin * 5 / 60).toFixed(2);
+  const pay = rate > 0 ? (workedMin / 60 * rate).toFixed(2) : 0;
+
+  const box = document.getElementById('resultBox');
+  box.style.display = 'block';
+  document.getElementById('totalHours').innerHTML = `<b>Today:</b> ${hours} hours ${mins} minutes (${decimalHours} hrs)`;
+  document.getElementById('totalPay').innerHTML = rate > 0 ? `<b>Today's Pay:</b> $${pay}` : '';
+  document.getElementById('weekHours').innerHTML = `<b>Weekly (5 days):</b> ${weeklyHours} hours`;
+  
+  // Scroll to result on mobile
+  box.scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+          </html>
