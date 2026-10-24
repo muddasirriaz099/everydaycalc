@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paycheck Calculator USA 2026 - Take Home Pay with Taxes</title>
+<meta name="description" content="Calculate USA paycheck after federal, state, FICA taxes. Hourly to salary take-home pay calculator 2026.">
+<style>
+body{font-family:Arial;max-width:800px;margin:0 auto;padding:20px;background:#f8f9fa;line-height:1.6}
+.calc-box{background:#fff;padding:25px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+input,select,button{padding:12px;margin:5px;border:1px solid #ddd;border-radius:8px;width:100%;box-sizing:border-box}
+button{background:#dc2626;color:#fff;font-weight:bold;cursor:pointer}
+.result{background:#fee2e2;padding:15px;border-radius:8px;margin-top:15px;font-weight:bold}
+.solution{background:#fff7ed;padding:12px;border-left:4px solid #f97316;margin-top:10px;border-radius:8px}
+.adv-table{width:100%;border-collapse:collapse} .adv-table td{border:1px solid #ddd;padding:10px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"USA Paycheck Calculator 2026","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How to calculate take home pay?","acceptedAnswer":{"@type":"Answer","text":"Gross Pay minus Federal tax, State tax, FICA (Social Security 6.2% + Medicare 1.45%)."}},{"@type":"Question","name":"Advantage of paycheck calculator?","acceptedAnswer":{"@type":"Answer","text":"Advantage: Know real take-home pay before job. Disadvantage: State taxes vary, so estimate only."}}]}
+</script>
+</head>
+<body>
+<a href="/">← Back</a>
+<h1>Paycheck Calculator USA 2026</h1>
+<div class="calc-box">
+<label>Hourly Rate $</label><input type="number" id="rate" value="25">
+<label>Hours per Week</label><input type="number" id="hours" value="40">
+<label>Federal Tax %</label><input type="number" id="fed" value="12">
+<label>State Tax %</label><input type="number" id="state" value="5">
+<button onclick="calcPay()">Calculate Take-Home</button>
+<div id="res" class="result" style="display:none"></div>
+<div id="sol" class="solution" style="display:none"></div>
+</div>
+<h2>How to Use</h2><ul><li>Enter hourly rate</li><li>Enter weekly hours</li><li>Enter tax % and calculate</li></ul>
+<h2>Advantage / Disadvantage</h2><table class="adv-table"><tr><td><b>Advantage</b><br>Real take-home idea, yearly/monthly view</td><td><b>Disadvantage</b><br>Each state different, exact may vary</td></tr></table>
+<script>
+function calcPay(){
+let r=parseFloat(document.getElementById('rate').value);let h=parseFloat(document.getElementById('hours').value);
+let f=parseFloat(document.getElementById('fed').value);let s=parseFloat(document.getElementById('state').value);
+let gross=r*h*52;let fica=7.65;let totalTax=f+s+fica;let take=gross*(1-totalTax/100);
+document.getElementById('res').style.display='block';document.getElementById('res').innerHTML=`Yearly Gross: $${gross.toFixed(0)} | Take-Home: $${take.toFixed(0)} | Monthly: $${(take/12).toFixed(0)}`;
+document.getElementById('sol').style.display='block';document.getElementById('sol').innerHTML=`<b>Solution:</b> $${r} x ${h}h x 52 weeks = $${gross}. Minus Taxes (${f}% Fed + ${s}% State + 7.65% FICA) = Take-Home $${take.toFixed(0)}/year`;
+}
+</script>
+</body>
+  </html>
