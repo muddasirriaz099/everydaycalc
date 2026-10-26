@@ -3,113 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work Hours Calculator - Calculate Daily, Weekly Hours | EverydayCalc</title>
-<meta name="description" content="Free work hours calculator to calculate daily, weekly work hours, overtime, and pay. Simple and fast.">
+<title>Work Hours Calculator with Lunch Break & Overtime | EverydayCalc</title>
+<meta name="description" content="Free work hours calculator: enter clock in, clock out and break to get daily hours, weekly hours, overtime and gross pay. Works for night shifts.">
 <link rel="canonical" href="https://muddasirriaz099.github.io/everydaycalc/work-hours-calculator.html">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f6f7fb;color:#111;line-height:1.6}
-.container{max-width:700px;margin:0 auto;padding:16px}
-.header{background:#fff;padding:14px 16px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.header a{color:#2563eb;text-decoration:none;font-weight:600}
-.card{background:#fff;padding:20px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
-h1{font-size:22px;margin-bottom:8px}
-p.sub{color:#666;margin-bottom:18px;font-size:14px}
-label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}
-input{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;font-size:16px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.btn{width:100%;margin-top:18px;background:#2563eb;color:#fff;border:0;padding:14px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer}
-.btn:active{transform:scale(.98)}
-.result{margin-top:18px;padding:16px;background:#eef2ff;border-radius:12px;display:none}
-.result h3{color:#1e40af;margin-bottom:8px}
-.result div{margin:6px 0}
-.small{font-size:12px;color:#777;margin-top:12px}
-</style>
+<meta property="og:title" content="Work Hours Calculator with Lunch Break & Overtime | EverydayCalc">
+<meta property="og:description" content="Free work hours calculator: enter clock in, clock out and break to get daily hours, weekly hours, overtime and gross pay. Works for night shifts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muddasirriaz099.github.io/everydaycalc/work-hours-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate work hours with a lunch break?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract your clock-in time from your clock-out time, then subtract the unpaid break. Example: 9:00 AM to 5:00 PM is 8 hours; minus a 60 minute lunch gives 7 hours."}}, {"@type": "Question", "name": "How is overtime calculated in the USA?", "acceptedAnswer": {"@type": "Answer", "text": "Under the federal Fair Labor Standards Act, most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek. Some states have additional daily overtime rules, so check your state."}}, {"@type": "Question", "name": "Does this calculator handle night shifts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If your clock-out time is earlier than your clock-in time, it treats the shift as ending the next day, for example 10:00 PM to 6:00 AM."}}]}</script>
 </head>
 <body>
 <div class="container">
-  <div class="header">
-    <a href="./index.html">← Back to Home</a>
-    <a href="./index.html">EverydayCalc</a>
-  </div>
-
-  <div class="card">
-    <h1>Work Hours Calculator</h1>
-    <p class="sub">Calculate your daily work hours, break time, and total pay. 100% accurate.</p>
-
-    <div class="row">
-      <div>
-        <label>Clock In Time</label>
-        <input type="time" id="inTime" value="09:00">
-      </div>
-      <div>
-        <label>Clock Out Time</label>
-        <input type="time" id="outTime" value="17:00">
-      </div>
-    </div>
-
-    <label>Break Time (minutes)</label>
-    <input type="number" id="breakMin" value="60" placeholder="e.g. 30, 60">
-
-    <label>Hourly Rate ($) - Optional</label>
-    <input type="number" id="rate" value="15" placeholder="e.g. 20">
-
-    <button class="btn" onclick="calculateWork()">Calculate Hours</button>
-
-    <div class="result" id="resultBox">
-      <h3>Result:</h3>
-      <div id="totalHours"></div>
-      <div id="totalPay"></div>
-      <div id="weekHours"></div>
-    </div>
-    <p class="small">Tip: 8 hours = 1 work day. 40 hours = 1 work week (USA standard).</p>
-  </div>
+<div class="header"><a class="logo" href="index.html">EverydayCalc</a><div><a href="work-hours-calculator.html">Work Hours</a><a href="bmi-calculator.html">BMI</a><a href="paycheck-calculator.html">Paycheck</a></div></div>
+<div class="card">
+<h1>Work Hours Calculator</h1>
+<p class="sub">Find your daily and weekly hours, overtime and gross pay.</p>
+<div class="row"><div><label for="inTime">Clock In</label><input type="time" id="inTime" value="09:00"></div>
+<div><label for="outTime">Clock Out</label><input type="time" id="outTime" value="17:00"></div></div>
+<div class="row"><div><label for="breakMin">Unpaid break (minutes)</label><input type="number" id="breakMin" value="60" min="0"></div>
+<div><label for="days">Days worked per week</label><input type="number" id="days" value="5" min="1" max="7"></div></div>
+<label for="rate">Hourly rate ($) - optional</label><input type="number" id="rate" value="15" min="0" step="0.01">
+<button class="btn" onclick="calculateWork()">Calculate Hours</button>
+<div class="result" id="resultBox"></div>
+<p class="note">Overtime estimate uses 1.5x pay after 40 hours per week (federal rule). State rules may differ.</p>
 </div>
-
+<div class="card">
+<h2>How to use the Work Hours Calculator</h2>
+<ol><li>Enter the time you clocked in and clocked out.</li><li>Enter your unpaid break in minutes (for example 30 or 60).</li><li>Enter how many days you work per week.</li><li>Add your hourly rate to see estimated gross pay, then press Calculate.</li></ol>
+<h2>The formula</h2>
+<p><b>Hours worked = (Clock out - Clock in) - Break.</b> Weekly hours = daily hours x days per week. Any weekly hours above 40 are shown as overtime paid at 1.5x your rate.</p>
+<h2>Example</h2>
+<p>Clock in 9:00 AM, clock out 6:00 PM, 60 minute break, $20 per hour, 5 days: daily hours = 8.00, weekly hours = 40.00, gross weekly pay = $800.00.</p>
+<h2>Frequently Asked Questions</h2><h3>How do I calculate work hours with a lunch break?</h3><p>Subtract your clock-in time from your clock-out time, then subtract the unpaid break. Example: 9:00 AM to 5:00 PM is 8 hours; minus a 60 minute lunch gives 7 hours.</p><h3>How is overtime calculated in the USA?</h3><p>Under the federal Fair Labor Standards Act, most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek. Some states have additional daily overtime rules, so check your state.</p><h3>Does this calculator handle night shifts?</h3><p>Yes. If your clock-out time is earlier than your clock-in time, it treats the shift as ending the next day, for example 10:00 PM to 6:00 AM.</p></div>
 <script>
 function calculateWork(){
-  const inVal = document.getElementById('inTime').value;
-  const outVal = document.getElementById('outTime').value;
-  const breakMin = parseFloat(document.getElementById('breakMin').value) || 0;
-  const rate = parseFloat(document.getElementById('rate').value) || 0;
-
-  if(!inVal || !outVal){
-    alert('Please select In and Out time');
-    return;
-  }
-
-  // Convert time to minutes
-  function toMin(t){
-    const parts = t.split(':');
-    return parseInt(parts[0])*60 + parseInt(parts[1]);
-  }
-
-  let inMin = toMin(inVal);
-  let outMin = toMin(outVal);
-  
-  // Night shift handling (e.g., 22:00 to 06:00)
-  if(outMin < inMin){
-    outMin += 24*60;
-  }
-
-  let workedMin = outMin - inMin - breakMin;
-  if(workedMin < 0) workedMin = 0;
-
-  const hours = Math.floor(workedMin / 60);
-  const mins = workedMin % 60;
-  const decimalHours = (workedMin / 60).toFixed(2);
-  const weeklyHours = (workedMin * 5 / 60).toFixed(2);
-  const pay = rate > 0 ? (workedMin / 60 * rate).toFixed(2) : 0;
-
-  const box = document.getElementById('resultBox');
-  box.style.display = 'block';
-  document.getElementById('totalHours').innerHTML = `<b>Today:</b> ${hours} hours ${mins} minutes (${decimalHours} hrs)`;
-  document.getElementById('totalPay').innerHTML = rate > 0 ? `<b>Today's Pay:</b> $${pay}` : '';
-  document.getElementById('weekHours').innerHTML = `<b>Weekly (5 days):</b> ${weeklyHours} hours`;
-  
-  // Scroll to result on mobile
-  box.scrollIntoView({behavior:'smooth'});
+  var inV=document.getElementById('inTime').value,outV=document.getElementById('outTime').value;
+  var br=parseFloat(document.getElementById('breakMin').value)||0;
+  var days=parseFloat(document.getElementById('days').value)||5;
+  var rate=parseFloat(document.getElementById('rate').value)||0;
+  if(!inV||!outV){alert('Please select clock in and clock out time');return;}
+  function tm(t){var p=t.split(':');return parseInt(p[0])*60+parseInt(p[1]);}
+  var a=tm(inV),o=tm(outV);if(o<=a)o+=1440;
+  var m=Math.max(0,o-a-br);
+  var dh=m/60,wh=dh*days,ot=Math.max(0,wh-40),reg=wh-ot;
+  var pay=reg*rate+ot*rate*1.5;
+  var h='<h3>Result</h3><div><b>Daily:</b> '+Math.floor(m/60)+' h '+(m%60)+' min ('+dh.toFixed(2)+' hours)</div>'+
+  '<div><b>Weekly:</b> '+wh.toFixed(2)+' hours</div>';
+  if(ot>0)h+='<div><b>Overtime:</b> '+ot.toFixed(2)+' hours</div>';
+  if(rate>0)h+='<div><b>Estimated weekly gross pay:</b> $'+pay.toFixed(2)+'</div>';
+  var b=document.getElementById('resultBox');b.innerHTML=h;b.style.display='block';b.scrollIntoView({behavior:'smooth'});
 }
 </script>
+</div>
+<div class="footer"><a href="index.html">Home</a><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a><p>&copy; 2026 EverydayCalc. Free online calculators.</p></div>
 </body>
-          </html>
+</html>

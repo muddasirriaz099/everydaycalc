@@ -3,72 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMI Calculator - Calculate Body Mass Index | EverydayCalc</title>
-<meta name="description" content="Free BMI calculator to check your body mass index, healthy weight range.">
+<title>BMI Calculator (Pounds, Feet & Inches or kg, cm) | EverydayCalc</title>
+<meta name="description" content="Free BMI calculator for adults. Enter height in feet and inches with pounds, or cm and kg. See your BMI category and healthy weight range.">
 <link rel="canonical" href="https://muddasirriaz099.github.io/everydaycalc/bmi-calculator.html">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,sans-serif;background:#f6f7fb;color:#111;line-height:1.6}
-.container{max-width:700px;margin:0 auto;padding:16px}
-.header{background:#fff;padding:14px 16px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.header a{color:#2563eb;text-decoration:none;font-weight:600}
-.card{background:#fff;padding:20px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
-h1{font-size:22px;margin-bottom:8px}
-.sub{color:#666;margin-bottom:18px;font-size:14px}
-label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}
-input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;font-size:16px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.btn{width:100%;margin-top:18px;background:#16a34a;color:#fff;border:0;padding:14px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer}
-.result{margin-top:18px;padding:16px;background:#ecfdf5;border-radius:12px;display:none}
-</style>
+<meta property="og:title" content="BMI Calculator (Pounds, Feet & Inches or kg, cm) | EverydayCalc">
+<meta property="og:description" content="Free BMI calculator for adults. Enter height in feet and inches with pounds, or cm and kg. See your BMI category and healthy weight range.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muddasirriaz099.github.io/everydaycalc/bmi-calculator.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a healthy BMI?", "acceptedAnswer": {"@type": "Answer", "text": "For most adults, a BMI from 18.5 to 24.9 is considered in the healthy range. 25 to 29.9 is overweight and 30 or above is obese, according to standard CDC categories."}}, {"@type": "Question", "name": "How do I calculate BMI in pounds and inches?", "acceptedAnswer": {"@type": "Answer", "text": "BMI = 703 x weight in pounds / (height in inches squared). Example: 160 lb at 5 ft 7 in (67 in) gives 703 x 160 / 4489 = 25.1."}}, {"@type": "Question", "name": "Is BMI accurate for everyone?", "acceptedAnswer": {"@type": "Answer", "text": "No. BMI does not separate muscle from fat, so athletes can score high. It is a screening tool, not a diagnosis. Talk to a doctor about your health."}}]}</script>
 </head>
 <body>
 <div class="container">
-  <div class="header">
-    <a href="./index.html">← Back to Home</a>
-    <a href="./index.html">EverydayCalc</a>
-  </div>
-  <div class="card">
-    <h1>BMI Calculator</h1>
-    <p class="sub">Check if your weight is healthy for your height.</p>
-    <div class="row">
-      <div>
-        <label>Height (cm)</label>
-        <input type="number" id="height" value="170" placeholder="e.g. 170">
-      </div>
-      <div>
-        <label>Weight (kg)</label>
-        <input type="number" id="weight" value="70" placeholder="e.g. 70">
-      </div>
-    </div>
-    <button class="btn" onclick="calcBMI()">Calculate BMI</button>
-    <div class="result" id="resultBox">
-      <h3 id="bmiValue"></h3>
-      <div id="bmiCat"></div>
-      <div id="bmiRange" style="margin-top:8px;font-size:13px;color:#555"></div>
-    </div>
-  </div>
+<div class="header"><a class="logo" href="index.html">EverydayCalc</a><div><a href="work-hours-calculator.html">Work Hours</a><a href="bmi-calculator.html">BMI</a><a href="paycheck-calculator.html">Paycheck</a></div></div>
+<div class="card">
+<h1>BMI Calculator</h1>
+<p class="sub">Check your Body Mass Index in US units (ft, in, lb) or metric (cm, kg).</p>
+<label for="unit">Units</label>
+<select id="unit" onchange="toggleUnit()"><option value="us">US (feet, inches, pounds)</option><option value="metric">Metric (cm, kg)</option></select>
+<div id="usBox"><div class="row"><div><label for="ft">Height (feet)</label><input type="number" id="ft" value="5" min="0"></div>
+<div><label for="inch">Height (inches)</label><input type="number" id="inch" value="7" min="0" max="11"></div></div>
+<label for="lb">Weight (pounds)</label><input type="number" id="lb" value="160" min="0"></div>
+<div id="mBox" style="display:none"><div class="row"><div><label for="cm">Height (cm)</label><input type="number" id="cm" value="170"></div>
+<div><label for="kg">Weight (kg)</label><input type="number" id="kg" value="70"></div></div></div>
+<button class="btn" style="background:#16a34a" onclick="calcBMI()">Calculate BMI</button>
+<div class="result" id="resultBox" style="background:#ecfdf5"></div>
+<p class="note">For adults 20+. Not medical advice.</p>
 </div>
+<div class="card">
+<h2>How to use the BMI Calculator</h2>
+<ol><li>Pick US or metric units.</li><li>Enter your height and weight.</li><li>Press Calculate BMI to see your number, category and healthy weight range for your height.</li></ol>
+<h2>BMI categories (adults)</h2>
+<table><tr><th>BMI</th><th>Category</th></tr><tr><td>Below 18.5</td><td>Underweight</td></tr><tr><td>18.5 - 24.9</td><td>Healthy weight</td></tr><tr><td>25 - 29.9</td><td>Overweight</td></tr><tr><td>30 and above</td><td>Obese</td></tr></table>
+<h2>Formulas</h2>
+<p><b>US:</b> BMI = 703 x pounds / inches&sup2;. <b>Metric:</b> BMI = kg / meters&sup2;.</p>
+<h2>Frequently Asked Questions</h2><h3>What is a healthy BMI?</h3><p>For most adults, a BMI from 18.5 to 24.9 is considered in the healthy range. 25 to 29.9 is overweight and 30 or above is obese, according to standard CDC categories.</p><h3>How do I calculate BMI in pounds and inches?</h3><p>BMI = 703 x weight in pounds / (height in inches squared). Example: 160 lb at 5 ft 7 in (67 in) gives 703 x 160 / 4489 = 25.1.</p><h3>Is BMI accurate for everyone?</h3><p>No. BMI does not separate muscle from fat, so athletes can score high. It is a screening tool, not a diagnosis. Talk to a doctor about your health.</p></div>
 <script>
+function toggleUnit(){var m=document.getElementById('unit').value=='metric';document.getElementById('usBox').style.display=m?'none':'block';document.getElementById('mBox').style.display=m?'block':'none';}
 function calcBMI(){
-  const h = parseFloat(document.getElementById('height').value);
-  const w = parseFloat(document.getElementById('weight').value);
-  if(!h || !w){ alert('Enter height and weight'); return; }
-  const hm = h/100;
-  const bmi = (w/(hm*hm)).toFixed(1);
-  let cat="", color="";
-  if(bmi<18.5){cat="Underweight"; color="#f59e0b";}
-  else if(bmi<25){cat="Normal - Healthy!"; color="#16a34a";}
-  else if(bmi<30){cat="Overweight"; color="#f59e0b";}
-  else{cat="Obese"; color="#dc2626";}
-  const box=document.getElementById('resultBox');
-  box.style.display='block';
-  document.getElementById('bmiValue').innerHTML=`Your BMI: ${bmi}`;
-  document.getElementById('bmiValue').style.color=color;
-  document.getElementById('bmiCat').innerHTML=`<b>Category:</b> ${cat}`;
-  document.getElementById('bmiRange').innerHTML=`Healthy BMI range: 18.5 - 24.9`;
-  box.scrollIntoView({behavior:'smooth'});
+  var m=document.getElementById('unit').value=='metric',bmi,hM,lo,hi,u;
+  if(m){var cm=parseFloat(document.getElementById('cm').value),kg=parseFloat(document.getElementById('kg').value);
+    if(!cm||!kg){alert('Enter height and weight');return;}hM=cm/100;bmi=kg/(hM*hM);lo=18.5*hM*hM;hi=24.9*hM*hM;u='kg';}
+  else{var ft=parseFloat(document.getElementById('ft').value)||0,inc=parseFloat(document.getElementById('inch').value)||0,lb=parseFloat(document.getElementById('lb').value);
+    var tot=ft*12+inc;if(!tot||!lb){alert('Enter height and weight');return;}
+    bmi=703*lb/(tot*tot);lo=18.5*tot*tot/703;hi=24.9*tot*tot/703;u='lb';}
+  var c,col;if(bmi<18.5){c='Underweight';col='#d97706';}else if(bmi<25){c='Healthy weight';col='#16a34a';}else if(bmi<30){c='Overweight';col='#d97706';}else{c='Obese';col='#dc2626';}
+  var b=document.getElementById('resultBox');
+  b.innerHTML='<h3 style="color:'+col+'">Your BMI: '+bmi.toFixed(1)+'</h3><div><b>Category:</b> '+c+'</div><div>Healthy weight for your height: '+lo.toFixed(1)+' - '+hi.toFixed(1)+' '+u+'</div>';
+  b.style.display='block';b.scrollIntoView({behavior:'smooth'});
 }
 </script>
+</div>
+<div class="footer"><a href="index.html">Home</a><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a><p>&copy; 2026 EverydayCalc. Free online calculators.</p></div>
 </body>
-  </html>
+</html>
