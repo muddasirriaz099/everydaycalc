@@ -2,60 +2,178 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMI Calculator (Pounds, Feet & Inches or kg, cm) | EverydayCalc</title>
-<meta name="description" content="Free BMI calculator for adults. Enter height in feet and inches with pounds, or cm and kg. See your BMI category and healthy weight range.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BMI Calculator: Check Your BMI in lb/ft or kg/cm</title>
+<meta name="description" content="Free BMI calculator for adults. Use pounds and feet or kg and cm to get your BMI, weight category and healthy weight range, with formulas and examples.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://muddasirriaz099.github.io/everydaycalc/bmi-calculator.html">
-<meta property="og:title" content="BMI Calculator (Pounds, Feet & Inches or kg, cm) | EverydayCalc">
-<meta property="og:description" content="Free BMI calculator for adults. Enter height in feet and inches with pounds, or cm and kg. See your BMI category and healthy weight range.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1d4ed8">
+<meta property="og:site_name" content="EverydayCalc">
 <meta property="og:type" content="website">
+<meta property="og:title" content="BMI Calculator: Check Your BMI in lb/ft or kg/cm">
+<meta property="og:description" content="Free BMI calculator for adults. Use pounds and feet or kg and cm to get your BMI, weight category and healthy weight range, with formulas and examples.">
 <meta property="og:url" content="https://muddasirriaz099.github.io/everydaycalc/bmi-calculator.html">
-<meta name="theme-color" content="#2563eb">
+<meta property="og:image" content="https://muddasirriaz099.github.io/everydaycalc/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a healthy BMI?", "acceptedAnswer": {"@type": "Answer", "text": "For most adults, a BMI from 18.5 to 24.9 is considered in the healthy range. 25 to 29.9 is overweight and 30 or above is obese, according to standard CDC categories."}}, {"@type": "Question", "name": "How do I calculate BMI in pounds and inches?", "acceptedAnswer": {"@type": "Answer", "text": "BMI = 703 x weight in pounds / (height in inches squared). Example: 160 lb at 5 ft 7 in (67 in) gives 703 x 160 / 4489 = 25.1."}}, {"@type": "Question", "name": "Is BMI accurate for everyone?", "acceptedAnswer": {"@type": "Answer", "text": "No. BMI does not separate muscle from fat, so athletes can score high. It is a screening tool, not a diagnosis. Talk to a doctor about your health."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "BMI Calculator", "url": "https://muddasirriaz099.github.io/everydaycalc/bmi-calculator.html", "description": "Free BMI calculator for adults. Use pounds and feet or kg and cm to get your BMI, weight category and healthy weight range, with formulas and examples.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://muddasirriaz099.github.io/everydaycalc/assets/icon-bmi.svg", "author": {"@type": "Person", "name": "Muddasir Riaz", "url": "https://muddasirriaz099.github.io/everydaycalc/about.html"}, "publisher": {"@type": "Organization", "name": "EverydayCalc", "url": "https://muddasirriaz099.github.io/everydaycalc/", "logo": "https://muddasirriaz099.github.io/everydaycalc/assets/logo.svg"}, "dateModified": "2026-10-27", "inLanguage": "en-US"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a healthy BMI for adults?", "acceptedAnswer": {"@type": "Answer", "text": "A BMI from 18.5 to 24.9 is considered the healthy weight range for adults aged 20 and older. 25 to 29.9 is overweight, and 30 or higher is in the obesity range, according to the CDC categories."}}, {"@type": "Question", "name": "How do I calculate BMI in pounds and inches?", "acceptedAnswer": {"@type": "Answer", "text": "BMI = 703 x weight in pounds / (height in inches squared). For example, 160 lb at 5 ft 7 in (67 in) gives 703 x 160 / 4,489 = 25.1."}}, {"@type": "Question", "name": "How do I calculate BMI in kg and cm?", "acceptedAnswer": {"@type": "Answer", "text": "Convert centimeters to meters by dividing by 100, square the result, and divide your weight in kilograms by it. For example, 70 kg and 170 cm gives 70 / (1.7 x 1.7) = 24.2."}}, {"@type": "Question", "name": "Is BMI accurate for everyone?", "acceptedAnswer": {"@type": "Answer", "text": "No. BMI does not separate muscle from fat, so athletes can score high. It also does not show where fat is stored and is less reliable for older adults. It is a screening tool, not a diagnosis."}}, {"@type": "Question", "name": "What BMI is considered obese?", "acceptedAnswer": {"@type": "Answer", "text": "A BMI of 30 or higher is in the obesity range for adults. It is split into Class 1 (30 to 34.9), Class 2 (35 to 39.9) and Class 3 (40 or higher)."}}, {"@type": "Question", "name": "What is the BMI formula?", "acceptedAnswer": {"@type": "Answer", "text": "In US units, BMI = 703 x pounds / inches squared. In metric, BMI = kilograms / meters squared. Both give the same result for the same person."}}, {"@type": "Question", "name": "Does BMI change with age or sex for adults?", "acceptedAnswer": {"@type": "Answer", "text": "The adult cutoffs are the same for men and women aged 20 and older. For children and teens, BMI is compared with percentiles for their age and sex instead."}}, {"@type": "Question", "name": "Can I use this BMI calculator for my child?", "acceptedAnswer": {"@type": "Answer", "text": "No. This calculator uses adult categories. For children and teens aged 2 to 19, use the CDC's child and teen BMI percentile calculator or ask your pediatrician."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://muddasirriaz099.github.io/everydaycalc/"}, {"@type": "ListItem", "position": 2, "name": "BMI Calculator", "item": "https://muddasirriaz099.github.io/everydaycalc/bmi-calculator.html"}]}</script>
 </head>
-<body class="">
-<header class="site-header"><div class="bar"><a class="brand" href="index.html"><span class="mark">E</span>EverydayCalc</a><nav><a href="overtime-calculator.html">Overtime</a><a href="work-hours-calculator.html">Work Hours</a><a href="paycheck-calculator.html">Paycheck</a><a href="bmi-calculator.html">BMI</a></nav></div></header>
-<div class="container">
-<div class="card">
-<h1>BMI Calculator</h1>
-<p class="sub">Check your Body Mass Index in US units (ft, in, lb) or metric (cm, kg).</p>
+<body class="t-bmi">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap"><a class="brand" href="index.html" aria-label="EverydayCalc home"><img src="assets/logo.svg" alt="" width="32" height="32"><span>Everyday<b>Calc</b></span></a><nav class="main" aria-label="Main"><a href="work-hours-calculator.html">Work Hours</a><a href="bmi-calculator.html" aria-current="page">BMI</a><a href="paycheck-calculator.html">Paycheck</a><a href="about.html">About</a></nav></div></header>
+<main id="main" class="wrap">
+<p class="crumb"><a href="index.html">Home</a> / BMI Calculator</p>
+<div class="pagehead"><img src="assets/icon-bmi.svg" alt="BMI Calculator logo" width="60" height="60"><h1>BMI Calculator</h1></div>
+<p class="meta">By <a href="about.html">Muddasir Riaz</a> &middot; Updated October 27, 2026</p>
+<p class="lede">Check your body mass index in US units (feet, inches, pounds) or metric (cm, kg). You get your BMI, your weight category and the healthy weight range for your height.</p>
+<div class="calc" id="tool">
+<form onsubmit="calcBMI();return false" novalidate>
 <label for="unit">Units</label>
-<select id="unit" onchange="toggleUnit()"><option value="us">US (feet, inches, pounds)</option><option value="metric">Metric (cm, kg)</option></select>
-<div id="usBox"><div class="row"><div><label for="ft">Height (feet)</label><input type="number" id="ft" value="5" min="0"></div>
-<div><label for="inch">Height (inches)</label><input type="number" id="inch" value="7" min="0" max="11"></div></div>
-<label for="lb">Weight (pounds)</label><input type="number" id="lb" value="160" min="0"></div>
-<div id="mBox" style="display:none"><div class="row"><div><label for="cm">Height (cm)</label><input type="number" id="cm" value="170"></div>
-<div><label for="kg">Weight (kg)</label><input type="number" id="kg" value="70"></div></div></div>
-<button class="btn" style="background:#16a34a" onclick="calcBMI()">Calculate BMI</button>
-<div class="result" id="resultBox" style="background:#ecfdf5"></div>
-<p class="note">For adults 20+. Not medical advice.</p>
+<select id="unit" onchange="toggleUnit()"><option value="us">US units (feet, inches, pounds)</option><option value="metric">Metric (cm, kg)</option></select>
+<div id="usBox"><div class="row"><div><label for="ft">Height (feet)</label><input type="number" id="ft" value="5" min="0" max="8" inputmode="numeric"></div>
+<div><label for="inch">Height (inches)</label><input type="number" id="inch" value="7" min="0" max="11" inputmode="decimal"></div></div>
+<label for="lb">Weight (pounds)</label><input type="number" id="lb" value="160" min="1" inputmode="decimal"></div>
+<div id="mBox" style="display:none"><div class="row"><div><label for="cm">Height (cm)</label><input type="number" id="cm" value="170" min="1" inputmode="decimal"></div>
+<div><label for="kg">Weight (kg)</label><input type="number" id="kg" value="70" min="1" inputmode="decimal"></div></div></div>
+<button class="go" type="submit">Calculate BMI</button>
+</form>
+<div class="result" id="resultBox" role="status" aria-live="polite"></div>
+<p class="note" style="margin-top:12px">For adults aged 20 and older. BMI is a screening number, not a diagnosis. For children and teens, use the CDC's age-and-sex-specific BMI percentile tools.</p>
 </div>
-<div class="card">
-<h2>How to use the BMI Calculator</h2>
-<ol><li>Pick US or metric units.</li><li>Enter your height and weight.</li><li>Press Calculate BMI to see your number, category and healthy weight range for your height.</li></ol>
-<h2>BMI categories (adults)</h2>
-<table><tr><th>BMI</th><th>Category</th></tr><tr><td>Below 18.5</td><td>Underweight</td></tr><tr><td>18.5 - 24.9</td><td>Healthy weight</td></tr><tr><td>25 - 29.9</td><td>Overweight</td></tr><tr><td>30 and above</td><td>Obese</td></tr></table>
-<h2>Formulas</h2>
-<p><b>US:</b> BMI = 703 x pounds / inches&sup2;. <b>Metric:</b> BMI = kg / meters&sup2;.</p>
-<h2>Frequently Asked Questions</h2><h3>What is a healthy BMI?</h3><p>For most adults, a BMI from 18.5 to 24.9 is considered in the healthy range. 25 to 29.9 is overweight and 30 or above is obese, according to standard CDC categories.</p><h3>How do I calculate BMI in pounds and inches?</h3><p>BMI = 703 x weight in pounds / (height in inches squared). Example: 160 lb at 5 ft 7 in (67 in) gives 703 x 160 / 4489 = 25.1.</p><h3>Is BMI accurate for everyone?</h3><p>No. BMI does not separate muscle from fat, so athletes can score high. It is a screening tool, not a diagnosis. Talk to a doctor about your health.</p></div>
-<div class="card related"><h2>Related calculators</h2><a href="overtime-calculator.html">Overtime Calculator &rarr;</a><a href="work-hours-calculator.html">Work Hours Calculator &rarr;</a><a href="paycheck-calculator.html">Paycheck Calculator &rarr;</a></div>
+
+<div class="quick"><b>Quick answer:</b> BMI (body mass index) = 703 &times; weight in pounds &divide; height in inches squared. In metric, BMI = weight in kg &divide; height in meters squared. For adults, a BMI from 18.5 to 24.9 is in the healthy weight range, 25 to 29.9 is overweight, and 30 or more is in the obesity range.</div>
+
+<h2>How to use the BMI calculator</h2>
+<ol>
+<li><b>Choose your units.</b> Pick US units (feet, inches, pounds) or metric (centimeters, kilograms).</li>
+<li><b>Enter your height and weight.</b> Use your current height without shoes and your weight without heavy clothing.</li>
+<li><b>Press Calculate BMI.</b> You will see your BMI number, your weight category and the weight range that counts as healthy for your height.</li>
+</ol>
+
+<h2>What is BMI?</h2>
+<p>BMI stands for body mass index. It is a number that compares your weight with your height. Because it only needs two measurements, doctors and public health agencies use it as a quick screening tool to spot weight categories that may be linked with health risks. BMI does not measure body fat directly, and it does not tell you how healthy you are by itself.</p>
+
+<h2>BMI formula</h2>
+<p><b>US units:</b> BMI = 703 &times; weight (lb) &divide; height (in)&sup2;</p>
+<p><b>Metric units:</b> BMI = weight (kg) &divide; height (m)&sup2;</p>
+<p>Take a person who is 5 ft 7 in (67 inches) and weighs 160 pounds. Square the height: 67 &times; 67 = 4,489. Then 703 &times; 160 = 112,480. Divide 112,480 by 4,489 and you get a BMI of 25.1. In metric the same person is about 170 cm and 72.6 kg: 72.6 &divide; (1.70 &times; 1.70) = 72.6 &divide; 2.89, which is about 25.1.</p>
+
+<h2>BMI categories for adults</h2>
+<p>These cutoffs are used by the U.S. Centers for Disease Control and Prevention (CDC) for adults aged 20 and older.</p>
+<div class="tw"><table>
+<tr><th>BMI</th><th>Weight category</th></tr>
+<tr><td>Below 18.5</td><td>Underweight</td></tr>
+<tr><td>18.5 to 24.9</td><td>Healthy weight</td></tr>
+<tr><td>25.0 to 29.9</td><td>Overweight</td></tr>
+<tr><td>30.0 to 34.9</td><td>Obesity (Class 1)</td></tr>
+<tr><td>35.0 to 39.9</td><td>Obesity (Class 2)</td></tr>
+<tr><td>40.0 and above</td><td>Obesity (Class 3)</td></tr>
+</table></div>
+
+<h2>BMI examples</h2>
+<p>These examples are worked out with the formula above, so you can check your own result against a similar height and weight.</p>
+<div class="tw"><table>
+<tr><th>Height</th><th>Weight</th><th>BMI</th><th>Category</th></tr>
+<tr><td>5 ft 2 in</td><td>110 lb</td><td>20.1</td><td>Healthy weight</td></tr>
+<tr><td>5 ft 4 in</td><td>130 lb</td><td>22.3</td><td>Healthy weight</td></tr>
+<tr><td>5 ft 7 in</td><td>160 lb</td><td>25.1</td><td>Overweight</td></tr>
+<tr><td>5 ft 10 in</td><td>200 lb</td><td>28.7</td><td>Overweight</td></tr>
+<tr><td>6 ft 0 in</td><td>180 lb</td><td>24.4</td><td>Healthy weight</td></tr>
+<tr><td>6 ft 2 in</td><td>260 lb</td><td>33.4</td><td>Obesity (Class 1)</td></tr>
+</table></div>
+
+<h2>Healthy weight range by height</h2>
+<p>A BMI of 18.5 to 24.9 is the healthy weight range. The table turns that into pounds for each height, rounded to whole pounds. It is a guide for adults, not a goal for any one person.</p>
+<div class="tw"><table>
+<tr><th>Height</th><th>Height in inches</th><th>Lowest healthy weight (BMI 18.5)</th><th>Highest healthy weight (BMI 24.9)</th></tr>
+<tr><td>4 ft 10 in</td><td>58 in</td><td>89 lb</td><td>119 lb</td></tr>
+<tr><td>4 ft 11 in</td><td>59 in</td><td>92 lb</td><td>123 lb</td></tr>
+<tr><td>5 ft 0 in</td><td>60 in</td><td>95 lb</td><td>127 lb</td></tr>
+<tr><td>5 ft 1 in</td><td>61 in</td><td>98 lb</td><td>131 lb</td></tr>
+<tr><td>5 ft 2 in</td><td>62 in</td><td>102 lb</td><td>136 lb</td></tr>
+<tr><td>5 ft 3 in</td><td>63 in</td><td>105 lb</td><td>140 lb</td></tr>
+<tr><td>5 ft 4 in</td><td>64 in</td><td>108 lb</td><td>145 lb</td></tr>
+<tr><td>5 ft 5 in</td><td>65 in</td><td>112 lb</td><td>149 lb</td></tr>
+<tr><td>5 ft 6 in</td><td>66 in</td><td>115 lb</td><td>154 lb</td></tr>
+<tr><td>5 ft 7 in</td><td>67 in</td><td>119 lb</td><td>158 lb</td></tr>
+<tr><td>5 ft 8 in</td><td>68 in</td><td>122 lb</td><td>163 lb</td></tr>
+<tr><td>5 ft 9 in</td><td>69 in</td><td>126 lb</td><td>168 lb</td></tr>
+<tr><td>5 ft 10 in</td><td>70 in</td><td>129 lb</td><td>173 lb</td></tr>
+<tr><td>5 ft 11 in</td><td>71 in</td><td>133 lb</td><td>178 lb</td></tr>
+<tr><td>6 ft 0 in</td><td>72 in</td><td>137 lb</td><td>183 lb</td></tr>
+<tr><td>6 ft 1 in</td><td>73 in</td><td>141 lb</td><td>188 lb</td></tr>
+<tr><td>6 ft 2 in</td><td>74 in</td><td>145 lb</td><td>193 lb</td></tr>
+<tr><td>6 ft 3 in</td><td>75 in</td><td>149 lb</td><td>199 lb</td></tr>
+<tr><td>6 ft 4 in</td><td>76 in</td><td>152 lb</td><td>204 lb</td></tr>
+</table></div>
+
+<h2>How do you calculate BMI in pounds and inches?</h2>
+<p>Multiply your weight in pounds by 703. Separately, multiply your height in inches by itself. Divide the first number by the second. For a person who is 5 ft 4 in (64 inches) and 130 pounds, that is 703 &times; 130 = 91,390, divided by 64 &times; 64 = 4,096, which is 22.3. That is in the healthy range. Do not forget to include the feet when you convert to inches: 5 feet 4 inches is 5 &times; 12 + 4 = 64 inches.</p>
+
+<h2>What is a good BMI for adults?</h2>
+<p>For most adults, a BMI between 18.5 and 24.9 is considered the healthy weight range. People in this range have a lower average risk of some weight-related conditions than people at either end. That is only an average. A person at a BMI of 26 who is active, eats well and has normal blood pressure can be healthier than someone at 23 who has other risk factors. BMI is one number, and your doctor looks at many more.</p>
+
+<h2>Limits of BMI</h2>
+<ul>
+<li><b>It does not separate muscle from fat.</b> Athletes and people with a lot of muscle can have a high BMI without having extra body fat.</li>
+<li><b>It does not show where fat is stored.</b> Fat around the waist is linked with higher health risk than fat in other places. Measures such as waist circumference can add context.</li>
+<li><b>Age changes the picture.</b> Older adults tend to lose muscle and may have more body fat at the same BMI as a younger person.</li>
+<li><b>Different groups may have different risk levels.</b> Some health organizations use different cutoffs for some ethnic groups.</li>
+<li><b>It is not for children and teens.</b> For ages 2 to 19, the CDC compares BMI with other children of the same age and sex, using percentiles instead of the adult cutoffs.</li>
+<li><b>It is not for pregnancy.</b> Weight guidance during pregnancy is different, so ask your doctor or midwife.</li>
+</ul>
+
+<h2>What should you do with your BMI result?</h2>
+<p>Treat the number as a starting point for a conversation, not a verdict. If your BMI is in the healthy range, you do not need to change anything because of the number alone. If it is above or below the healthy range, a doctor can look at your whole health picture, which may include blood pressure, blood sugar, cholesterol, family history, activity and eating habits. Do not start a strict diet or a big change in exercise only because of a BMI calculator. If you have concerns about your weight or how you eat, talk to a doctor or a registered dietitian.</p>
+
+<h2>BMI in metric units: a quick example</h2>
+<p>Metric is easy if you keep the units straight. A person who is 175 cm tall and weighs 80 kg is 1.75 meters tall. Square the height to get 3.0625. Divide 80 by 3.0625 and the result is 26.1, which is in the overweight category. To convert, 1 inch is 2.54 centimeters and 1 pound is about 0.4536 kilograms, so you can use whichever units you know best.</p>
+
+<h2>Frequently asked questions</h2>
+<details class="faq"><summary>What is a healthy BMI for adults?</summary><p>A BMI from 18.5 to 24.9 is considered the healthy weight range for adults aged 20 and older. 25 to 29.9 is overweight, and 30 or higher is in the obesity range, according to the CDC categories.</p></details>
+<details class="faq"><summary>How do I calculate BMI in pounds and inches?</summary><p>BMI = 703 x weight in pounds / (height in inches squared). For example, 160 lb at 5 ft 7 in (67 in) gives 703 x 160 / 4,489 = 25.1.</p></details>
+<details class="faq"><summary>How do I calculate BMI in kg and cm?</summary><p>Convert centimeters to meters by dividing by 100, square the result, and divide your weight in kilograms by it. For example, 70 kg and 170 cm gives 70 / (1.7 x 1.7) = 24.2.</p></details>
+<details class="faq"><summary>Is BMI accurate for everyone?</summary><p>No. BMI does not separate muscle from fat, so athletes can score high. It also does not show where fat is stored and is less reliable for older adults. It is a screening tool, not a diagnosis.</p></details>
+<details class="faq"><summary>What BMI is considered obese?</summary><p>A BMI of 30 or higher is in the obesity range for adults. It is split into Class 1 (30 to 34.9), Class 2 (35 to 39.9) and Class 3 (40 or higher).</p></details>
+<details class="faq"><summary>What is the BMI formula?</summary><p>In US units, BMI = 703 x pounds / inches squared. In metric, BMI = kilograms / meters squared. Both give the same result for the same person.</p></details>
+<details class="faq"><summary>Does BMI change with age or sex for adults?</summary><p>The adult cutoffs are the same for men and women aged 20 and older. For children and teens, BMI is compared with percentiles for their age and sex instead.</p></details>
+<details class="faq"><summary>Can I use this BMI calculator for my child?</summary><p>No. This calculator uses adult categories. For children and teens aged 2 to 19, use the CDC's child and teen BMI percentile calculator or ask your pediatrician.</p></details>
+<h2>More free calculators</h2>
+<div class="related"><a class="tool" href="work-hours-calculator.html"><img src="assets/icon-work-hours.svg" alt="Work Hours Calculator logo" width="52" height="52"><div><b>Work Hours Calculator</b><span>Daily and weekly hours with breaks, night shifts, overtime and pay.</span></div></a><a class="tool" href="paycheck-calculator.html"><img src="assets/icon-paycheck.svg" alt="Paycheck Calculator logo" width="52" height="52"><div><b>Paycheck Calculator</b><span>Estimate take-home pay after federal tax, state tax, FICA and deductions.</span></div></a></div>
+<h2>Sources and further reading</h2>
+<ul class="sources"><li><a href="https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html" rel="noopener" target="_blank">CDC: Adult BMI Categories</a></li></ul>
+<p class="note">This calculator gives estimates for information only. It is not financial, tax, legal or medical advice. Found a mistake? <a href="contact.html">Tell us</a> and we will fix it.</p>
 <script>
 function toggleUnit(){var m=document.getElementById('unit').value=='metric';document.getElementById('usBox').style.display=m?'none':'block';document.getElementById('mBox').style.display=m?'block':'none';}
 function calcBMI(){
-  var m=document.getElementById('unit').value=='metric',bmi,hM,lo,hi,u;
-  if(m){var cm=parseFloat(document.getElementById('cm').value),kg=parseFloat(document.getElementById('kg').value);
-    if(!cm||!kg){alert('Enter height and weight');return;}hM=cm/100;bmi=kg/(hM*hM);lo=18.5*hM*hM;hi=24.9*hM*hM;u='kg';}
-  else{var ft=parseFloat(document.getElementById('ft').value)||0,inc=parseFloat(document.getElementById('inch').value)||0,lb=parseFloat(document.getElementById('lb').value);
-    var tot=ft*12+inc;if(!tot||!lb){alert('Enter height and weight');return;}
-    bmi=703*lb/(tot*tot);lo=18.5*tot*tot/703;hi=24.9*tot*tot/703;u='lb';}
-  var c,col;if(bmi<18.5){c='Underweight';col='#d97706';}else if(bmi<25){c='Healthy weight';col='#16a34a';}else if(bmi<30){c='Overweight';col='#d97706';}else{c='Obese';col='#dc2626';}
-  var b=document.getElementById('resultBox');
-  b.innerHTML='<h3 style="color:'+col+'">Your BMI: '+bmi.toFixed(1)+'</h3><div><b>Category:</b> '+c+'</div><div>Healthy weight for your height: '+lo.toFixed(1)+' - '+hi.toFixed(1)+' '+u+'</div>';
-  b.style.display='block';b.scrollIntoView({behavior:'smooth'});
+  var m=document.getElementById('unit').value=='metric',bmi,lo,hi,u,b=document.getElementById('resultBox');
+  b.style.display='block';
+  if(m){
+    var cm=parseFloat(document.getElementById('cm').value),kg=parseFloat(document.getElementById('kg').value);
+    if(!(cm>0&&kg>0)){b.innerHTML='<p class="err">Please enter your height and weight.</p>';return;}
+    var hM=cm/100;bmi=kg/(hM*hM);lo=18.5*hM*hM;hi=24.9*hM*hM;u='kg';
+  }else{
+    var ft=parseFloat(document.getElementById('ft').value)||0,inc=parseFloat(document.getElementById('inch').value)||0,lb=parseFloat(document.getElementById('lb').value);
+    var tot=ft*12+inc;
+    if(!(tot>0&&lb>0)){b.innerHTML='<p class="err">Please enter your height and weight.</p>';return;}
+    bmi=703*lb/(tot*tot);lo=18.5*tot*tot/703;hi=24.9*tot*tot/703;u='lb';
+  }
+  var c;
+  if(bmi<18.5)c='Underweight';else if(bmi<25)c='Healthy weight';else if(bmi<30)c='Overweight';else if(bmi<35)c='Obesity (Class 1)';else if(bmi<40)c='Obesity (Class 2)';else c='Obesity (Class 3)';
+  var pos=Math.max(2,Math.min(98,(bmi-15)/(40-15)*100));
+  b.innerHTML='<div class="big">BMI '+bmi.toFixed(1)+'</div><p><b>Category:</b> '+c+'</p>'+
+  '<div style="position:relative;height:12px;border-radius:6px;margin:14px 0 4px;background:linear-gradient(90deg,#60a5fa 0%,#34d399 14%,#34d399 38%,#fbbf24 40%,#fbbf24 60%,#f87171 62%,#b91c1c 100%)"><span style="position:absolute;left:'+pos+'%;top:-5px;width:4px;height:22px;background:#111827;border-radius:2px;transform:translateX(-2px)"></span></div>'+
+  '<div style="position:relative;height:18px;font-size:12px;color:#5b6472"><span style="position:absolute;left:0">15</span><span style="position:absolute;left:14%;transform:translateX(-50%)">18.5</span><span style="position:absolute;left:40%;transform:translateX(-50%)">25</span><span style="position:absolute;left:60%;transform:translateX(-50%)">30</span><span style="position:absolute;right:0">40+</span></div>'+
+  '<p style="margin-top:12px"><b>Healthy weight range for your height:</b> '+lo.toFixed(1)+' to '+hi.toFixed(1)+' '+u+'</p>'+
+  '<p class="note">BMI does not measure body fat directly. Talk to a doctor about what is healthy for you.</p>';
+  b.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 </script>
-</div>
-<div class="footer"><a href="index.html">Home</a><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a><p>&copy; 2026 EverydayCalc. Free online calculators.</p></div>
+</main>
+<footer class="site"><div class="wrap"><div class="cols"><div><h4>Calculators</h4><a href="work-hours-calculator.html">Work Hours Calculator</a><a href="bmi-calculator.html">BMI Calculator</a><a href="paycheck-calculator.html">Paycheck Calculator</a></div><div><h4>EverydayCalc</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><div><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div></div><p>&copy; 2026 EverydayCalc. Free online calculators. Results are estimates for information only and are not financial, tax, legal or medical advice.</p></div></footer>
 </body>
 </html>

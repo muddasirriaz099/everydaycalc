@@ -2,60 +2,173 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paycheck Calculator - Estimate Take-Home Pay | EverydayCalc</title>
-<meta name="description" content="Free paycheck calculator: estimate net pay after federal tax, state tax and FICA. Choose weekly, biweekly or monthly pay and see annual take-home.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paycheck Calculator: Estimate Your Take-Home Pay</title>
+<meta name="description" content="Free paycheck calculator. Estimate take-home pay after federal tax, state tax, FICA and 401(k) or health deductions for weekly, biweekly or monthly pay.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://muddasirriaz099.github.io/everydaycalc/paycheck-calculator.html">
-<meta property="og:title" content="Paycheck Calculator - Estimate Take-Home Pay | EverydayCalc">
-<meta property="og:description" content="Free paycheck calculator: estimate net pay after federal tax, state tax and FICA. Choose weekly, biweekly or monthly pay and see annual take-home.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1d4ed8">
+<meta property="og:site_name" content="EverydayCalc">
 <meta property="og:type" content="website">
+<meta property="og:title" content="Paycheck Calculator: Estimate Your Take-Home Pay">
+<meta property="og:description" content="Free paycheck calculator. Estimate take-home pay after federal tax, state tax, FICA and 401(k) or health deductions for weekly, biweekly or monthly pay.">
 <meta property="og:url" content="https://muddasirriaz099.github.io/everydaycalc/paycheck-calculator.html">
-<meta name="theme-color" content="#2563eb">
+<meta property="og:image" content="https://muddasirriaz099.github.io/everydaycalc/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is take-home pay calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Take-home pay = gross pay minus pre-tax deductions, federal income tax, state income tax, and FICA (Social Security 6.2% plus Medicare 1.45%), minus any after-tax deductions."}}, {"@type": "Question", "name": "What is FICA?", "acceptedAnswer": {"@type": "Answer", "text": "FICA is the US payroll tax that funds Social Security and Medicare. Employees pay 7.65% of wages (6.2% Social Security up to an annual wage cap, plus 1.45% Medicare)."}}, {"@type": "Question", "name": "Why is my real paycheck different from this estimate?", "acceptedAnswer": {"@type": "Answer", "text": "Actual withholding depends on your W-4, filing status, state and local taxes, benefits and other deductions. Use this as an estimate and check your pay stub for exact numbers."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Paycheck Calculator", "url": "https://muddasirriaz099.github.io/everydaycalc/paycheck-calculator.html", "description": "Free paycheck calculator. Estimate take-home pay after federal tax, state tax, FICA and 401(k) or health deductions for weekly, biweekly or monthly pay.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://muddasirriaz099.github.io/everydaycalc/assets/icon-paycheck.svg", "author": {"@type": "Person", "name": "Muddasir Riaz", "url": "https://muddasirriaz099.github.io/everydaycalc/about.html"}, "publisher": {"@type": "Organization", "name": "EverydayCalc", "url": "https://muddasirriaz099.github.io/everydaycalc/", "logo": "https://muddasirriaz099.github.io/everydaycalc/assets/logo.svg"}, "dateModified": "2026-10-27", "inLanguage": "en-US"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is take-home pay calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Take-home pay is your gross pay minus pre-tax deductions, federal income tax, state income tax and FICA (Social Security 6.2% plus Medicare 1.45%), minus any after-tax deductions."}}, {"@type": "Question", "name": "What is FICA and how much is it?", "acceptedAnswer": {"@type": "Answer", "text": "FICA is the US payroll tax that funds Social Security and Medicare. Employees pay 7.65% of wages: 6.2% for Social Security up to a yearly wage cap, plus 1.45% for Medicare."}}, {"@type": "Question", "name": "Does a 401(k) reduce my FICA taxes?", "acceptedAnswer": {"@type": "Answer", "text": "No. Traditional 401(k) contributions lower the wages used for income tax, but Social Security and Medicare tax are still charged on that pay. Health insurance premiums through payroll usually reduce both."}}, {"@type": "Question", "name": "How do I get my gross pay per paycheck from my salary?", "acceptedAnswer": {"@type": "Answer", "text": "Divide your yearly salary by the number of paychecks you get: 52 for weekly, 26 for biweekly, 24 for semi-monthly or 12 for monthly. For example, $52,000 a year is $2,000 biweekly."}}, {"@type": "Question", "name": "What is the difference between gross pay and net pay?", "acceptedAnswer": {"@type": "Answer", "text": "Gross pay is what you earn before anything is taken out. Net pay, also called take-home pay, is what is left after taxes and deductions."}}, {"@type": "Question", "name": "Why is my real paycheck different from this estimate?", "acceptedAnswer": {"@type": "Answer", "text": "Actual withholding depends on your W-4, filing status, state and local taxes, benefits and year-to-date limits. Use this as an estimate and check your pay stub for exact numbers."}}, {"@type": "Question", "name": "Which states have no state income tax on wages?", "acceptedAnswer": {"@type": "Answer", "text": "Alaska, Florida, Nevada, South Dakota, Tennessee, Texas, Washington and Wyoming do not tax wages, and neither does New Hampshire. Enter 0 for state tax if you live in one of them."}}, {"@type": "Question", "name": "Does this calculator include the Additional Medicare Tax or the Social Security cap?", "acceptedAnswer": {"@type": "Answer", "text": "No. It uses a simple 7.65% FICA rate on your pay. Very high earners should expect their real paychecks to differ once the Social Security wage cap or the 0.9% Additional Medicare Tax applies."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://muddasirriaz099.github.io/everydaycalc/"}, {"@type": "ListItem", "position": 2, "name": "Paycheck Calculator", "item": "https://muddasirriaz099.github.io/everydaycalc/paycheck-calculator.html"}]}</script>
 </head>
-<body class="">
-<header class="site-header"><div class="bar"><a class="brand" href="index.html"><span class="mark">E</span>EverydayCalc</a><nav><a href="overtime-calculator.html">Overtime</a><a href="work-hours-calculator.html">Work Hours</a><a href="paycheck-calculator.html">Paycheck</a><a href="bmi-calculator.html">BMI</a></nav></div></header>
-<div class="container">
-<div class="card">
-<h1>Paycheck Calculator</h1>
-<p class="sub">Estimate your take-home pay per paycheck and per year.</p>
-<label for="gross">Gross pay per paycheck ($)</label><input type="number" id="gross" value="2000" min="0">
-<label for="freq">Pay frequency</label>
-<select id="freq"><option value="52">Weekly</option><option value="26" selected>Biweekly</option><option value="24">Semi-monthly</option><option value="12">Monthly</option></select>
-<div class="row"><div><label for="fed">Federal income tax (%)</label><input type="number" id="fed" value="12" min="0" step="0.1"></div>
-<div><label for="state">State income tax (%)</label><input type="number" id="state" value="4" min="0" step="0.1"></div></div>
-<label for="pre">Pre-tax deductions per paycheck ($) e.g. 401(k), insurance</label><input type="number" id="pre" value="0" min="0">
-<label for="post">After-tax deductions per paycheck ($)</label><input type="number" id="post" value="0" min="0">
-<button class="btn" style="background:#7c3aed" onclick="calcPay()">Calculate Paycheck</button>
-<div class="result" id="resultBox" style="background:#f5f3ff"></div>
-<p class="note">Estimate only. Federal and state percentages are your effective rates; enter the rate from your pay stub for best accuracy.</p>
+<body class="t-pay">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap"><a class="brand" href="index.html" aria-label="EverydayCalc home"><img src="assets/logo.svg" alt="" width="32" height="32"><span>Everyday<b>Calc</b></span></a><nav class="main" aria-label="Main"><a href="work-hours-calculator.html">Work Hours</a><a href="bmi-calculator.html">BMI</a><a href="paycheck-calculator.html" aria-current="page">Paycheck</a><a href="about.html">About</a></nav></div></header>
+<main id="main" class="wrap">
+<p class="crumb"><a href="index.html">Home</a> / Paycheck Calculator</p>
+<div class="pagehead"><img src="assets/icon-paycheck.svg" alt="Paycheck Calculator logo" width="60" height="60"><h1>Paycheck Calculator</h1></div>
+<p class="meta">By <a href="about.html">Muddasir Riaz</a> &middot; Updated October 27, 2026</p>
+<p class="lede">Estimate your take-home pay after federal tax, state tax, Social Security, Medicare and deductions. Pick your pay schedule and see your pay per paycheck, per month and per year.</p>
+<div class="calc" id="tool">
+<form onsubmit="calcPay();return false" novalidate>
+<div class="row"><div><label for="gross">Gross pay per paycheck ($)</label><input type="number" id="gross" value="2000" min="0" step="0.01" inputmode="decimal"></div>
+<div><label for="freq">Pay frequency</label>
+<select id="freq"><option value="52">Weekly (52)</option><option value="26" selected>Biweekly (26)</option><option value="24">Semi-monthly (24)</option><option value="12">Monthly (12)</option></select></div></div>
+<div class="row"><div><label for="fed">Federal income tax rate (%)</label><input type="number" id="fed" value="12" min="0" max="60" step="0.1" inputmode="decimal"></div>
+<div><label for="state">State income tax rate (%)</label><input type="number" id="state" value="4" min="0" max="30" step="0.1" inputmode="decimal"></div></div>
+<p class="hint">Use your effective rate: tax withheld on your pay stub divided by your taxable wages. Enter 0 for a state with no wage income tax.</p>
+<div class="row"><div><label for="k401">Pre-tax retirement, e.g. traditional 401(k) ($)</label><input type="number" id="k401" value="0" min="0" step="0.01" inputmode="decimal"></div>
+<div><label for="health">Pre-tax health premiums, FSA, HSA ($)</label><input type="number" id="health" value="0" min="0" step="0.01" inputmode="decimal"></div></div>
+<label for="post">After-tax deductions per paycheck ($)</label><input type="number" id="post" value="0" min="0" step="0.01" inputmode="decimal">
+<p class="hint">Roth 401(k), union dues, garnishments and state disability insurance (SDI) can go here.</p>
+<button class="go" type="submit">Calculate paycheck</button>
+</form>
+<div class="result" id="resultBox" role="status" aria-live="polite"></div>
+<p class="note" style="margin-top:12px">Estimate only. Real withholding depends on your W-4, filing status, state and local taxes and benefits. FICA is calculated at 7.65% and does not apply the Social Security wage cap.</p>
 </div>
-<div class="card">
-<h2>How to use the Paycheck Calculator</h2>
-<ol><li>Enter your gross pay for one paycheck.</li><li>Select how often you are paid.</li><li>Enter your federal and state tax rates (your pay stub shows the withheld amounts).</li><li>Add deductions and press Calculate.</li></ol>
-<h2>The formula</h2>
-<p>Taxable pay = gross - pre-tax deductions. Federal tax and state tax are taken as a percentage of taxable pay. FICA is 7.65% of taxable pay for Social Security and Medicare. Net pay = taxable pay - federal - state - FICA - after-tax deductions.</p>
-<h2>Example</h2>
-<p>Gross $2,000 biweekly, 12% federal, 4% state, no deductions: federal $240, state $80, FICA $153, take-home $1,527 per paycheck, about $39,702 per year.</p>
-<h2>Frequently Asked Questions</h2><h3>How is take-home pay calculated?</h3><p>Take-home pay = gross pay minus pre-tax deductions, federal income tax, state income tax, and FICA (Social Security 6.2% plus Medicare 1.45%), minus any after-tax deductions.</p><h3>What is FICA?</h3><p>FICA is the US payroll tax that funds Social Security and Medicare. Employees pay 7.65% of wages (6.2% Social Security up to an annual wage cap, plus 1.45% Medicare).</p><h3>Why is my real paycheck different from this estimate?</h3><p>Actual withholding depends on your W-4, filing status, state and local taxes, benefits and other deductions. Use this as an estimate and check your pay stub for exact numbers.</p></div>
-<div class="card related"><h2>Related calculators</h2><a href="overtime-calculator.html">Overtime Calculator &rarr;</a><a href="work-hours-calculator.html">Work Hours Calculator &rarr;</a><a href="bmi-calculator.html">BMI Calculator &rarr;</a></div>
+
+<div class="quick"><b>Quick answer:</b> Take-home pay = gross pay &minus; pre-tax deductions &minus; federal income tax &minus; state income tax &minus; FICA (7.65%) &minus; after-tax deductions. For a $2,000 biweekly paycheck with 12% federal and 4% state tax, take-home pay is about $1,527 per paycheck, or $39,702 a year.</div>
+
+<h2>How to use the paycheck calculator</h2>
+<ol>
+<li><b>Enter your gross pay for one paycheck.</b> This is your pay before anything is taken out. If you only know your salary, use the table further down to find your gross pay per paycheck.</li>
+<li><b>Choose how often you are paid.</b> Weekly, biweekly, semi-monthly or monthly.</li>
+<li><b>Enter your federal and state tax rates.</b> Your pay stub shows the amounts withheld. Divide each by your taxable wages and multiply by 100 to get your effective rate.</li>
+<li><b>Add deductions.</b> Put traditional 401(k) contributions in the retirement box, health insurance premiums, FSA or HSA in the health box, and anything taken out after tax in the last box.</li>
+<li><b>Press Calculate paycheck.</b> You will see your take-home pay for one paycheck, plus yearly, monthly and weekly totals.</li>
+</ol>
+
+<h2>How is take-home pay calculated?</h2>
+<p>Your employer starts with your gross pay and takes out the items below to reach your net pay, also called take-home pay.</p>
+<ol>
+<li><b>Pre-tax deductions</b> such as traditional 401(k) contributions and health insurance premiums.</li>
+<li><b>Federal income tax withholding,</b> based on your Form W-4.</li>
+<li><b>State (and sometimes local) income tax,</b> where they apply.</li>
+<li><b>FICA taxes,</b> which pay for Social Security and Medicare.</li>
+<li><b>After-tax deductions</b> such as Roth 401(k) contributions, union dues or wage garnishments.</li>
+</ol>
+<p>In formula form: <b>Net pay = gross &minus; pre-tax deductions &minus; federal tax &minus; state tax &minus; FICA &minus; after-tax deductions.</b></p>
+
+<h2>Paycheck examples</h2>
+<p>These are illustrations that use the calculator's formula with example tax rates. Your own rates will differ. The semi-monthly row includes a $150 traditional 401(k) contribution, and the monthly row includes $200 in pre-tax health premiums.</p>
+<div class="tw"><table>
+<tr><th>Pay frequency</th><th>Gross</th><th>Fed / state rate</th><th>Pre-tax deductions</th><th>Federal tax</th><th>State tax</th><th>FICA</th><th>Take-home</th><th>Take-home per year</th></tr>
+<tr><td>Weekly</td><td>$1,000.00</td><td>10% / 0%</td><td>$0.00</td><td>$100.00</td><td>$0.00</td><td>$76.50</td><td><b>$823.50</b></td><td>$42,822.00</td></tr>
+<tr><td>Biweekly</td><td>$2,000.00</td><td>12% / 4%</td><td>$0.00</td><td>$240.00</td><td>$80.00</td><td>$153.00</td><td><b>$1,527.00</b></td><td>$39,702.00</td></tr>
+<tr><td>Semi-monthly</td><td>$3,000.00</td><td>14% / 5%</td><td>$150.00</td><td>$399.00</td><td>$142.50</td><td>$229.50</td><td><b>$2,079.00</b></td><td>$49,896.00</td></tr>
+<tr><td>Monthly</td><td>$5,000.00</td><td>18% / 5%</td><td>$200.00</td><td>$864.00</td><td>$240.00</td><td>$367.20</td><td><b>$3,328.80</b></td><td>$39,945.60</td></tr>
+</table></div>
+<p>Look at the semi-monthly row. The 401(k) contribution lowers the income that is taxed by federal and state tax, but FICA is still charged on the full $3,000. That is why the FICA amount in that row is $229.50, which is 7.65% of $3,000, even though the 401(k) takes $150 out. The monthly row, with health premiums, shows the opposite: FICA drops because those premiums are exempt from it.</p>
+
+<h2>What is FICA?</h2>
+<p>FICA stands for the Federal Insurance Contributions Act. It is the payroll tax that funds Social Security and Medicare. As an employee you pay 6.2% of your wages for Social Security and 1.45% for Medicare, which adds up to 7.65%. Your employer pays a matching amount. Two details are worth knowing:</p>
+<ul>
+<li><b>The Social Security part has a yearly cap.</b> The Social Security Administration sets a maximum amount of wages that are taxed each year. Once your pay passes that wage base, the 6.2% stops for the rest of the year. This calculator does not apply the cap, so it can overstate FICA for very high earners.</li>
+<li><b>There is an extra Medicare tax for high earners.</b> Employers must withhold an Additional Medicare Tax of 0.9% on wages above $200,000. This calculator does not include it.</li>
+</ul>
+
+<h2>How much is my gross pay per paycheck?</h2>
+<p>If you know your yearly salary, divide it by the number of paychecks you get each year: 52 for weekly, 26 for biweekly, 24 for semi-monthly and 12 for monthly.</p>
+<div class="tw"><table>
+<tr><th>Annual salary</th><th>Weekly gross</th><th>Biweekly gross</th><th>Semi-monthly gross</th><th>Monthly gross</th></tr>
+<tr><td>$35,000</td><td>$673.08</td><td>$1,346.15</td><td>$1,458.33</td><td>$2,916.67</td></tr>
+<tr><td>$50,000</td><td>$961.54</td><td>$1,923.08</td><td>$2,083.33</td><td>$4,166.67</td></tr>
+<tr><td>$75,000</td><td>$1,442.31</td><td>$2,884.62</td><td>$3,125.00</td><td>$6,250.00</td></tr>
+<tr><td>$100,000</td><td>$1,923.08</td><td>$3,846.15</td><td>$4,166.67</td><td>$8,333.33</td></tr>
+</table></div>
+
+<h2>Biweekly vs semi-monthly: what is the difference?</h2>
+<p>Biweekly means every two weeks, so you get 26 paychecks a year, and in two months of the year you get three paychecks instead of two. Semi-monthly means twice a month, usually on set dates like the 15th and the last day, for 24 paychecks a year. The annual total is the same. A semi-monthly paycheck is a little larger than a biweekly one for the same salary, because it is split into 24 parts instead of 26.</p>
+
+<h2>Pre-tax and after-tax deductions</h2>
+<p>Pre-tax deductions reduce the pay that is used to figure income tax. They come in two types, and the difference matters:</p>
+<ul>
+<li><b>Traditional 401(k) and similar retirement plans</b> reduce your income tax wages, but they do <i>not</i> reduce your FICA wages. You still pay Social Security and Medicare on that money.</li>
+<li><b>Health insurance premiums, health FSA and HSA contributions made through payroll</b> usually reduce both income tax wages and FICA wages.</li>
+<li><b>After-tax deductions,</b> such as a Roth 401(k), union dues or garnishments, come out after taxes have been figured. They lower your take-home pay without lowering your taxes.</li>
+</ul>
+<p>That is why this calculator has two pre-tax boxes instead of one.</p>
+
+<h2>Which states have no income tax on wages?</h2>
+<p>Alaska, Florida, Nevada, South Dakota, Tennessee, Texas, Washington and Wyoming do not tax wages, and New Hampshire does not tax wages either. If you live in one of them, enter 0 in the state tax box. Keep in mind that some states with no income tax still have other payroll charges, and some cities and counties charge their own local income taxes. Many states also collect a small payroll tax for disability insurance or paid leave. Put those in the after-tax deductions box if they show on your pay stub.</p>
+
+<h2>Why is my real paycheck different from the estimate?</h2>
+<ul>
+<li><b>Federal withholding is not a flat rate.</b> Employers use your W-4 and IRS tables, so the percentage taken from each paycheck can be different from your effective rate for the year.</li>
+<li><b>Bonuses can be withheld at a flat rate.</b> Federal withholding on supplemental pay such as bonuses is often calculated at a flat 22%, which is different from regular paycheck withholding.</li>
+<li><b>Other deductions.</b> Dental, vision, life insurance, parking and transit benefits, and employer-specific items can all change your net pay.</li>
+<li><b>Local taxes and state rules.</b> City taxes and state disability or family leave contributions are not in the main formula.</li>
+<li><b>Year-to-date limits.</b> The Social Security wage cap and some benefit limits change your paycheck late in the year.</li>
+</ul>
+<p>For an exact figure, check your pay stub or ask your payroll department. This calculator is meant to give you a close estimate quickly.</p>
+
+<h2>How to find your effective tax rate on a pay stub</h2>
+<p>Look at one recent pay stub. Find the federal income tax withheld and your taxable wages for the federal tax, which can be lower than your gross pay if you have pre-tax deductions. Divide the tax by the taxable wages and multiply by 100. For example, $240 of federal tax on $2,000 of taxable wages is 12%. Do the same for state tax. Use those two percentages in the calculator for the closest result.</p>
+
+<h2>Frequently asked questions</h2>
+<details class="faq"><summary>How is take-home pay calculated?</summary><p>Take-home pay is your gross pay minus pre-tax deductions, federal income tax, state income tax and FICA (Social Security 6.2% plus Medicare 1.45%), minus any after-tax deductions.</p></details>
+<details class="faq"><summary>What is FICA and how much is it?</summary><p>FICA is the US payroll tax that funds Social Security and Medicare. Employees pay 7.65% of wages: 6.2% for Social Security up to a yearly wage cap, plus 1.45% for Medicare.</p></details>
+<details class="faq"><summary>Does a 401(k) reduce my FICA taxes?</summary><p>No. Traditional 401(k) contributions lower the wages used for income tax, but Social Security and Medicare tax are still charged on that pay. Health insurance premiums through payroll usually reduce both.</p></details>
+<details class="faq"><summary>How do I get my gross pay per paycheck from my salary?</summary><p>Divide your yearly salary by the number of paychecks you get: 52 for weekly, 26 for biweekly, 24 for semi-monthly or 12 for monthly. For example, $52,000 a year is $2,000 biweekly.</p></details>
+<details class="faq"><summary>What is the difference between gross pay and net pay?</summary><p>Gross pay is what you earn before anything is taken out. Net pay, also called take-home pay, is what is left after taxes and deductions.</p></details>
+<details class="faq"><summary>Why is my real paycheck different from this estimate?</summary><p>Actual withholding depends on your W-4, filing status, state and local taxes, benefits and year-to-date limits. Use this as an estimate and check your pay stub for exact numbers.</p></details>
+<details class="faq"><summary>Which states have no state income tax on wages?</summary><p>Alaska, Florida, Nevada, South Dakota, Tennessee, Texas, Washington and Wyoming do not tax wages, and neither does New Hampshire. Enter 0 for state tax if you live in one of them.</p></details>
+<details class="faq"><summary>Does this calculator include the Additional Medicare Tax or the Social Security cap?</summary><p>No. It uses a simple 7.65% FICA rate on your pay. Very high earners should expect their real paychecks to differ once the Social Security wage cap or the 0.9% Additional Medicare Tax applies.</p></details>
+<h2>More free calculators</h2>
+<div class="related"><a class="tool" href="work-hours-calculator.html"><img src="assets/icon-work-hours.svg" alt="Work Hours Calculator logo" width="52" height="52"><div><b>Work Hours Calculator</b><span>Daily and weekly hours with breaks, night shifts, overtime and pay.</span></div></a><a class="tool" href="bmi-calculator.html"><img src="assets/icon-bmi.svg" alt="BMI Calculator logo" width="52" height="52"><div><b>BMI Calculator</b><span>BMI in feet, inches and pounds or cm and kg, with your healthy weight range.</span></div></a></div>
+<h2>Sources and further reading</h2>
+<ul class="sources"><li><a href="https://www.irs.gov/taxtopics/tc751" rel="noopener" target="_blank">IRS: Topic no. 751, Social Security and Medicare withholding rates</a></li><li><a href="https://www.ssa.gov/oact/cola/cbb.html" rel="noopener" target="_blank">Social Security Administration: Contribution and Benefit Base</a></li><li><a href="https://www.irs.gov/publications/p15" rel="noopener" target="_blank">IRS: Publication 15 (Employer's Tax Guide)</a></li></ul>
+<p class="note">This calculator gives estimates for information only. It is not financial, tax, legal or medical advice. Found a mistake? <a href="contact.html">Tell us</a> and we will fix it.</p>
 <script>
+function money(x){return '$'+x.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function calcPay(){
-  var g=parseFloat(document.getElementById('gross').value)||0,n=parseInt(document.getElementById('freq').value);
+  var b=document.getElementById('resultBox');b.style.display='block';
+  var g=parseFloat(document.getElementById('gross').value)||0,n=parseInt(document.getElementById('freq').value,10);
   var f=parseFloat(document.getElementById('fed').value)||0,s=parseFloat(document.getElementById('state').value)||0;
-  var pre=parseFloat(document.getElementById('pre').value)||0,post=parseFloat(document.getElementById('post').value)||0;
-  if(!g){alert('Enter gross pay');return;}
-  var t=Math.max(0,g-pre),fed=t*f/100,st=t*s/100,fica=t*0.0765,net=t-fed-st-fica-post;
-  var h='<div style="font-size:20px;font-weight:800">Take-home: $'+net.toFixed(2)+'</div>'+
-  '<div>Federal: $'+fed.toFixed(2)+' | State: $'+st.toFixed(2)+' | FICA: $'+fica.toFixed(2)+'</div>'+
-  '<div>Deductions: $'+(pre+post).toFixed(2)+'</div>'+
-  '<div><b>Per year ('+n+' paychecks):</b> $'+(net*n).toFixed(2)+' take-home, $'+(g*n).toFixed(2)+' gross</div>'+
-  '<div>Monthly average: $'+(net*n/12).toFixed(2)+'</div>';
-  var b=document.getElementById('resultBox');b.innerHTML=h;b.style.display='block';b.scrollIntoView({behavior:'smooth'});
+  var k=parseFloat(document.getElementById('k401').value)||0,h=parseFloat(document.getElementById('health').value)||0,post=parseFloat(document.getElementById('post').value)||0;
+  if(!(g>0)){b.innerHTML='<p class="err">Please enter your gross pay for one paycheck.</p>';return;}
+  if(k+h>g){b.innerHTML='<p class="err">Your pre-tax deductions are more than your gross pay. Please check them.</p>';return;}
+  var incW=g-k-h,ficaW=g-h,fed=incW*f/100,st=incW*s/100,fica=ficaW*0.0765,net=g-k-h-fed-st-fica-post;
+  if(net<0){b.innerHTML='<p class="err">Your deductions and taxes are more than your pay. Please check your numbers.</p>';return;}
+  var pct=(net/g*100).toFixed(1);
+  b.innerHTML='<div class="big">'+money(net)+' take-home</div><p>per paycheck &middot; '+pct+'% of gross pay</p>'+
+  '<table><tr><th>Item</th><th>Per paycheck</th></tr>'+
+  '<tr><td>Gross pay</td><td>'+money(g)+'</td></tr>'+
+  '<tr><td>Pre-tax deductions</td><td>&minus;'+money(k+h)+'</td></tr>'+
+  '<tr><td>Federal income tax</td><td>&minus;'+money(fed)+'</td></tr>'+
+  '<tr><td>State income tax</td><td>&minus;'+money(st)+'</td></tr>'+
+  '<tr><td>Social Security + Medicare (7.65%)</td><td>&minus;'+money(fica)+'</td></tr>'+
+  '<tr><td>After-tax deductions</td><td>&minus;'+money(post)+'</td></tr>'+
+  '<tr><td><b>Take-home pay</b></td><td><b>'+money(net)+'</b></td></tr></table>'+
+  '<table><tr><th>Over time</th><th>Take-home</th><th>Gross</th></tr>'+
+  '<tr><td>Per year ('+n+' paychecks)</td><td>'+money(net*n)+'</td><td>'+money(g*n)+'</td></tr>'+
+  '<tr><td>Per month (average)</td><td>'+money(net*n/12)+'</td><td>'+money(g*n/12)+'</td></tr>'+
+  '<tr><td>Per week (average)</td><td>'+money(net*n/52)+'</td><td>'+money(g*n/52)+'</td></tr></table>';
+  b.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 </script>
-</div>
-<div class="footer"><a href="index.html">Home</a><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a><p>&copy; 2026 EverydayCalc. Free online calculators.</p></div>
+</main>
+<footer class="site"><div class="wrap"><div class="cols"><div><h4>Calculators</h4><a href="work-hours-calculator.html">Work Hours Calculator</a><a href="bmi-calculator.html">BMI Calculator</a><a href="paycheck-calculator.html">Paycheck Calculator</a></div><div><h4>EverydayCalc</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><div><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div></div><p>&copy; 2026 EverydayCalc. Free online calculators. Results are estimates for information only and are not financial, tax, legal or medical advice.</p></div></footer>
 </body>
 </html>

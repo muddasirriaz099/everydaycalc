@@ -2,62 +2,168 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work Hours Calculator with Lunch Break & Overtime | EverydayCalc</title>
-<meta name="description" content="Free work hours calculator: enter clock in, clock out and break to get daily hours, weekly hours, overtime and gross pay. Works for night shifts.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Work Hours Calculator: Hours, Breaks &amp; Overtime Pay</title>
+<meta name="description" content="Free work hours calculator. Enter clock in, clock out and break time to get daily hours, weekly hours, overtime and gross pay. Handles night shifts.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://muddasirriaz099.github.io/everydaycalc/work-hours-calculator.html">
-<meta property="og:title" content="Work Hours Calculator with Lunch Break & Overtime | EverydayCalc">
-<meta property="og:description" content="Free work hours calculator: enter clock in, clock out and break to get daily hours, weekly hours, overtime and gross pay. Works for night shifts.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1d4ed8">
+<meta property="og:site_name" content="EverydayCalc">
 <meta property="og:type" content="website">
+<meta property="og:title" content="Work Hours Calculator: Hours, Breaks &amp; Overtime Pay">
+<meta property="og:description" content="Free work hours calculator. Enter clock in, clock out and break time to get daily hours, weekly hours, overtime and gross pay. Handles night shifts.">
 <meta property="og:url" content="https://muddasirriaz099.github.io/everydaycalc/work-hours-calculator.html">
-<meta name="theme-color" content="#2563eb">
+<meta property="og:image" content="https://muddasirriaz099.github.io/everydaycalc/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate work hours with a lunch break?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract your clock-in time from your clock-out time, then subtract the unpaid break. Example: 9:00 AM to 5:00 PM is 8 hours; minus a 60 minute lunch gives 7 hours."}}, {"@type": "Question", "name": "How is overtime calculated in the USA?", "acceptedAnswer": {"@type": "Answer", "text": "Under the federal Fair Labor Standards Act, most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek. Some states have additional daily overtime rules, so check your state."}}, {"@type": "Question", "name": "Does this calculator handle night shifts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If your clock-out time is earlier than your clock-in time, it treats the shift as ending the next day, for example 10:00 PM to 6:00 AM."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Work Hours Calculator", "url": "https://muddasirriaz099.github.io/everydaycalc/work-hours-calculator.html", "description": "Free work hours calculator. Enter clock in, clock out and break time to get daily hours, weekly hours, overtime and gross pay. Handles night shifts.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://muddasirriaz099.github.io/everydaycalc/assets/icon-work-hours.svg", "author": {"@type": "Person", "name": "Muddasir Riaz", "url": "https://muddasirriaz099.github.io/everydaycalc/about.html"}, "publisher": {"@type": "Organization", "name": "EverydayCalc", "url": "https://muddasirriaz099.github.io/everydaycalc/", "logo": "https://muddasirriaz099.github.io/everydaycalc/assets/logo.svg"}, "dateModified": "2026-10-27", "inLanguage": "en-US"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate work hours with a lunch break?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract your clock-in time from your clock-out time, then subtract the unpaid lunch. For example, 9:00 AM to 5:00 PM is 8 hours, and a 60-minute unpaid lunch leaves 7 hours. If your lunch is paid, do not subtract it."}}, {"@type": "Question", "name": "How many hours is 9 to 5 with a 30-minute lunch?", "acceptedAnswer": {"@type": "Answer", "text": "9:00 AM to 5:00 PM is 8 hours on the clock. With a 30-minute unpaid lunch you work 7.5 hours. With a 60-minute unpaid lunch you work 7 hours."}}, {"@type": "Question", "name": "How is overtime calculated in the USA?", "acceptedAnswer": {"@type": "Answer", "text": "Under the federal Fair Labor Standards Act, most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek. Some states also require overtime after a certain number of hours in a day, so check your state's rules."}}, {"@type": "Question", "name": "How do I calculate hours worked on a night shift?", "acceptedAnswer": {"@type": "Answer", "text": "If your shift ends after midnight, add 24 hours to the clock-out time before subtracting. For example, 10:00 PM to 6:00 AM is 8 hours. This calculator does that for you when clock out is earlier than clock in."}}, {"@type": "Question", "name": "How do I convert hours and minutes to decimal hours?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the minutes by 60 and add the result to the hours. For example, 6 hours 15 minutes is 6.25 hours, and 6 hours 40 minutes is about 6.67 hours."}}, {"@type": "Question", "name": "How many hours is 40 hours a week?", "acceptedAnswer": {"@type": "Answer", "text": "40 hours a week is a standard full-time schedule, such as eight hours a day for five days. In most jobs, hours above 40 in a workweek are overtime for non-exempt employees."}}, {"@type": "Question", "name": "Are paid breaks included in hours worked?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Short rest breaks of about 5 to 20 minutes are paid and count as hours worked. Meal periods of 30 minutes or more can be unpaid if you are fully relieved of duty."}}, {"@type": "Question", "name": "Does this calculator work for part-time and four-day weeks?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enter any number of days from 1 to 7. A part-time schedule that stays under 40 hours a week will simply show no overtime."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://muddasirriaz099.github.io/everydaycalc/"}, {"@type": "ListItem", "position": 2, "name": "Work Hours Calculator", "item": "https://muddasirriaz099.github.io/everydaycalc/work-hours-calculator.html"}]}</script>
 </head>
-<body class="">
-<header class="site-header"><div class="bar"><a class="brand" href="index.html"><span class="mark">E</span>EverydayCalc</a><nav><a href="overtime-calculator.html">Overtime</a><a href="work-hours-calculator.html">Work Hours</a><a href="paycheck-calculator.html">Paycheck</a><a href="bmi-calculator.html">BMI</a></nav></div></header>
-<div class="container">
-<div class="card">
-<h1>Work Hours Calculator</h1>
-<p class="sub">Find your daily and weekly hours, overtime and gross pay.</p>
-<div class="row"><div><label for="inTime">Clock In</label><input type="time" id="inTime" value="09:00"></div>
-<div><label for="outTime">Clock Out</label><input type="time" id="outTime" value="17:00"></div></div>
-<div class="row"><div><label for="breakMin">Unpaid break (minutes)</label><input type="number" id="breakMin" value="60" min="0"></div>
-<div><label for="days">Days worked per week</label><input type="number" id="days" value="5" min="1" max="7"></div></div>
-<label for="rate">Hourly rate ($) - optional</label><input type="number" id="rate" value="15" min="0" step="0.01">
-<button class="btn" onclick="calculateWork()">Calculate Hours</button>
-<div class="result" id="resultBox"></div>
-<p class="note">Overtime estimate uses 1.5x pay after 40 hours per week (federal rule). State rules may differ.</p>
+<body class="t-work">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap"><a class="brand" href="index.html" aria-label="EverydayCalc home"><img src="assets/logo.svg" alt="" width="32" height="32"><span>Everyday<b>Calc</b></span></a><nav class="main" aria-label="Main"><a href="work-hours-calculator.html" aria-current="page">Work Hours</a><a href="bmi-calculator.html">BMI</a><a href="paycheck-calculator.html">Paycheck</a><a href="about.html">About</a></nav></div></header>
+<main id="main" class="wrap">
+<p class="crumb"><a href="index.html">Home</a> / Work Hours Calculator</p>
+<div class="pagehead"><img src="assets/icon-work-hours.svg" alt="Work Hours Calculator logo" width="60" height="60"><h1>Work Hours Calculator</h1></div>
+<p class="meta">By <a href="about.html">Muddasir Riaz</a> &middot; Updated October 27, 2026</p>
+<p class="lede">Enter your clock-in time, clock-out time and unpaid break to see your daily hours, weekly hours, overtime and estimated gross pay. It works for day shifts and overnight shifts.</p>
+<div class="calc" id="tool">
+<form onsubmit="calculateWork();return false" novalidate>
+<div class="row"><div><label for="inTime">Clock in</label><input type="time" id="inTime" value="09:00"></div>
+<div><label for="outTime">Clock out</label><input type="time" id="outTime" value="17:00"></div></div>
+<div class="row"><div><label for="breakMin">Unpaid break (minutes)</label><input type="number" id="breakMin" value="60" min="0" inputmode="numeric"></div>
+<div><label for="days">Days worked per week</label><input type="number" id="days" value="5" min="1" max="7" inputmode="numeric"></div></div>
+<label for="rate">Hourly pay rate ($) <span style="font-weight:400">(optional)</span></label><input type="number" id="rate" value="15" min="0" step="0.01" inputmode="decimal">
+<p class="hint">If clock out is earlier than clock in, we treat it as an overnight shift that ends the next day.</p>
+<button class="go" type="submit">Calculate hours</button>
+</form>
+<div class="result" id="resultBox" role="status" aria-live="polite"></div>
+<p class="note" style="margin-top:12px">Overtime is estimated at 1.5x after 40 hours in the week (federal rule). Your state or employer may use different rules.</p>
 </div>
-<div class="card">
-<h2>How to use the Work Hours Calculator</h2>
-<ol><li>Enter the time you clocked in and clocked out.</li><li>Enter your unpaid break in minutes (for example 30 or 60).</li><li>Enter how many days you work per week.</li><li>Add your hourly rate to see estimated gross pay, then press Calculate.</li></ol>
-<h2>The formula</h2>
-<p><b>Hours worked = (Clock out - Clock in) - Break.</b> Weekly hours = daily hours x days per week. Any weekly hours above 40 are shown as overtime paid at 1.5x your rate.</p>
-<h2>Example</h2>
-<p>Clock in 9:00 AM, clock out 6:00 PM, 60 minute break, $20 per hour, 5 days: daily hours = 8.00, weekly hours = 40.00, gross weekly pay = $800.00.</p>
-<h2>Frequently Asked Questions</h2><h3>How do I calculate work hours with a lunch break?</h3><p>Subtract your clock-in time from your clock-out time, then subtract the unpaid break. Example: 9:00 AM to 5:00 PM is 8 hours; minus a 60 minute lunch gives 7 hours.</p><h3>How is overtime calculated in the USA?</h3><p>Under the federal Fair Labor Standards Act, most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek. Some states have additional daily overtime rules, so check your state.</p><h3>Does this calculator handle night shifts?</h3><p>Yes. If your clock-out time is earlier than your clock-in time, it treats the shift as ending the next day, for example 10:00 PM to 6:00 AM.</p></div>
-<div class="card related"><h2>Related calculators</h2><a href="overtime-calculator.html">Overtime Calculator &rarr;</a><a href="paycheck-calculator.html">Paycheck Calculator &rarr;</a><a href="bmi-calculator.html">BMI Calculator &rarr;</a></div>
+
+<div class="quick"><b>Quick answer:</b> To calculate hours worked, subtract your clock-in time from your clock-out time, then subtract any unpaid break. For example, 9:00 AM to 5:30 PM with a 30-minute unpaid lunch is 8 hours. Multiply by the days you work to get your weekly hours.</div>
+
+<h2>How to use the work hours calculator</h2>
+<ol>
+<li><b>Enter your clock-in and clock-out times.</b> Use the exact times from your time clock, schedule or timesheet.</li>
+<li><b>Enter your unpaid break in minutes.</b> Use 30 for a half-hour lunch, 60 for an hour, or 0 if you are paid for your breaks.</li>
+<li><b>Enter how many days you work each week.</b> The calculator assumes you work the same shift every day.</li>
+<li><b>Add your hourly rate if you want pay.</b> This is optional. Leave it blank if you only need hours.</li>
+<li><b>Press Calculate hours.</b> You will see daily hours, weekly hours, overtime hours and an estimate of gross pay before taxes.</li>
+</ol>
+
+<h2>How do you calculate hours worked?</h2>
+<p>The formula is simple:</p>
+<p><b>Hours worked = (clock out &minus; clock in) &minus; unpaid break</b></p>
+<p>To do it by hand, convert each time to minutes after midnight, subtract, take off the break, and divide by 60. A shift from 8:15 AM to 4:45 PM is 495 minutes to 1,005 minutes, which is 510 minutes. Take off a 30-minute lunch and you have 480 minutes, or 8 hours. Weekly hours are your daily hours multiplied by the number of days you work. If your total goes above 40 in a workweek, the extra hours are overtime for most non-exempt employees.</p>
+
+<h2>Work hours examples</h2>
+<p>The table below uses this calculator's own formula. Weekly pay uses time-and-a-half for any hours above 40 and is before taxes.</p>
+<div class="tw"><table>
+<tr><th>Shift</th><th>Unpaid break</th><th>Hours per day</th><th>Days</th><th>Weekly hours</th><th>Overtime hours</th><th>Rate</th><th>Weekly gross pay</th></tr>
+<tr><td>9:00 AM to 5:00 PM</td><td>60 min</td><td>7 h 00 min (7.00)</td><td>5</td><td>35.00</td><td>0.00</td><td>$18</td><td>$630.00</td></tr>
+<tr><td>8:00 AM to 4:30 PM</td><td>30 min</td><td>8 h 00 min (8.00)</td><td>5</td><td>40.00</td><td>0.00</td><td>$20</td><td>$800.00</td></tr>
+<tr><td>7:00 AM to 6:00 PM</td><td>60 min</td><td>10 h 00 min (10.00)</td><td>5</td><td>50.00</td><td>10.00</td><td>$20</td><td>$1,100.00</td></tr>
+<tr><td>10:00 PM to 6:00 AM</td><td>30 min</td><td>7 h 30 min (7.50)</td><td>5</td><td>37.50</td><td>0.00</td><td>$22</td><td>$825.00</td></tr>
+<tr><td>6:30 AM to 3:00 PM</td><td>45 min</td><td>7 h 45 min (7.75)</td><td>4</td><td>31.00</td><td>0.00</td><td>$25</td><td>$775.00</td></tr>
+</table></div>
+<p>Notice the third row. Working 7:00 AM to 6:00 PM with an hour off is a 10-hour day. Over five days that is 50 hours, so 10 of them are paid at 1.5 times the normal rate. Small changes in your daily schedule can add up to a lot of overtime across the week.</p>
+
+<h2>How do you convert minutes to decimal hours?</h2>
+<p>Payroll systems usually want hours in decimals, not hours and minutes. To convert, divide the minutes by 60 and add the result to the whole hours. For example, 7 hours and 45 minutes is 7 + 45/60 = 7.75 hours. Here are the conversions people use most:</p>
+<div class="tw"><table>
+<tr><th>Minutes</th><th>Decimal hours</th></tr>
+<tr><td>5 minutes</td><td>0.08 hours</td></tr>
+<tr><td>10 minutes</td><td>0.17 hours</td></tr>
+<tr><td>15 minutes</td><td>0.25 hours</td></tr>
+<tr><td>20 minutes</td><td>0.33 hours</td></tr>
+<tr><td>30 minutes</td><td>0.50 hours</td></tr>
+<tr><td>40 minutes</td><td>0.67 hours</td></tr>
+<tr><td>45 minutes</td><td>0.75 hours</td></tr>
+<tr><td>50 minutes</td><td>0.83 hours</td></tr>
+<tr><td>55 minutes</td><td>0.92 hours</td></tr>
+</table></div>
+<p>A common mistake is to write 7 hours 45 minutes as 7.45. That is wrong, because there are 60 minutes in an hour, not 100. Written correctly, 7:45 is 7.75 hours, and the difference matters when you multiply by an hourly rate. At $20 an hour, 7.45 hours pays $149.00 but 7.75 hours pays $155.00.</p>
+
+<h2>How do you calculate hours for an overnight or night shift?</h2>
+<p>When your shift crosses midnight, the clock-out time looks earlier than the clock-in time. This calculator detects that and adds 24 hours to the clock-out time. For example, 10:00 PM to 6:00 AM is 8 hours on the clock. With a 30-minute unpaid break you worked 7.5 hours. By hand you can do the same thing in two parts: 10:00 PM to midnight is 2 hours, and midnight to 6:00 AM is 6 hours, for 8 hours in total.</p>
+<p>Overnight shifts can also split across two calendar days within one workweek. Employers normally assign the whole shift to the day it started, but check your pay policy if your workweek resets on a night you work.</p>
+
+<h2>How does overtime work in the United States?</h2>
+<p>The federal Fair Labor Standards Act (FLSA) requires most non-exempt employees to be paid at least one and a half times their regular rate for hours worked over 40 in a workweek. The workweek is a fixed period of seven days in a row (168 hours), and it does not have to start on Monday. Your employer chooses the start day and time and applies it consistently.</p>
+<ul>
+<li><b>Overtime is based on the workweek, not the pay period.</b> Two weeks of 45 hours is 10 hours of overtime, even if you are paid every two weeks.</li>
+<li><b>Exempt employees do not get overtime.</b> Exempt status depends on being paid a salary and on doing certain kinds of duties. A job title alone does not make someone exempt.</li>
+<li><b>Some states have extra rules.</b> California, for example, requires overtime after 8 hours in a single day for most non-exempt workers. Several other states have their own daily or weekly rules. The more generous rule generally applies to you.</li>
+<li><b>Overtime uses your regular rate.</b> The regular rate can include things like some bonuses and shift differentials, not only your base hourly wage. This calculator uses the single hourly rate you type in.</li>
+</ul>
+
+<h2>Are breaks paid or unpaid?</h2>
+<p>Federal law does not require employers to give meal or rest breaks. When an employer does offer them, the rule from the U.S. Department of Labor is straightforward. Short rest breaks, usually 5 to 20 minutes, are paid and count as hours worked. Bona fide meal periods, usually 30 minutes or longer, can be unpaid as long as you are fully relieved of duty. If you have to keep working or stay at your desk through lunch, that time generally counts as work time and should be paid. Many states set their own meal and rest break requirements, so look up your state's labor department for the exact rules.</p>
+
+<h2>What is the 7-minute rule for rounding time?</h2>
+<p>Some employers round clock times to the nearest quarter hour. Under the 7-minute rule, 1 to 7 minutes past a quarter hour is rounded down, and 8 to 14 minutes is rounded up. For example, clocking in at 8:07 becomes 8:00 and clocking in at 8:08 becomes 8:15. The Department of Labor allows rounding as long as it averages out over time so that employees are paid for all the time they actually work. If your employer always rounds in the company's favor, that can be a problem. This calculator does not round, so it shows your exact time.</p>
+
+<h2>Common mistakes when calculating work hours</h2>
+<ul>
+<li><b>Forgetting the unpaid break.</b> Subtracting nothing for lunch overstates your hours and your pay.</li>
+<li><b>Treating paid breaks as unpaid.</b> If your short breaks are paid, do not subtract them.</li>
+<li><b>Writing minutes as a decimal.</b> 7:30 is 7.5 hours, not 7.30 hours.</li>
+<li><b>Mixing up AM and PM.</b> A shift that is one hour longer than expected is often a PM typed as AM.</li>
+<li><b>Averaging two weeks.</b> Overtime is calculated per workweek, so 30 hours one week and 50 the next is not 40 on average.</li>
+<li><b>Ignoring off-the-clock work.</b> Work you do before clocking in or after clocking out is usually time you should be paid for.</li>
+</ul>
+
+<h2>Tips for tracking your hours accurately</h2>
+<p>Record your start and end times as they happen, not from memory at the end of the week. Write down your break length every day, since it often changes. Keep your own copy of your hours, such as a note on your phone or a simple spreadsheet, so you can compare it with your pay stub. If you find a gap between your records and your pay, bring the dates and times to your payroll or HR department first. The Wage and Hour Division of the U.S. Department of Labor can help if the problem is not fixed.</p>
+
+<h2>Frequently asked questions</h2>
+<details class="faq"><summary>How do I calculate work hours with a lunch break?</summary><p>Subtract your clock-in time from your clock-out time, then subtract the unpaid lunch. For example, 9:00 AM to 5:00 PM is 8 hours, and a 60-minute unpaid lunch leaves 7 hours. If your lunch is paid, do not subtract it.</p></details>
+<details class="faq"><summary>How many hours is 9 to 5 with a 30-minute lunch?</summary><p>9:00 AM to 5:00 PM is 8 hours on the clock. With a 30-minute unpaid lunch you work 7.5 hours. With a 60-minute unpaid lunch you work 7 hours.</p></details>
+<details class="faq"><summary>How is overtime calculated in the USA?</summary><p>Under the federal Fair Labor Standards Act, most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek. Some states also require overtime after a certain number of hours in a day, so check your state's rules.</p></details>
+<details class="faq"><summary>How do I calculate hours worked on a night shift?</summary><p>If your shift ends after midnight, add 24 hours to the clock-out time before subtracting. For example, 10:00 PM to 6:00 AM is 8 hours. This calculator does that for you when clock out is earlier than clock in.</p></details>
+<details class="faq"><summary>How do I convert hours and minutes to decimal hours?</summary><p>Divide the minutes by 60 and add the result to the hours. For example, 6 hours 15 minutes is 6.25 hours, and 6 hours 40 minutes is about 6.67 hours.</p></details>
+<details class="faq"><summary>How many hours is 40 hours a week?</summary><p>40 hours a week is a standard full-time schedule, such as eight hours a day for five days. In most jobs, hours above 40 in a workweek are overtime for non-exempt employees.</p></details>
+<details class="faq"><summary>Are paid breaks included in hours worked?</summary><p>Yes. Short rest breaks of about 5 to 20 minutes are paid and count as hours worked. Meal periods of 30 minutes or more can be unpaid if you are fully relieved of duty.</p></details>
+<details class="faq"><summary>Does this calculator work for part-time and four-day weeks?</summary><p>Yes. Enter any number of days from 1 to 7. A part-time schedule that stays under 40 hours a week will simply show no overtime.</p></details>
+<h2>More free calculators</h2>
+<div class="related"><a class="tool" href="bmi-calculator.html"><img src="assets/icon-bmi.svg" alt="BMI Calculator logo" width="52" height="52"><div><b>BMI Calculator</b><span>BMI in feet, inches and pounds or cm and kg, with your healthy weight range.</span></div></a><a class="tool" href="paycheck-calculator.html"><img src="assets/icon-paycheck.svg" alt="Paycheck Calculator logo" width="52" height="52"><div><b>Paycheck Calculator</b><span>Estimate take-home pay after federal tax, state tax, FICA and deductions.</span></div></a></div>
+<h2>Sources and further reading</h2>
+<ul class="sources"><li><a href="https://www.dol.gov/agencies/whd/fact-sheets/22-flsa-hours-worked" rel="noopener" target="_blank">U.S. Department of Labor: Fact Sheet #22, Hours Worked Under the FLSA</a></li><li><a href="https://www.dol.gov/whd/regs/compliance/whdfs23.htm" rel="noopener" target="_blank">U.S. Department of Labor: Fact Sheet #23, Overtime Pay Requirements of the FLSA</a></li></ul>
+<p class="note">This calculator gives estimates for information only. It is not financial, tax, legal or medical advice. Found a mistake? <a href="contact.html">Tell us</a> and we will fix it.</p>
 <script>
+function tm(t){var p=t.split(':');return parseInt(p[0],10)*60+parseInt(p[1],10);}
+function money(x){return '$'+x.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function calculateWork(){
+  var b=document.getElementById('resultBox');
   var inV=document.getElementById('inTime').value,outV=document.getElementById('outTime').value;
   var br=parseFloat(document.getElementById('breakMin').value)||0;
-  var days=parseFloat(document.getElementById('days').value)||5;
+  var days=parseFloat(document.getElementById('days').value);
   var rate=parseFloat(document.getElementById('rate').value)||0;
-  if(!inV||!outV){alert('Please select clock in and clock out time');return;}
-  function tm(t){var p=t.split(':');return parseInt(p[0])*60+parseInt(p[1]);}
+  b.style.display='block';
+  if(!inV||!outV){b.innerHTML='<p class="err">Please choose both a clock-in and a clock-out time.</p>';return;}
+  if(!(days>=1&&days<=7)){b.innerHTML='<p class="err">Days per week must be between 1 and 7.</p>';return;}
   var a=tm(inV),o=tm(outV);if(o<=a)o+=1440;
-  var m=Math.max(0,o-a-br);
-  var dh=m/60,wh=dh*days,ot=Math.max(0,wh-40),reg=wh-ot;
-  var pay=reg*rate+ot*rate*1.5;
-  var h='<h3>Result</h3><div><b>Daily:</b> '+Math.floor(m/60)+' h '+(m%60)+' min ('+dh.toFixed(2)+' hours)</div>'+
-  '<div><b>Weekly:</b> '+wh.toFixed(2)+' hours</div>';
-  if(ot>0)h+='<div><b>Overtime:</b> '+ot.toFixed(2)+' hours</div>';
-  if(rate>0)h+='<div><b>Estimated weekly gross pay:</b> $'+pay.toFixed(2)+'</div>';
-  var b=document.getElementById('resultBox');b.innerHTML=h;b.style.display='block';b.scrollIntoView({behavior:'smooth'});
+  var gross=o-a;
+  if(br>=gross){b.innerHTML='<p class="err">Your break is as long as the whole shift. Please check the break minutes.</p>';return;}
+  var m=gross-br,dh=m/60,wh=dh*days,ot=Math.max(0,wh-40),reg=wh-ot,pay=reg*rate+ot*rate*1.5;
+  var wm=Math.round(wh*60);
+  var h='<div class="big">'+dh.toFixed(2)+' hours per day</div>'+
+  '<table><tr><th>Result</th><th>Value</th></tr>'+
+  '<tr><td>Daily hours</td><td>'+Math.floor(m/60)+' h '+('0'+(m%60)).slice(-2)+' min ('+dh.toFixed(2)+')</td></tr>'+
+  '<tr><td>Weekly hours</td><td>'+Math.floor(wm/60)+' h '+('0'+(wm%60)).slice(-2)+' min ('+wh.toFixed(2)+')</td></tr>'+
+  '<tr><td>Regular hours</td><td>'+reg.toFixed(2)+'</td></tr>'+
+  '<tr><td>Overtime hours (over 40)</td><td>'+ot.toFixed(2)+'</td></tr>';
+  if(rate>0){h+='<tr><td>Regular pay</td><td>'+money(reg*rate)+'</td></tr><tr><td>Overtime pay (1.5x)</td><td>'+money(ot*rate*1.5)+'</td></tr><tr><td><b>Estimated weekly gross pay</b></td><td><b>'+money(pay)+'</b></td></tr>';}
+  h+='</table>';
+  b.innerHTML=h;
+  b.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 </script>
-</div>
-<div class="footer"><a href="index.html">Home</a><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a><p>&copy; 2026 EverydayCalc. Free online calculators.</p></div>
+</main>
+<footer class="site"><div class="wrap"><div class="cols"><div><h4>Calculators</h4><a href="work-hours-calculator.html">Work Hours Calculator</a><a href="bmi-calculator.html">BMI Calculator</a><a href="paycheck-calculator.html">Paycheck Calculator</a></div><div><h4>EverydayCalc</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><div><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div></div><p>&copy; 2026 EverydayCalc. Free online calculators. Results are estimates for information only and are not financial, tax, legal or medical advice.</p></div></footer>
 </body>
 </html>
