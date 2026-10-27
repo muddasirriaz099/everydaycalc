@@ -4,7 +4,7 @@ Goal: SEO practice + portfolio + earning, USA traffic. Host: GitHub Pages (no cu
 ## Rules for every new tool page
 - Calculator first, then quick answer, how to use, formula, examples table, long-tail sections, FAQ, related tools, sources.
 - 1000+ words of original content, FAQ matches the FAQ schema, canonical + meta description + og tags.
-- Unique SVG logo in /assets (icon-<tool>.svg), shown on the home page card and the tool page header.
+- Unique SVG logo in  (icon-<tool>.svg), shown on the home page card and the tool page header.
 - After adding a page: add it to sitemap.xml, add a card on index.html, add it to the header and footer, link from related tools.
 - Official numbers (tax rates, wage caps) only from IRS / SSA / DOL. Update yearly.
 - Edit files with the pencil icon on GitHub (do not delete + re-add).
