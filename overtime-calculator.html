@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overtime Calculator - Overtime Pay & Total Weekly Pay | EverydayCalc</title>
+<meta name="description" content="Free overtime calculator for the USA. Enter hourly rate and hours worked to see regular pay, overtime pay at 1.5x or 2x, and total weekly pay.">
+<link rel="canonical" href="https://muddasirriaz099.github.io/everydaycalc/overtime-calculator.html">
+<meta property="og:title" content="Overtime Calculator - Overtime Pay & Total Weekly Pay | EverydayCalc">
+<meta property="og:description" content="Free overtime calculator for the USA. Enter hourly rate and hours worked to see regular pay, overtime pay at 1.5x or 2x, and total weekly pay.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muddasirriaz099.github.io/everydaycalc/overtime-calculator.html">
+<meta name="theme-color" content="#2563eb">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who gets overtime pay in the USA?", "acceptedAnswer": {"@type": "Answer", "text": "Most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek under the Fair Labor Standards Act. Salaried exempt employees are usually not eligible."}}, {"@type": "Question", "name": "Do all states use the same rule?", "acceptedAnswer": {"@type": "Answer", "text": "No. Some states, such as California, also require overtime after 8 hours in a single day and double time in some cases. Check your state labor department for exact rules."}}, {"@type": "Question", "name": "What is double time?", "acceptedAnswer": {"@type": "Answer", "text": "Double time means paying 2 times the regular hourly rate. It is not required by federal law but applies in some states or union contracts after long shifts."}}, {"@type": "Question", "name": "Is overtime taxed differently?", "acceptedAnswer": {"@type": "Answer", "text": "Overtime is taxed as regular income. It can push more of a paycheck into a higher withholding bracket, but it does not change your actual tax rate at filing time."}}]}</script>
+</head>
+<body class="">
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><span class="mark">E</span>EverydayCalc</a><nav><a href="overtime-calculator.html">Overtime</a><a href="work-hours-calculator.html">Work Hours</a><a href="paycheck-calculator.html">Paycheck</a><a href="bmi-calculator.html">BMI</a></nav></div></header>
+<div class="container">
+<div class="card">
+<h1>Overtime Calculator</h1>
+<p class="sub">Work out overtime pay and total weekly earnings. Uses the US federal 40-hour rule by default.</p>
+<div class="row"><div><label for="rate">Hourly rate ($)</label><input type="number" id="rate" value="20" min="0" step="0.01" inputmode="decimal"></div>
+<div><label for="hours">Hours worked this week</label><input type="number" id="hours" value="50" min="0" step="0.25" inputmode="decimal"></div></div>
+<div class="row"><div><label for="mult">Overtime multiplier</label><select id="mult"><option value="1.5" selected>1.5x (time and a half)</option><option value="2">2x (double time)</option><option value="1.25">1.25x</option></select></div>
+<div><label for="thr">Overtime starts after (hours)</label><input type="number" id="thr" value="40" min="0" inputmode="decimal"></div></div>
+<button class="btn" onclick="calcOT()">Calculate overtime</button>
+<div class="result" id="resultBox"></div>
+<p class="note">Estimate only. Some states add daily overtime rules.</p>
+</div>
+<div class="quick"><b>QUICK ANSWER</b>Overtime pay = hours over 40 &times; your hourly rate &times; 1.5. At $20 an hour and 50 hours worked, you earn $800 regular pay plus $300 overtime, a total of $1,100 for the week.</div>
+<div class="card">
+<h2>How to use the Overtime Calculator</h2>
+<ol><li>Enter your regular hourly rate.</li><li>Enter the total hours you worked this week.</li><li>Choose the overtime multiplier (1.5x or 2x).</li><li>Press Calculate to see regular pay, overtime pay and your total.</li></ol>
+<h2>Overtime formula</h2>
+<p><b>Overtime pay = overtime hours &times; hourly rate &times; multiplier.</b><br><b>Total pay = regular hours &times; rate + overtime pay.</b></p>
+<h2>Example</h2>
+<p>Rate $20, 50 hours, 1.5x: regular = 40 &times; $20 = $800. Overtime = 10 &times; $20 &times; 1.5 = $300. Total = $1,100.</p>
+<h2>Frequently Asked Questions</h2><h3>Who gets overtime pay in the USA?</h3><p>Most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek under the Fair Labor Standards Act. Salaried exempt employees are usually not eligible.</p><h3>Do all states use the same rule?</h3><p>No. Some states, such as California, also require overtime after 8 hours in a single day and double time in some cases. Check your state labor department for exact rules.</p><h3>What is double time?</h3><p>Double time means paying 2 times the regular hourly rate. It is not required by federal law but applies in some states or union contracts after long shifts.</p><h3>Is overtime taxed differently?</h3><p>Overtime is taxed as regular income. It can push more of a paycheck into a higher withholding bracket, but it does not change your actual tax rate at filing time.</p></div>
+<div class="card related"><h2>Related calculators</h2><a href="work-hours-calculator.html">Work Hours Calculator &rarr;</a><a href="paycheck-calculator.html">Paycheck Calculator &rarr;</a><a href="bmi-calculator.html">BMI Calculator &rarr;</a></div>
+<script>
+function calcOT(){
+  var r=parseFloat(document.getElementById('rate').value)||0,h=parseFloat(document.getElementById('hours').value)||0;
+  var m=parseFloat(document.getElementById('mult').value),t=parseFloat(document.getElementById('thr').value);if(isNaN(t))t=40;
+  if(!r||!h){alert('Enter hourly rate and hours worked');return;}
+  var reg=Math.min(h,t),ot=Math.max(0,h-t),rp=reg*r,op=ot*r*m,tot=rp+op;
+  var x='<div style="font-size:22px;font-weight:800">Total pay: $'+tot.toFixed(2)+'</div>'+
+  '<div>Regular pay ('+reg.toFixed(2)+' h): $'+rp.toFixed(2)+'</div>'+
+  '<div>Overtime pay ('+ot.toFixed(2)+' h at '+m+'x): $'+op.toFixed(2)+'</div>'+
+  '<div>Overtime rate: $'+(r*m).toFixed(2)+' per hour</div>';
+  var b=document.getElementById('resultBox');b.innerHTML=x;b.style.display='block';b.scrollIntoView({behavior:'smooth'});
+}
+</script>
+</div>
+<div class="footer"><a href="index.html">Home</a><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a><p>&copy; 2026 EverydayCalc. Free online calculators.</p></div>
+</body>
+</html>

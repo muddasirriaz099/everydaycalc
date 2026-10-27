@@ -7,6 +7,7 @@ Goal: SEO practice + earning, USA traffic. Host: GitHub Pages (no custom domain 
 - Edit files with the pencil icon on GitHub (don't delete + re-add).
 
 ## Changelog
+- 2026-10-27: New mobile-first design (search box on top, tool cards below), new Overtime Calculator page, related-calculator links, header nav updated.
 - 2026-10-26: Full cleanup. Shared style.css, new header/footer, tools rewritten (BMI ft/lb + metric, paycheck with FICA + frequency, work hours with overtime), content + FAQ on each tool, sitemap has all 7 pages, fake claims removed, contact form replaced by GitHub issues link.
 
 ## Status

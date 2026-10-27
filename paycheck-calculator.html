@@ -10,12 +10,13 @@
 <meta property="og:description" content="Free paycheck calculator: estimate net pay after federal tax, state tax and FICA. Choose weekly, biweekly or monthly pay and see annual take-home.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://muddasirriaz099.github.io/everydaycalc/paycheck-calculator.html">
+<meta name="theme-color" content="#2563eb">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is take-home pay calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Take-home pay = gross pay minus pre-tax deductions, federal income tax, state income tax, and FICA (Social Security 6.2% plus Medicare 1.45%), minus any after-tax deductions."}}, {"@type": "Question", "name": "What is FICA?", "acceptedAnswer": {"@type": "Answer", "text": "FICA is the US payroll tax that funds Social Security and Medicare. Employees pay 7.65% of wages (6.2% Social Security up to an annual wage cap, plus 1.45% Medicare)."}}, {"@type": "Question", "name": "Why is my real paycheck different from this estimate?", "acceptedAnswer": {"@type": "Answer", "text": "Actual withholding depends on your W-4, filing status, state and local taxes, benefits and other deductions. Use this as an estimate and check your pay stub for exact numbers."}}]}</script>
 </head>
-<body>
+<body class="">
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><span class="mark">E</span>EverydayCalc</a><nav><a href="overtime-calculator.html">Overtime</a><a href="work-hours-calculator.html">Work Hours</a><a href="paycheck-calculator.html">Paycheck</a><a href="bmi-calculator.html">BMI</a></nav></div></header>
 <div class="container">
-<div class="header"><a class="logo" href="index.html">EverydayCalc</a><div><a href="work-hours-calculator.html">Work Hours</a><a href="bmi-calculator.html">BMI</a><a href="paycheck-calculator.html">Paycheck</a></div></div>
 <div class="card">
 <h1>Paycheck Calculator</h1>
 <p class="sub">Estimate your take-home pay per paycheck and per year.</p>
@@ -38,6 +39,7 @@
 <h2>Example</h2>
 <p>Gross $2,000 biweekly, 12% federal, 4% state, no deductions: federal $240, state $80, FICA $153, take-home $1,527 per paycheck, about $39,702 per year.</p>
 <h2>Frequently Asked Questions</h2><h3>How is take-home pay calculated?</h3><p>Take-home pay = gross pay minus pre-tax deductions, federal income tax, state income tax, and FICA (Social Security 6.2% plus Medicare 1.45%), minus any after-tax deductions.</p><h3>What is FICA?</h3><p>FICA is the US payroll tax that funds Social Security and Medicare. Employees pay 7.65% of wages (6.2% Social Security up to an annual wage cap, plus 1.45% Medicare).</p><h3>Why is my real paycheck different from this estimate?</h3><p>Actual withholding depends on your W-4, filing status, state and local taxes, benefits and other deductions. Use this as an estimate and check your pay stub for exact numbers.</p></div>
+<div class="card related"><h2>Related calculators</h2><a href="overtime-calculator.html">Overtime Calculator &rarr;</a><a href="work-hours-calculator.html">Work Hours Calculator &rarr;</a><a href="bmi-calculator.html">BMI Calculator &rarr;</a></div>
 <script>
 function calcPay(){
   var g=parseFloat(document.getElementById('gross').value)||0,n=parseInt(document.getElementById('freq').value);

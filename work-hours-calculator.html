@@ -10,12 +10,13 @@
 <meta property="og:description" content="Free work hours calculator: enter clock in, clock out and break to get daily hours, weekly hours, overtime and gross pay. Works for night shifts.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://muddasirriaz099.github.io/everydaycalc/work-hours-calculator.html">
+<meta name="theme-color" content="#2563eb">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate work hours with a lunch break?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract your clock-in time from your clock-out time, then subtract the unpaid break. Example: 9:00 AM to 5:00 PM is 8 hours; minus a 60 minute lunch gives 7 hours."}}, {"@type": "Question", "name": "How is overtime calculated in the USA?", "acceptedAnswer": {"@type": "Answer", "text": "Under the federal Fair Labor Standards Act, most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek. Some states have additional daily overtime rules, so check your state."}}, {"@type": "Question", "name": "Does this calculator handle night shifts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If your clock-out time is earlier than your clock-in time, it treats the shift as ending the next day, for example 10:00 PM to 6:00 AM."}}]}</script>
 </head>
-<body>
+<body class="">
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><span class="mark">E</span>EverydayCalc</a><nav><a href="overtime-calculator.html">Overtime</a><a href="work-hours-calculator.html">Work Hours</a><a href="paycheck-calculator.html">Paycheck</a><a href="bmi-calculator.html">BMI</a></nav></div></header>
 <div class="container">
-<div class="header"><a class="logo" href="index.html">EverydayCalc</a><div><a href="work-hours-calculator.html">Work Hours</a><a href="bmi-calculator.html">BMI</a><a href="paycheck-calculator.html">Paycheck</a></div></div>
 <div class="card">
 <h1>Work Hours Calculator</h1>
 <p class="sub">Find your daily and weekly hours, overtime and gross pay.</p>
@@ -36,6 +37,7 @@
 <h2>Example</h2>
 <p>Clock in 9:00 AM, clock out 6:00 PM, 60 minute break, $20 per hour, 5 days: daily hours = 8.00, weekly hours = 40.00, gross weekly pay = $800.00.</p>
 <h2>Frequently Asked Questions</h2><h3>How do I calculate work hours with a lunch break?</h3><p>Subtract your clock-in time from your clock-out time, then subtract the unpaid break. Example: 9:00 AM to 5:00 PM is 8 hours; minus a 60 minute lunch gives 7 hours.</p><h3>How is overtime calculated in the USA?</h3><p>Under the federal Fair Labor Standards Act, most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek. Some states have additional daily overtime rules, so check your state.</p><h3>Does this calculator handle night shifts?</h3><p>Yes. If your clock-out time is earlier than your clock-in time, it treats the shift as ending the next day, for example 10:00 PM to 6:00 AM.</p></div>
+<div class="card related"><h2>Related calculators</h2><a href="overtime-calculator.html">Overtime Calculator &rarr;</a><a href="paycheck-calculator.html">Paycheck Calculator &rarr;</a><a href="bmi-calculator.html">BMI Calculator &rarr;</a></div>
 <script>
 function calculateWork(){
   var inV=document.getElementById('inTime').value,outV=document.getElementById('outTime').value;
