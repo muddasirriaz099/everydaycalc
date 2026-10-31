@@ -4,6 +4,7 @@
 
 ## Calculators
 - [Work Hours Calculator](https://muddasirriaz099.github.io/everydaycalc/work-hours-calculator.html): Daily and weekly hours with breaks, night shifts, overtime and pay.
+- [Time Card Calculator](https://muddasirriaz099.github.io/everydaycalc/time-card-calculator.html): Weekly timesheet with lunch breaks: total hours, overtime and pay.
 - [Overtime Calculator](https://muddasirriaz099.github.io/everydaycalc/overtime-calculator.html): Time-and-a-half and double-time pay, with federal and California daily rules.
 - [BMI Calculator](https://muddasirriaz099.github.io/everydaycalc/bmi-calculator.html): BMI in feet, inches and pounds or cm and kg, with your healthy weight range.
 - [Paycheck Calculator](https://muddasirriaz099.github.io/everydaycalc/paycheck-calculator.html): Estimate take-home pay after federal tax, state tax, FICA and deductions.

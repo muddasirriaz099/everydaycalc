@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Time Card Calculator: Weekly Hours with Lunch Breaks</title>
+<meta name="description" content="Free time card calculator. Enter clock in, clock out and lunch break for each day to get daily hours, your weekly total, overtime and estimated pay.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://muddasirriaz099.github.io/everydaycalc/time-card-calculator.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#1d4ed8">
+<meta property="og:site_name" content="EverydayCalc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Time Card Calculator: Weekly Hours with Lunch Breaks">
+<meta property="og:description" content="Free time card calculator. Enter clock in, clock out and lunch break for each day to get daily hours, your weekly total, overtime and estimated pay.">
+<meta property="og:url" content="https://muddasirriaz099.github.io/everydaycalc/time-card-calculator.html">
+<meta property="og:image" content="https://muddasirriaz099.github.io/everydaycalc/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Time Card Calculator", "url": "https://muddasirriaz099.github.io/everydaycalc/time-card-calculator.html", "description": "Free time card calculator. Enter clock in, clock out and lunch break for each day to get daily hours, your weekly total, overtime and estimated pay.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://muddasirriaz099.github.io/everydaycalc/icon-time-card.svg", "author": {"@type": "Person", "name": "Muddasir Riaz", "url": "https://muddasirriaz099.github.io/everydaycalc/about.html"}, "publisher": {"@type": "Organization", "name": "EverydayCalc", "url": "https://muddasirriaz099.github.io/everydaycalc/", "logo": "https://muddasirriaz099.github.io/everydaycalc/logo.svg"}, "datePublished": "2026-10-31", "dateModified": "2026-10-31", "inLanguage": "en-US", "isAccessibleForFree": true, "mainEntityOfPage": "https://muddasirriaz099.github.io/everydaycalc/time-card-calculator.html", "about": "Time Card Calculator"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate a time card?", "acceptedAnswer": {"@type": "Answer", "text": "For each day, subtract the clock in time from the clock out time, then subtract any unpaid break. Add the daily results together for the weekly total. For example, 8:00 AM to 4:30 PM with a 30-minute lunch is 8 hours."}}, {"@type": "Question", "name": "How do I calculate hours worked with a lunch break on a time card?", "acceptedAnswer": {"@type": "Answer", "text": "Take clock out minus clock in, then subtract the unpaid lunch. If you clock in at 9:00 AM and out at 5:30 PM with a 30-minute unpaid lunch, you worked 8 hours. If the lunch is paid, do not subtract it."}}, {"@type": "Question", "name": "How do I add up hours and minutes on a timesheet?", "acceptedAnswer": {"@type": "Answer", "text": "Add the hours and the minutes separately, then turn every 60 minutes into 1 hour. For example, 7 h 45 min plus 8 h 30 min is 15 h 75 min, which is 16 h 15 min, or 16.25 hours."}}, {"@type": "Question", "name": "How do I convert minutes to decimal hours?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the minutes by 60. 15 minutes is 0.25 hours, 30 minutes is 0.50 and 45 minutes is 0.75. In systems that use tenths of an hour, each tenth is 6 minutes."}}, {"@type": "Question", "name": "How do I calculate a split shift on a time card?", "acceptedAnswer": {"@type": "Answer", "text": "Enter the first clock in and the last clock out for the day, and put the gap between the two parts as the break. For 8 AM to 12 PM and 4 PM to 8 PM, enter 8:00 AM, 8:00 PM and a 240-minute break for 8 hours."}}, {"@type": "Question", "name": "Can an employer round my time card hours?", "acceptedAnswer": {"@type": "Answer", "text": "Department of Labor guidance allows rounding to the nearest 5 minutes, one tenth of an hour or quarter hour if it is neutral and averages out so employees are paid for all the time they work. Rounding that always favors the employer can be a problem."}}, {"@type": "Question", "name": "How many hours should be on a time card for a full-time week?", "acceptedAnswer": {"@type": "Answer", "text": "A typical full-time week is 40 hours. Federal law does not define full time, but most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek."}}, {"@type": "Question", "name": "Does this time card calculator work for night shifts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If your clock out time is earlier than your clock in time, it treats the shift as ending the next day. For example, 10:00 PM to 6:30 AM is 8 hours 30 minutes on the clock."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://muddasirriaz099.github.io/everydaycalc/"}, {"@type": "ListItem", "position": 2, "name": "Time Card Calculator", "item": "https://muddasirriaz099.github.io/everydaycalc/time-card-calculator.html"}]}</script>
+</head>
+<body class="t-tc">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap"><a class="brand" href="index.html" aria-label="EverydayCalc home"><img src="logo.svg" alt="" width="32" height="32"><span>Everyday<b>Calc</b></span></a><nav class="main" aria-label="Main"><a href="work-hours-calculator.html">Work Hours</a><a href="time-card-calculator.html" aria-current="page">Time Card</a><a href="overtime-calculator.html">Overtime</a><a href="bmi-calculator.html">BMI</a><a href="paycheck-calculator.html">Paycheck</a><a href="about.html">About</a></nav></div></header>
+<main id="main" class="wrap">
+<p class="crumb"><a href="index.html">Home</a> / Time Card Calculator</p>
+<div class="pagehead"><img src="icon-time-card.svg" alt="Time Card Calculator logo" width="60" height="60"><h1>Time Card Calculator</h1></div>
+<p class="meta">By <a href="about.html">Muddasir Riaz</a> &middot; Updated October 31, 2026</p>
+<p class="lede">Enter your clock in, clock out and unpaid break for each day of the week. You get your daily hours, your weekly total in hours and minutes and in decimals, overtime and estimated gross pay.</p>
+<div class="calc" id="tool">
+<form onsubmit="calcTC();return false" novalidate>
+<div><div class="tcday"><b>Monday</b><div class="tcrow"><div><label for="in0">Clock in</label><input type="time" id="in0" value="09:00"></div><div><label for="out0">Clock out</label><input type="time" id="out0" value="17:00"></div><div><label for="br0">Break (min)</label><input type="number" id="br0" value="30" min="0" inputmode="numeric"></div></div></div><div class="tcday"><b>Tuesday</b><div class="tcrow"><div><label for="in1">Clock in</label><input type="time" id="in1" value="09:00"></div><div><label for="out1">Clock out</label><input type="time" id="out1" value="17:00"></div><div><label for="br1">Break (min)</label><input type="number" id="br1" value="30" min="0" inputmode="numeric"></div></div></div><div class="tcday"><b>Wednesday</b><div class="tcrow"><div><label for="in2">Clock in</label><input type="time" id="in2" value="09:00"></div><div><label for="out2">Clock out</label><input type="time" id="out2" value="17:00"></div><div><label for="br2">Break (min)</label><input type="number" id="br2" value="30" min="0" inputmode="numeric"></div></div></div><div class="tcday"><b>Thursday</b><div class="tcrow"><div><label for="in3">Clock in</label><input type="time" id="in3" value="09:00"></div><div><label for="out3">Clock out</label><input type="time" id="out3" value="17:00"></div><div><label for="br3">Break (min)</label><input type="number" id="br3" value="30" min="0" inputmode="numeric"></div></div></div><div class="tcday"><b>Friday</b><div class="tcrow"><div><label for="in4">Clock in</label><input type="time" id="in4" value="09:00"></div><div><label for="out4">Clock out</label><input type="time" id="out4" value="17:00"></div><div><label for="br4">Break (min)</label><input type="number" id="br4" value="30" min="0" inputmode="numeric"></div></div></div><div class="tcday"><b>Saturday</b><div class="tcrow"><div><label for="in5">Clock in</label><input type="time" id="in5" value=""></div><div><label for="out5">Clock out</label><input type="time" id="out5" value=""></div><div><label for="br5">Break (min)</label><input type="number" id="br5" value="0" min="0" inputmode="numeric"></div></div></div><div class="tcday"><b>Sunday</b><div class="tcrow"><div><label for="in6">Clock in</label><input type="time" id="in6" value=""></div><div><label for="out6">Clock out</label><input type="time" id="out6" value=""></div><div><label for="br6">Break (min)</label><input type="number" id="br6" value="0" min="0" inputmode="numeric"></div></div></div></div>
+<div class="row"><button type="button" class="go sec" onclick="fillWeek()">Copy Monday to Tue-Fri</button><button type="button" class="go sec" onclick="clearTC()">Clear all</button></div>
+<p class="hint">Leave a day blank if you did not work. For a night shift, enter a clock out time earlier than the clock in time, for example 10:00 PM to 6:00 AM.</p>
+<label for="rate">Hourly pay rate ($) <span style="font-weight:400">(optional)</span></label><input type="number" id="rate" value="" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 18.50">
+<button class="go" type="submit">Calculate time card</button>
+</form>
+<div class="result" id="resultBox" role="status" aria-live="polite"></div>
+<p class="note" style="margin-top:12px">Overtime is estimated at 1.5x after 40 hours in the week (federal rule). State rules may differ.</p>
+</div>
+
+<div class="quick"><b>Quick answer:</b> To fill in a time card, work out each day separately: clock out minus clock in, minus the unpaid break. Then add the days together. For example, 8:00 AM to 4:30 PM with a 30-minute unpaid lunch is 8 hours. Five of those days make 40 hours, which is a standard full-time week.</div>
+
+<h2>How to use the time card calculator</h2>
+<ol>
+<li><b>Enter your clock in and clock out times</b> for each day you worked. Leave the days you did not work blank.</li>
+<li><b>Enter your unpaid break in minutes</b> for each day. Use 0 if you are paid for your breaks.</li>
+<li><b>Save time with the copy button.</b> Fill in Monday, then press &ldquo;Copy Monday to Tue to Fri&rdquo; and change any days that were different.</li>
+<li><b>Add your hourly rate if you want pay.</b> This is optional.</li>
+<li><b>Press Calculate time card.</b> You get each day's hours, the weekly total in hours and minutes and in decimals, overtime over 40 hours, and estimated gross pay.</li>
+</ol>
+
+<h2>How do you calculate a time card by hand?</h2>
+<p>Use the same three steps for every day:</p>
+<ol>
+<li><b>Subtract clock in from clock out.</b> 4:30 PM minus 8:00 AM is 8 hours 30 minutes.</li>
+<li><b>Subtract the unpaid break.</b> 8 hours 30 minutes minus a 30-minute lunch is 8 hours.</li>
+<li><b>Add up all the days.</b> Add the hours together, then add the minutes together. Every 60 minutes becomes one more hour.</li>
+</ol>
+<p><b>Formula:</b> Daily hours = (clock out &minus; clock in) &minus; unpaid break. Weekly hours = the sum of the daily hours.</p>
+
+<h2>Time card example</h2>
+<p>Here is a full week worked out with this calculator's formula. The last column shows each day as a decimal, which is what most payroll systems use.</p>
+<div class="tw"><table>
+<tr><th>Day</th><th>Clock in</th><th>Clock out</th><th>Unpaid break</th><th>Hours</th><th>Decimal</th></tr>
+<tr><td>Monday</td><td>8:00 AM</td><td>4:30 PM</td><td>30 min</td><td>8 h 00 min</td><td>8.00</td></tr>
+<tr><td>Tuesday</td><td>8:00 AM</td><td>4:30 PM</td><td>30 min</td><td>8 h 00 min</td><td>8.00</td></tr>
+<tr><td>Wednesday</td><td>7:45 AM</td><td>5:15 PM</td><td>45 min</td><td>8 h 45 min</td><td>8.75</td></tr>
+<tr><td>Thursday</td><td>8:00 AM</td><td>4:00 PM</td><td>30 min</td><td>7 h 30 min</td><td>7.50</td></tr>
+<tr><td>Friday</td><td>8:15 AM</td><td>5:00 PM</td><td>30 min</td><td>8 h 15 min</td><td>8.25</td></tr>
+<tr><td><b>Total</b></td><td></td><td></td><td></td><td><b>40 h 30 min</b></td><td><b>40.50</b></td></tr>
+</table></div>
+<p>The week adds up to 40 h 30 min, or 40.50 hours. That is 0.50 hours over 40, so 30 minutes would be paid as overtime at time and a half under federal rules. Notice that Wednesday is longer than the other days because of the early start, so it helps to check each day separately, not guess from a single average.</p>
+
+<h2>How do you add hours and minutes on a timesheet?</h2>
+<p>There are two easy ways. Pick one and use it every time.</p>
+<ul>
+<li><b>Add hours and minutes separately.</b> Add all the hours, add all the minutes, and then turn every 60 minutes into 1 hour. For 7 h 45 min plus 8 h 30 min: hours 7 + 8 = 15, minutes 45 + 30 = 75, so 15 h 75 min, which is 16 h 15 min.</li>
+<li><b>Convert each day to decimal hours first.</b> Divide the minutes by 60. 7 h 45 min is 7.75 hours and 8 h 30 min is 8.50 hours, so the total is 16.25 hours.</li>
+</ul>
+<p>A very common mistake is to write 7 h 45 min as 7.45. The number after the point is a fraction of an hour, not minutes, so 45 minutes is .75.</p>
+
+<h2>Minutes to decimal hours chart for time cards</h2>
+<p>Some time clocks track time in tenths of an hour, where each tenth is 6 minutes. This chart shows the match.</p>
+<div class="tw"><table>
+<tr><th>Decimal hours</th><th>Minutes</th></tr>
+<tr><td>0.1 hour</td><td>6 minutes</td></tr>
+<tr><td>0.2 hour</td><td>12 minutes</td></tr>
+<tr><td>0.3 hour</td><td>18 minutes</td></tr>
+<tr><td>0.4 hour</td><td>24 minutes</td></tr>
+<tr><td>0.5 hour</td><td>30 minutes</td></tr>
+<tr><td>0.6 hour</td><td>36 minutes</td></tr>
+<tr><td>0.7 hour</td><td>42 minutes</td></tr>
+<tr><td>0.8 hour</td><td>48 minutes</td></tr>
+<tr><td>0.9 hour</td><td>54 minutes</td></tr>
+</table></div>
+<p>Quarter hours work the same way: 15 minutes is 0.25 hours, 30 minutes is 0.50 and 45 minutes is 0.75.</p>
+
+<h2>How do you calculate a night shift on a time card?</h2>
+<p>When you clock out after midnight, your clock out time looks earlier than your clock in time. The calculator adds 24 hours to the clock out time for you. A shift from 10:00 PM to 6:30 AM is 8 hours 30 minutes on the clock, and with a 30-minute unpaid break it is 8 hours. By hand, count 10:00 PM to midnight (2 hours) and midnight to 6:30 AM (6 hours 30 minutes).</p>
+<p>Enter the shift on the day it started. If your workweek starts on a different day than the one you started on, check with your employer how overnight hours are assigned.</p>
+
+<h2>How do you calculate a split shift?</h2>
+<p>A split shift means you work two separate parts in one day, for example 8:00 AM to 12:00 PM and 4:00 PM to 8:00 PM. This calculator has one clock in and one clock out for each day. To handle a split shift, enter the first clock in (8:00 AM), the last clock out (8:00 PM) and use the gap in the middle as your break (240 minutes). The result is 8 hours, which is the 4 hours plus the 4 hours you actually worked. Check your employer's rules and your state law, because some states require extra pay for split shifts.</p>
+
+<h2>Can employers round time card hours?</h2>
+<p>Many employers round time clock punches to the nearest 5 minutes, one tenth of an hour or quarter hour. Department of Labor guidance allows this as long as the rounding is neutral and averages out over time, so that employees are paid for all the time they actually work. A rounding rule that always favors the employer, for example always rounding start times up and end times down, can be a problem.</p>
+<p>The &ldquo;7-minute rule&rdquo; is a common version of quarter-hour rounding:</p>
+<div class="tw"><table>
+<tr><th>Minutes past the quarter hour</th><th>Rounded</th></tr>
+<tr><td>1 to 7 minutes</td><td>Round down to the earlier quarter hour</td></tr>
+<tr><td>8 to 14 minutes</td><td>Round up to the next quarter hour</td></tr>
+</table></div>
+<p>This calculator does not round. It shows your exact time, so you can compare it with the hours on your pay stub.</p>
+
+<h2>How many hours should be on a full-time time card?</h2>
+<p>A standard full-time schedule is 40 hours a week, such as five 8-hour days. Federal law does not define full time. Your employer decides what counts as full time for benefits and scheduling. What the law does set is overtime: most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek. If you worked more than 40 hours, see exactly what you are owed with our <a href="overtime-calculator.html">Overtime Calculator</a>, which also covers California's daily overtime rules.</p>
+
+<h2>How do you turn time card hours into pay?</h2>
+<p>Multiply the decimal hours by your hourly rate. For 36.5 hours at $18.50, the gross pay is 36.5 &times; $18.50 = $675.25. With overtime, pay the first 40 hours at the regular rate and the extra hours at 1.5 times the rate. This is your gross pay before taxes. To see what is left after tax and deductions, enter it into our <a href="paycheck-calculator.html">Paycheck Calculator</a>.</p>
+
+<h2>Common time card mistakes</h2>
+<ul>
+<li><b>Forgetting the unpaid break.</b> This makes your hours and pay look higher than they are.</li>
+<li><b>Mixing up AM and PM.</b> A 12-hour shift that should be 8 hours is often a PM typed as AM.</li>
+<li><b>Writing minutes as decimals.</b> 6 h 20 min is 6.33 hours, not 6.20.</li>
+<li><b>Using the pay period instead of the workweek for overtime.</b> Overtime is counted for each workweek on its own.</li>
+<li><b>Leaving out short tasks.</b> Time spent opening up, closing down or attending required meetings is usually work time.</li>
+<li><b>Not keeping a copy.</b> Employers must keep accurate records of hours worked. It is also smart to keep your own copy of your clock in and out times, so you can check your pay stub.</li>
+</ul>
+
+<h2>Tips for keeping an accurate time card</h2>
+<p>Write down your times as they happen, not from memory at the end of the week. Note your break length each day, since it often changes. Take a photo of your time card or a screenshot of your time clock app. If your pay stub is different from your own records, bring the dates, times and breaks to your payroll department first. If it is not corrected, you can contact the Wage and Hour Division of the U.S. Department of Labor or your state labor agency. For one day only, our <a href="work-hours-calculator.html">Work Hours Calculator</a> is a quicker tool.</p>
+
+<h2>Frequently asked questions</h2>
+<details class="faq"><summary>How do I calculate a time card?</summary><p>For each day, subtract the clock in time from the clock out time, then subtract any unpaid break. Add the daily results together for the weekly total. For example, 8:00 AM to 4:30 PM with a 30-minute lunch is 8 hours.</p></details>
+<details class="faq"><summary>How do I calculate hours worked with a lunch break on a time card?</summary><p>Take clock out minus clock in, then subtract the unpaid lunch. If you clock in at 9:00 AM and out at 5:30 PM with a 30-minute unpaid lunch, you worked 8 hours. If the lunch is paid, do not subtract it.</p></details>
+<details class="faq"><summary>How do I add up hours and minutes on a timesheet?</summary><p>Add the hours and the minutes separately, then turn every 60 minutes into 1 hour. For example, 7 h 45 min plus 8 h 30 min is 15 h 75 min, which is 16 h 15 min, or 16.25 hours.</p></details>
+<details class="faq"><summary>How do I convert minutes to decimal hours?</summary><p>Divide the minutes by 60. 15 minutes is 0.25 hours, 30 minutes is 0.50 and 45 minutes is 0.75. In systems that use tenths of an hour, each tenth is 6 minutes.</p></details>
+<details class="faq"><summary>How do I calculate a split shift on a time card?</summary><p>Enter the first clock in and the last clock out for the day, and put the gap between the two parts as the break. For 8 AM to 12 PM and 4 PM to 8 PM, enter 8:00 AM, 8:00 PM and a 240-minute break for 8 hours.</p></details>
+<details class="faq"><summary>Can an employer round my time card hours?</summary><p>Department of Labor guidance allows rounding to the nearest 5 minutes, one tenth of an hour or quarter hour if it is neutral and averages out so employees are paid for all the time they work. Rounding that always favors the employer can be a problem.</p></details>
+<details class="faq"><summary>How many hours should be on a time card for a full-time week?</summary><p>A typical full-time week is 40 hours. Federal law does not define full time, but most non-exempt employees must be paid at least 1.5 times their regular rate for hours over 40 in a workweek.</p></details>
+<details class="faq"><summary>Does this time card calculator work for night shifts?</summary><p>Yes. If your clock out time is earlier than your clock in time, it treats the shift as ending the next day. For example, 10:00 PM to 6:30 AM is 8 hours 30 minutes on the clock.</p></details>
+<h2>More free calculators</h2>
+<div class="related"><a class="tool" href="work-hours-calculator.html"><img src="icon-work-hours.svg" alt="Work Hours Calculator logo" width="52" height="52"><div><b>Work Hours Calculator</b><span>Daily and weekly hours with breaks, night shifts, overtime and pay.</span></div></a><a class="tool" href="overtime-calculator.html"><img src="icon-overtime.svg" alt="Overtime Calculator logo" width="52" height="52"><div><b>Overtime Calculator</b><span>Time-and-a-half and double-time pay, with federal and California daily rules.</span></div></a><a class="tool" href="bmi-calculator.html"><img src="icon-bmi.svg" alt="BMI Calculator logo" width="52" height="52"><div><b>BMI Calculator</b><span>BMI in feet, inches and pounds or cm and kg, with your healthy weight range.</span></div></a><a class="tool" href="paycheck-calculator.html"><img src="icon-paycheck.svg" alt="Paycheck Calculator logo" width="52" height="52"><div><b>Paycheck Calculator</b><span>Estimate take-home pay after federal tax, state tax, FICA and deductions.</span></div></a></div>
+<h2>Sources and further reading</h2>
+<ul class="sources"><li><a href="https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping" rel="noopener" target="_blank">U.S. Department of Labor: Fact Sheet #21, Recordkeeping Requirements under the FLSA</a></li><li><a href="https://www.dol.gov/agencies/whd/fact-sheets/22-flsa-hours-worked" rel="noopener" target="_blank">U.S. Department of Labor: Fact Sheet #22, Hours Worked Under the FLSA</a></li><li><a href="https://www.dol.gov/whd/regs/compliance/whdfs23.htm" rel="noopener" target="_blank">U.S. Department of Labor: Fact Sheet #23, Overtime Pay Requirements of the FLSA</a></li></ul>
+<p class="note">This calculator gives estimates for information only. It is not financial, tax, legal or medical advice. Found a mistake? <a href="contact.html">Tell us</a> and we will fix it.</p>
+<script>
+var DN=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+function tm(t){var p=t.split(':');return parseInt(p[0],10)*60+parseInt(p[1],10);}
+function fmt12(t){var p=t.split(':'),h=parseInt(p[0],10),s=h<12?'AM':'PM';h=h%12||12;return h+':'+p[1]+' '+s;}
+function hm(m){return Math.floor(m/60)+' h '+('0'+(m%60)).slice(-2)+' min';}
+function dec(m){return (m/60).toFixed(2);}
+function money(x){return '$'+x.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fillWeek(){for(var i=1;i<5;i++){document.getElementById('in'+i).value=document.getElementById('in0').value;document.getElementById('out'+i).value=document.getElementById('out0').value;document.getElementById('br'+i).value=document.getElementById('br0').value;}}
+function clearTC(){for(var i=0;i<7;i++){document.getElementById('in'+i).value='';document.getElementById('out'+i).value='';document.getElementById('br'+i).value='0';}document.getElementById('resultBox').style.display='none';}
+function calcTC(){
+  var b=document.getElementById('resultBox');b.style.display='block';
+  var rows=[],errs=[],total=0;
+  for(var i=0;i<7;i++){
+    var inV=document.getElementById('in'+i).value,outV=document.getElementById('out'+i).value;
+    var br=Math.round(parseFloat(document.getElementById('br'+i).value)||0);
+    if(!inV&&!outV)continue;
+    if(!inV||!outV){errs.push(DN[i]+': enter both a clock in and a clock out time.');continue;}
+    var a=tm(inV),o=tm(outV);
+    if(o===a){errs.push(DN[i]+': clock in and clock out are the same time.');continue;}
+    if(o<a)o+=1440;
+    var g=o-a;
+    if(br<0||br>=g){errs.push(DN[i]+': the break is as long as the whole shift. Please check it.');continue;}
+    var m=g-br;rows.push({i:i,inV:inV,outV:outV,br:br,m:m});total+=m;
+  }
+  if(errs.length){b.innerHTML='<p class="err">'+errs.join('<br>')+'</p>';return;}
+  if(!rows.length){b.innerHTML='<p class="err">Please enter clock in and clock out times for at least one day.</p>';return;}
+  var reg=Math.min(total,2400),ot=Math.max(total-2400,0),rate=parseFloat(document.getElementById('rate').value)||0;
+  var h='<div class="big">'+dec(total)+' hours</div><p>'+hm(total)+' total for the week</p>'+
+  '<table><tr><th>Day</th><th>In</th><th>Out</th><th>Break</th><th>Hours</th><th>Decimal</th></tr>';
+  rows.forEach(function(r){h+='<tr><td>'+DN[r.i]+'</td><td>'+fmt12(r.inV)+'</td><td>'+fmt12(r.outV)+'</td><td>'+r.br+' min</td><td>'+hm(r.m)+'</td><td>'+dec(r.m)+'</td></tr>';});
+  h+='<tr><td><b>Total</b></td><td></td><td></td><td></td><td><b>'+hm(total)+'</b></td><td><b>'+dec(total)+'</b></td></tr></table>';
+  h+='<table><tr><th>Summary</th><th>Hours</th></tr><tr><td>Regular hours</td><td>'+dec(reg)+'</td></tr><tr><td>Overtime hours (over 40)</td><td>'+dec(ot)+'</td></tr>';
+  if(rate>0){var pay=(reg/60)*rate+(ot/60)*rate*1.5;h+='<tr><td>Regular pay</td><td>'+money(reg/60*rate)+'</td></tr><tr><td>Overtime pay (1.5x)</td><td>'+money(ot/60*rate*1.5)+'</td></tr><tr><td><b>Estimated gross pay</b></td><td><b>'+money(pay)+'</b></td></tr>';}
+  h+='</table>';
+  b.innerHTML=h;b.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</main>
+<footer class="site"><div class="wrap"><div class="cols"><div><h4>Calculators</h4><a href="work-hours-calculator.html">Work Hours Calculator</a><a href="time-card-calculator.html">Time Card Calculator</a><a href="overtime-calculator.html">Overtime Calculator</a><a href="bmi-calculator.html">BMI Calculator</a><a href="paycheck-calculator.html">Paycheck Calculator</a></div><div><h4>EverydayCalc</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><div><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div></div><p>&copy; 2026 EverydayCalc. Free online calculators. Results are estimates for information only and are not financial, tax, legal or medical advice.</p></div></footer>
+</body>
+</html>

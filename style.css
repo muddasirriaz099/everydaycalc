@@ -3,7 +3,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.75;font-size:17px;-webkit-text-size-adjust:100%}
-.t-work{--ac:#2563eb;--acsoft:#eff6ff}.t-bmi{--ac:#059669;--acsoft:#ecfdf5}.t-pay{--ac:#7c3aed;--acsoft:#f5f3ff}.t-ot{--ac:#c2410c;--acsoft:#fff7ed}
+.t-work{--ac:#2563eb;--acsoft:#eff6ff}.t-bmi{--ac:#059669;--acsoft:#ecfdf5}.t-pay{--ac:#7c3aed;--acsoft:#f5f3ff}.t-ot{--ac:#c2410c;--acsoft:#fff7ed}.t-tc{--ac:#0e7490;--acsoft:#ecfeff}
 a{color:var(--ac)}a:hover{text-decoration:none}
 .skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px 12px;z-index:9;border-radius:8px}
 .wrap{max-width:820px;margin:0 auto;padding:0 20px}
@@ -71,7 +71,10 @@ footer.site .cols{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:14px}
 footer.site h4{color:var(--ink);font-size:14px;margin-bottom:6px}
 footer.site a{display:block;color:var(--mut);text-decoration:none;margin-bottom:4px}footer.site a:hover{color:var(--ink)}
 .days{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:8px}.days label{margin:0 0 4px;text-align:center;font-size:13px}.days input{padding:10px 4px;text-align:center}
-@media(max-width:560px){body{font-size:16px}.row{grid-template-columns:1fr}h1{font-size:26px}.hero h1{font-size:34px}h2{font-size:21px}.pagehead img{width:48px;height:48px}.calc{padding:16px}}
+.tcday{border:1px solid var(--line);border-radius:12px;padding:8px 12px 12px;margin-top:10px;background:#fff}.tcday>b{font-size:15px}
+.tcrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 86px;gap:10px}.tcrow>div{min-width:0}.tcrow input{min-width:0}.tcrow label{margin:6px 0 4px;font-size:12px;font-weight:600}.tcrow input{padding:10px 8px;font-size:16px}
+button.sec{background:#fff;color:var(--ac);border:1px solid var(--ac);margin-top:10px}button.sec:hover{background:var(--acsoft);filter:none}
+@media(max-width:560px){.tcrow{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.tcrow>div:nth-child(3){grid-column:1/-1}body{font-size:16px}.row{grid-template-columns:1fr}h1{font-size:26px}.hero h1{font-size:34px}h2{font-size:21px}.pagehead img{width:48px;height:48px}.calc{padding:16px}}
 @media print{header.site,footer.site,.calc button,.related{display:none}}
 
 .hero .wordmark{font-size:46px;font-weight:800;letter-spacing:-1.5px;line-height:1.1}.hero .wordmark b{color:#1d4ed8}
