@@ -68,7 +68,7 @@ details.faq p{margin-bottom:14px}
 .sources li{font-size:15px}
 footer.site{margin-top:56px;border-top:1px solid var(--line);background:var(--soft);padding:30px 0;font-size:14px;color:var(--mut)}
 footer.site .cols{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:14px}
-footer.site h4{color:var(--ink);font-size:14px;margin-bottom:6px}
+footer.site h3{color:var(--ink);font-size:14px;margin-bottom:6px}
 footer.site a{display:block;color:var(--mut);text-decoration:none;margin-bottom:4px}footer.site a:hover{color:var(--ink)}
 .days{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:8px}.days label{margin:0 0 4px;text-align:center;font-size:13px}.days input{padding:10px 4px;text-align:center}
 .tcday{border:1px solid var(--line);border-radius:12px;padding:8px 12px 12px;margin-top:10px;background:#fff}.tcday>b{font-size:15px}
