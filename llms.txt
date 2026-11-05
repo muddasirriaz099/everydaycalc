@@ -6,6 +6,7 @@
 - [Work Hours Calculator](https://muddasirriaz099.github.io/everydaycalc/work-hours-calculator.html): Daily and weekly hours with breaks, night shifts, overtime and pay.
 - [Time Card Calculator](https://muddasirriaz099.github.io/everydaycalc/time-card-calculator.html): Weekly timesheet with lunch breaks: total hours, overtime and pay.
 - [Overtime Calculator](https://muddasirriaz099.github.io/everydaycalc/overtime-calculator.html): Time-and-a-half and double-time pay, with federal and California daily rules.
+- [California Overtime Calculator](https://muddasirriaz099.github.io/everydaycalc/california-overtime-calculator.html): Daily overtime, double time and 7th-day pay under California law.
 - [Hourly to Salary Calculator](https://muddasirriaz099.github.io/everydaycalc/hourly-to-salary-calculator.html): Convert an hourly rate to yearly, monthly, biweekly and weekly pay.
 - [Salary to Hourly Calculator](https://muddasirriaz099.github.io/everydaycalc/salary-to-hourly-calculator.html): Convert a yearly, monthly or weekly salary to an hourly rate.
 - [BMI Calculator](https://muddasirriaz099.github.io/everydaycalc/bmi-calculator.html): BMI in feet, inches and pounds or cm and kg, with your healthy weight range.
