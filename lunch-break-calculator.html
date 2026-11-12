@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lunch Break Calculator: End Time &amp; Paid Hours</title>
+<meta name="description" content="Free lunch break calculator. Find when lunch ends and your paid hours with a 30, 45 or 60 minute lunch, plus paid vs unpaid rules and California meal period rules.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://muddasirriaz099.github.io/everydaycalc/lunch-break-calculator.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#1d4ed8">
+<meta property="og:site_name" content="EverydayCalc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lunch Break Calculator: End Time &amp; Paid Hours">
+<meta property="og:description" content="Free lunch break calculator. Find when lunch ends and your paid hours with a 30, 45 or 60 minute lunch, plus paid vs unpaid rules and California meal period rules.">
+<meta property="og:url" content="https://muddasirriaz099.github.io/everydaycalc/lunch-break-calculator.html">
+<meta property="og:image" content="https://muddasirriaz099.github.io/everydaycalc/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Lunch Break Calculator", "url": "https://muddasirriaz099.github.io/everydaycalc/lunch-break-calculator.html", "description": "Free lunch break calculator. Find when lunch ends and your paid hours with a 30, 45 or 60 minute lunch, plus paid vs unpaid rules and California meal period rules.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://muddasirriaz099.github.io/everydaycalc/icon-lunch-break.svg", "author": {"@type": "Person", "name": "Muddasir Riaz", "url": "https://muddasirriaz099.github.io/everydaycalc/about.html"}, "publisher": {"@type": "Organization", "name": "EverydayCalc", "url": "https://muddasirriaz099.github.io/everydaycalc/", "logo": "https://muddasirriaz099.github.io/everydaycalc/logo.svg"}, "datePublished": "2026-11-12", "dateModified": "2026-11-12", "inLanguage": "en-US", "isAccessibleForFree": true, "mainEntityOfPage": "https://muddasirriaz099.github.io/everydaycalc/lunch-break-calculator.html", "about": "Lunch Break Calculator"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do you calculate a lunch break?", "acceptedAnswer": {"@type": "Answer", "text": "Add the lunch length to the lunch start time to get the end time, and subtract an unpaid lunch from the shift to get paid hours. For example, 9:00 AM to 5:30 PM with a 30-minute unpaid lunch is 8 paid hours."}}, {"@type": "Question", "name": "How many hours do you work with a 30-minute lunch?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract 0.5 hours from the shift length. A shift from 8:00 AM to 4:30 PM is 8.5 hours on the clock and 8 paid hours with a 30-minute unpaid lunch."}}, {"@type": "Question", "name": "Is a 30-minute lunch paid or unpaid?", "acceptedAnswer": {"@type": "Answer", "text": "Under federal law, a meal period of about 30 minutes or more can be unpaid if you are completely relieved of duty. If you have to work or stay on duty, the time is generally paid. Many states and employers have their own rules."}}, {"@type": "Question", "name": "Are employers required to give lunch breaks?", "acceptedAnswer": {"@type": "Answer", "text": "The federal Fair Labor Standards Act does not require meal or rest breaks, but many states do. California, for example, requires a 30-minute meal period no later than the end of the fifth hour of work for most non-exempt employees."}}, {"@type": "Question", "name": "When must lunch start in California?", "acceptedAnswer": {"@type": "Answer", "text": "No later than the end of your fifth hour of work, according to the California Department of Industrial Relations. If you start at 8:00 AM, lunch must begin by 1:00 PM. A second meal period is required when you work more than 10 hours."}}, {"@type": "Question", "name": "What happens if my employer does not give me a required meal period in California?", "acceptedAnswer": {"@type": "Answer", "text": "The employer owes one additional hour of pay at your regular rate for each workday a required meal period was not provided. This is a premium payment and is not counted as hours worked for overtime."}}, {"@type": "Question", "name": "Do I get paid for short breaks?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Short rest breaks of about 5 to 20 minutes are paid and count as hours worked under federal law."}}, {"@type": "Question", "name": "Does this calculator work for night shifts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If your shift end time is earlier than the start time, it is treated as an overnight shift that ends the next day. A lunch that starts after midnight is handled correctly."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://muddasirriaz099.github.io/everydaycalc/"}, {"@type": "ListItem", "position": 2, "name": "Lunch Break Calculator", "item": "https://muddasirriaz099.github.io/everydaycalc/lunch-break-calculator.html"}]}</script>
+</head>
+<body class="t-lb">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap"><a class="brand" href="index.html" aria-label="EverydayCalc home"><img src="logo.svg" alt="" width="32" height="32"><span>Everyday<b>Calc</b></span></a><nav class="main" aria-label="Main"><a href="work-hours-calculator.html">Work Hours</a><a href="time-card-calculator.html">Time Card</a><a href="overtime-calculator.html">Overtime</a><a href="lunch-break-calculator.html" aria-current="page">Lunch Break</a><a href="california-overtime-calculator.html">California Overtime</a><a href="hourly-to-salary-calculator.html">Hourly to Salary</a><a href="salary-to-hourly-calculator.html">Salary to Hourly</a><a href="bmi-calculator.html">BMI</a><a href="paycheck-calculator.html">Paycheck</a><a href="about.html">About</a></nav></div></header>
+<main id="main" class="wrap">
+<p class="crumb"><a href="index.html">Home</a> / Lunch Break Calculator</p>
+<div class="pagehead"><img src="icon-lunch-break.svg" alt="Lunch Break Calculator logo" width="60" height="60"><h1>Lunch Break Calculator</h1></div>
+<p class="meta">By <a href="about.html">Muddasir Riaz</a> &middot; Updated November 12, 2026</p>
+<p class="lede">Enter your shift times and when lunch starts to see when lunch ends, the time you work before and after it, and your paid hours with a paid or unpaid lunch.</p>
+<div class="calc" id="tool">
+<form onsubmit="calcLunch();return false" novalidate>
+<div class="row"><div><label for="sIn">Shift starts</label><input type="time" id="sIn" value="09:00"></div>
+<div><label for="sOut">Shift ends</label><input type="time" id="sOut" value="17:30"></div></div>
+<div class="row"><div><label for="lIn">Lunch starts</label><input type="time" id="lIn" value="12:30"></div>
+<div><label for="lMin">Lunch length (minutes)</label><input type="number" id="lMin" value="30" min="1" max="240" inputmode="numeric"></div></div>
+<label for="lType">Is lunch paid?</label>
+<select id="lType"><option value="unpaid">Unpaid (taken off the clock)</option><option value="paid">Paid (stays on the clock)</option></select>
+<p class="hint">If the shift ends earlier than it starts, we treat it as an overnight shift. Leave lunch length at 30 for a standard half-hour lunch.</p>
+<button class="go" type="submit">Calculate lunch break</button>
+</form>
+<div class="result" id="resultBox" role="status" aria-live="polite"></div>
+<p class="note" style="margin-top:12px">Estimate for planning. The California check is general information, not legal advice. Your employer's policy and your state's law decide what applies to you.</p>
+</div>
+
+<div class="quick"><b>Quick answer:</b> To find when lunch ends, add the lunch length to the lunch start time: a 30-minute lunch that starts at 12:30 PM ends at 1:00 PM. To find paid hours, subtract an unpaid lunch from the shift: 9:00 AM to 5:30 PM with a 30-minute unpaid lunch is 8 paid hours. A paid lunch stays in your hours.</div>
+
+<h2>How to use the lunch break calculator</h2>
+<ol>
+<li><b>Enter your shift start and end.</b> Use the times you clock in and out. Overnight shifts work too.</li>
+<li><b>Enter when lunch starts and how long it lasts.</b> The default is a 30-minute lunch.</li>
+<li><b>Choose paid or unpaid.</b> Unpaid lunch is taken off your hours. Paid lunch is not.</li>
+<li><b>Press Calculate lunch break.</b> You see the lunch end time, the time worked before and after lunch, and your paid hours.</li>
+</ol>
+
+<h2>How do you calculate a lunch break?</h2>
+<p>Two formulas cover almost every case:</p>
+<p><b>Lunch end time = lunch start time + lunch length</b></p>
+<p><b>Paid hours = (shift end &minus; shift start) &minus; unpaid lunch</b></p>
+<p>For example, a shift from 8:00 AM to 4:30 PM is 8.5 hours on the clock. A 30-minute unpaid lunch leaves 8 paid hours. A 60-minute unpaid lunch leaves 7.5 paid hours. If lunch is paid, you are paid for all 8.5 hours.</p>
+<p>For a full week with clock-in and clock-out times for each day, use the <a href="time-card-calculator.html">Time Card Calculator</a>. To work out daily hours, overtime and pay from one schedule, use the <a href="work-hours-calculator.html">Work Hours Calculator</a>.</p>
+
+<h2>What time does lunch end?</h2>
+<p>This chart shows the end time for common lunch start times and lengths:</p>
+<div class="tw"><table>
+<tr><th>Lunch starts at</th><th>30-minute lunch ends</th><th>45-minute lunch ends</th><th>60-minute lunch ends</th></tr>
+<tr><td>11:00 AM</td><td>11:30 AM</td><td>11:45 AM</td><td>12:00 PM</td></tr>
+<tr><td>11:30 AM</td><td>12:00 PM</td><td>12:15 PM</td><td>12:30 PM</td></tr>
+<tr><td>12:00 PM</td><td>12:30 PM</td><td>12:45 PM</td><td>1:00 PM</td></tr>
+<tr><td>12:30 PM</td><td>1:00 PM</td><td>1:15 PM</td><td>1:30 PM</td></tr>
+<tr><td>1:00 PM</td><td>1:30 PM</td><td>1:45 PM</td><td>2:00 PM</td></tr>
+</table></div>
+
+<h2>How many hours do you work with a 30, 45 or 60 minute lunch?</h2>
+<p>The table shows paid hours for different shift lengths when lunch is unpaid. The shift length is the time from clock in to clock out.</p>
+<div class="tw"><table>
+<tr><th>Shift length on the clock</th><th>Paid hours, 30-minute lunch</th><th>Paid hours, 45-minute lunch</th><th>Paid hours, 60-minute lunch</th></tr>
+<tr><td>6 hours</td><td>5.5</td><td>5.25</td><td>5</td></tr>
+<tr><td>7 hours</td><td>6.5</td><td>6.25</td><td>6</td></tr>
+<tr><td>8 hours</td><td>7.5</td><td>7.25</td><td>7</td></tr>
+<tr><td>9 hours</td><td>8.5</td><td>8.25</td><td>8</td></tr>
+<tr><td>10 hours</td><td>9.5</td><td>9.25</td><td>9</td></tr>
+<tr><td>11 hours</td><td>10.5</td><td>10.25</td><td>10</td></tr>
+<tr><td>12 hours</td><td>11.5</td><td>11.25</td><td>11</td></tr>
+</table></div>
+<p>A 9-hour day at the office, such as 8:00 AM to 5:00 PM, usually means 8 paid hours with a 60-minute lunch or 8.5 hours with a 30-minute lunch. A longer lunch means either fewer paid hours or a later finish, if you still need to work a set number of hours.</p>
+
+<h2>How much is an unpaid lunch worth in pay?</h2>
+<p>An unpaid lunch costs you the wages for that time. The table shows the pay you do not earn during lunch at common hourly rates:</p>
+<div class="tw"><table>
+<tr><th>Hourly rate</th><th>30-minute lunch</th><th>45-minute lunch</th><th>60-minute lunch</th></tr>
+<tr><td>$15</td><td>$7.50</td><td>$11.25</td><td>$15.00</td></tr>
+<tr><td>$20</td><td>$10.00</td><td>$15.00</td><td>$20.00</td></tr>
+<tr><td>$25</td><td>$12.50</td><td>$18.75</td><td>$25.00</td></tr>
+</table></div>
+<p>This matters when you compare jobs or schedules. Two jobs paying $20 an hour can have different weekly pay if one has a 30-minute lunch and the other has a 60-minute lunch. Over five days the difference is 2.5 hours, or $50 at $20 an hour. Use the <a href="hourly-to-salary-calculator.html">Hourly to Salary Calculator</a> to see what the change means over a year.</p>
+
+<h2>Is lunch paid or unpaid?</h2>
+<p>It depends on whether you are free of work. Under the federal Fair Labor Standards Act, employers are not required to give meal or rest breaks. When they do, the rules from the U.S. Department of Labor are:</p>
+<ul>
+<li><b>Short breaks of about 5 to 20 minutes are paid.</b> They count as hours worked.</li>
+<li><b>Meal periods of about 30 minutes or more can be unpaid</b> if you are completely relieved of duty. If you must answer calls, watch a counter or stay at your desk, the time is generally paid.</li>
+<li><b>Time you work through lunch must be paid.</b> If your lunch is interrupted, the time may count as hours worked.</li>
+</ul>
+<p>Many states have stricter rules than federal law. Check your state labor department's website for the exact requirements.</p>
+
+<h2>What are California's lunch break rules?</h2>
+<p>California requires meal periods for most non-exempt employees. According to the California Department of Industrial Relations:</p>
+<ul>
+<li>A meal period of at least 30 minutes must be provided no later than the end of the employee's fifth hour of work. For example, if you start at 9:00 AM, lunch must begin by 2:00 PM.</li>
+<li>A second meal period is required when an employee works more than 10 hours.</li>
+<li>The first meal period can be waived by mutual consent only if the work period is no more than 6 hours. The second can be waived only if the total is no more than 12 hours and the first was not waived.</li>
+<li>To be off duty, you must be relieved of all duty for the full 30 minutes. An on-duty meal period is allowed only in limited cases with a written agreement, and it is paid.</li>
+<li>If a required meal period is not provided, the employer owes one extra hour of pay at the regular rate for each affected workday.</li>
+</ul>
+<p>The California Overtime Calculator has a box for break premiums, so you can add a missed meal period to your weekly pay: see the <a href="california-overtime-calculator.html">California Overtime Calculator</a>.</p>
+
+<h2>When should you take your lunch break?</h2>
+<p>There is no federal rule for the time of day. Most workers take lunch near the middle of the shift, usually after 4 to 5 hours of work. In an 8-hour shift starting at 8:00 AM, that is between 12:00 PM and 1:00 PM. Taking lunch too late can break state rules, such as California's fifth-hour deadline, and long stretches without a break can affect safety and focus. If you are planning a schedule, put lunch about halfway through the shift and check that it does not start after the legal limit in your state.</p>
+
+<h2>What about automatic lunch deductions?</h2>
+<p>Some time clocks subtract 30 minutes every day without asking whether you took lunch. This is allowed in many workplaces if employees really get an uninterrupted lunch, but it can cause underpayment when you work through it. Keep your own record of the times you clock in, clock out and take lunch. If your pay stub is shorter than your records, ask payroll to explain the difference. Use this calculator or the <a href="time-card-calculator.html">Time Card Calculator</a> to check the numbers.</p>
+
+<h2>Common lunch break calculation mistakes</h2>
+<ul>
+<li><b>Subtracting lunch twice.</b> If your clock times already exclude lunch because you clocked out for it, do not subtract it again.</li>
+<li><b>Treating paid lunch as unpaid.</b> A paid lunch does not reduce your hours.</li>
+<li><b>Writing 7 hours 30 minutes as 7.30.</b> The decimal is 7.5, because 30 minutes is half an hour.</li>
+<li><b>Ignoring a second lunch on long shifts.</b> In states such as California, shifts over 10 hours generally need another meal period.</li>
+<li><b>Forgetting that working lunches are paid.</b> If you work during lunch, the time counts.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details class="faq"><summary>How do you calculate a lunch break?</summary><p>Add the lunch length to the lunch start time to get the end time, and subtract an unpaid lunch from the shift to get paid hours. For example, 9:00 AM to 5:30 PM with a 30-minute unpaid lunch is 8 paid hours.</p></details>
+<details class="faq"><summary>How many hours do you work with a 30-minute lunch?</summary><p>Subtract 0.5 hours from the shift length. A shift from 8:00 AM to 4:30 PM is 8.5 hours on the clock and 8 paid hours with a 30-minute unpaid lunch.</p></details>
+<details class="faq"><summary>Is a 30-minute lunch paid or unpaid?</summary><p>Under federal law, a meal period of about 30 minutes or more can be unpaid if you are completely relieved of duty. If you have to work or stay on duty, the time is generally paid. Many states and employers have their own rules.</p></details>
+<details class="faq"><summary>Are employers required to give lunch breaks?</summary><p>The federal Fair Labor Standards Act does not require meal or rest breaks, but many states do. California, for example, requires a 30-minute meal period no later than the end of the fifth hour of work for most non-exempt employees.</p></details>
+<details class="faq"><summary>When must lunch start in California?</summary><p>No later than the end of your fifth hour of work, according to the California Department of Industrial Relations. If you start at 8:00 AM, lunch must begin by 1:00 PM. A second meal period is required when you work more than 10 hours.</p></details>
+<details class="faq"><summary>What happens if my employer does not give me a required meal period in California?</summary><p>The employer owes one additional hour of pay at your regular rate for each workday a required meal period was not provided. This is a premium payment and is not counted as hours worked for overtime.</p></details>
+<details class="faq"><summary>Do I get paid for short breaks?</summary><p>Yes. Short rest breaks of about 5 to 20 minutes are paid and count as hours worked under federal law.</p></details>
+<details class="faq"><summary>Does this calculator work for night shifts?</summary><p>Yes. If your shift end time is earlier than the start time, it is treated as an overnight shift that ends the next day. A lunch that starts after midnight is handled correctly.</p></details>
+<h2>More free calculators</h2>
+<div class="related"><a class="tool" href="work-hours-calculator.html"><img src="icon-work-hours.svg" alt="Work Hours Calculator logo" width="52" height="52"><div><b>Work Hours Calculator</b><span>Daily and weekly hours with breaks, night shifts, overtime and pay.</span></div></a><a class="tool" href="time-card-calculator.html"><img src="icon-time-card.svg" alt="Time Card Calculator logo" width="52" height="52"><div><b>Time Card Calculator</b><span>Weekly timesheet with lunch breaks: total hours, overtime and pay.</span></div></a><a class="tool" href="overtime-calculator.html"><img src="icon-overtime.svg" alt="Overtime Calculator logo" width="52" height="52"><div><b>Overtime Calculator</b><span>Time-and-a-half and double-time pay, with federal and California daily rules.</span></div></a><a class="tool" href="california-overtime-calculator.html"><img src="icon-california-overtime.svg" alt="California Overtime Calculator logo" width="52" height="52"><div><b>California Overtime Calculator</b><span>Daily overtime, double time and 7th-day pay under California law.</span></div></a><a class="tool" href="hourly-to-salary-calculator.html"><img src="icon-hourly-salary.svg" alt="Hourly to Salary Calculator logo" width="52" height="52"><div><b>Hourly to Salary Calculator</b><span>Convert an hourly rate to yearly, monthly, biweekly and weekly pay.</span></div></a><a class="tool" href="salary-to-hourly-calculator.html"><img src="icon-salary-hourly.svg" alt="Salary to Hourly Calculator logo" width="52" height="52"><div><b>Salary to Hourly Calculator</b><span>Convert a yearly, monthly or weekly salary to an hourly rate.</span></div></a><a class="tool" href="bmi-calculator.html"><img src="icon-bmi.svg" alt="BMI Calculator logo" width="52" height="52"><div><b>BMI Calculator</b><span>BMI in feet, inches and pounds or cm and kg, with your healthy weight range.</span></div></a><a class="tool" href="paycheck-calculator.html"><img src="icon-paycheck.svg" alt="Paycheck Calculator logo" width="52" height="52"><div><b>Paycheck Calculator</b><span>Estimate take-home pay after federal tax, state tax, FICA and deductions.</span></div></a></div>
+<h2>Sources and further reading</h2>
+<ul class="sources"><li><a href="https://www.dir.ca.gov/dlse/FAQ_MealPeriods.htm" rel="noopener" target="_blank">California Department of Industrial Relations: Meal periods</a></li><li><a href="https://www.dol.gov/general/topic/workhours/breaks" rel="noopener" target="_blank">U.S. Department of Labor: Breaks and Meal Periods</a></li><li><a href="https://www.dol.gov/agencies/whd/fact-sheets/22-flsa-hours-worked" rel="noopener" target="_blank">U.S. Department of Labor: Fact Sheet #22, Hours Worked Under the FLSA</a></li></ul>
+<p class="note">This calculator gives estimates for information only. It is not financial, tax, legal or medical advice. Found a mistake? <a href="contact.html">Tell us</a> and we will fix it.</p>
+<script>
+function tm(t){var p=t.split(':');return parseInt(p[0],10)*60+parseInt(p[1],10);}
+function clock(m){m=((m%1440)+1440)%1440;var h=Math.floor(m/60),mi=m%60,s=h<12?'AM':'PM',h12=h%12||12;return h12+':'+('0'+mi).slice(-2)+' '+s;}
+function hm(m){return Math.floor(m/60)+' h '+('0'+(m%60)).slice(-2)+' min';}
+function calcLunch(){
+  var b=document.getElementById('resultBox');b.style.display='block';
+  var si=document.getElementById('sIn').value,so=document.getElementById('sOut').value,li=document.getElementById('lIn').value;
+  var L=parseFloat(document.getElementById('lMin').value),paid=document.getElementById('lType').value==='paid';
+  if(!si||!so||!li){b.innerHTML='<p class="err">Please enter the shift start, shift end and lunch start times.</p>';return;}
+  if(!(L>0)){b.innerHTML='<p class="err">Please enter the lunch length in minutes.</p>';return;}
+  var a=tm(si),o=tm(so);if(o<=a)o+=1440;
+  var ls=tm(li);if(ls<a)ls+=1440;
+  var le=ls+L,total=o-a;
+  if(ls<a||le>o){b.innerHTML='<p class="err">Lunch must fall inside your shift. Please check the lunch start time and length.</p>';return;}
+  var before=ls-a,after=o-le,worked=paid?total:total-L;
+  var rows='<tr><td>Lunch ends at</td><td><b>'+clock(le)+'</b></td></tr>'+
+  '<tr><td>Time worked before lunch</td><td>'+hm(before)+'</td></tr>'+
+  '<tr><td>Time worked after lunch</td><td>'+hm(after)+'</td></tr>'+
+  '<tr><td>Total shift length</td><td>'+hm(total)+'</td></tr>'+
+  '<tr><td>Paid hours</td><td><b>'+hm(worked)+' ('+(worked/60).toFixed(2)+' hours)</b></td></tr>';
+  var notes=[];
+  if(before>300)notes.push('California requires the first 30-minute meal period to start by the end of the 5th hour of work. Your lunch starts after '+(before/60).toFixed(2)+' hours.');
+  if(total>600&&L<60)notes.push('Shifts over 10 hours generally need a second meal period in California.');
+  var h='<div class="big">'+clock(le)+'</div><p>is when your lunch ends</p><table><tr><th>Result</th><th>Value</th></tr>'+rows+'</table>';
+  if(notes.length)h+='<p class="note">'+notes.join(' ')+'</p>';
+  b.innerHTML=h;b.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</main>
+<footer class="site"><div class="wrap"><div class="cols"><div><h3>Calculators</h3><a href="work-hours-calculator.html">Work Hours Calculator</a><a href="time-card-calculator.html">Time Card Calculator</a><a href="overtime-calculator.html">Overtime Calculator</a><a href="lunch-break-calculator.html">Lunch Break Calculator</a><a href="california-overtime-calculator.html">California Overtime Calculator</a><a href="hourly-to-salary-calculator.html">Hourly to Salary Calculator</a><a href="salary-to-hourly-calculator.html">Salary to Hourly Calculator</a><a href="bmi-calculator.html">BMI Calculator</a><a href="paycheck-calculator.html">Paycheck Calculator</a></div><div><h3>EverydayCalc</h3><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><div><h3>Legal</h3><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div></div><p>&copy; 2026 EverydayCalc. Free online calculators. Results are estimates for information only and are not financial, tax, legal or medical advice.</p></div></footer>
+</body>
+</html>
