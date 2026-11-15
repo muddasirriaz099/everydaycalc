@@ -169,6 +169,7 @@ function calcCA(){
   var rate=parseFloat(document.getElementById('rate').value);
   var prem=parseInt(document.getElementById('prem').value,10)||0;
   if(!(rate>0)){b.innerHTML='<p class="err">Please enter your regular hourly rate.</p>';return;}
+if(prem<0){b.innerHTML='<p class="err">Break premiums cannot be negative.</p>';return;}
   var days=[];
   for(var i=0;i<7;i++){var v=parseFloat(document.getElementById('d'+i).value);if(isNaN(v))v=0;
     if(v<0||v>24){b.innerHTML='<p class="err">Hours for each day must be between 0 and 24.</p>';return;}days.push(v);}

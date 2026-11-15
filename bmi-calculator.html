@@ -166,7 +166,8 @@ function calcBMI(){
     var hM=cm/100;bmi=kg/(hM*hM);lo=18.5*hM*hM;hi=24.9*hM*hM;u='kg';
   }else{
     var ft=parseFloat(document.getElementById('ft').value)||0,inc=parseFloat(document.getElementById('inch').value)||0,lb=parseFloat(document.getElementById('lb').value);
-    var tot=ft*12+inc;
+    if(ft<0||inc<0){b.innerHTML='<p class="err">Height cannot be negative. Please check your feet and inches.</p>';return;}
+var tot=ft*12+inc;
     if(!(tot>0&&lb>0)){b.innerHTML='<p class="err">Please enter your height and weight.</p>';return;}
     bmi=703*lb/(tot*tot);lo=18.5*tot*tot/703;hi=24.9*tot*tot/703;u='lb';
   }

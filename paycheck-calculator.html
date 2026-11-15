@@ -157,6 +157,8 @@ function calcPay(){
   var f=parseFloat(document.getElementById('fed').value)||0,s=parseFloat(document.getElementById('state').value)||0;
   var k=parseFloat(document.getElementById('k401').value)||0,h=parseFloat(document.getElementById('health').value)||0,post=parseFloat(document.getElementById('post').value)||0;
   if(!(g>0)){b.innerHTML='<p class="err">Please enter your gross pay for one paycheck.</p>';return;}
+if(f<0||f>60||s<0||s>30){b.innerHTML='<p class="err">Tax rates must be 0% to 60% for federal and 0% to 30% for state.</p>';return;}
+if(k<0||h<0||post<0){b.innerHTML='<p class="err">Deductions cannot be negative.</p>';return;}
   if(k+h>g){b.innerHTML='<p class="err">Your pre-tax deductions are more than your gross pay. Please check them.</p>';return;}
   var incW=g-k-h,ficaW=g-h,fed=incW*f/100,st=incW*s/100,fica=ficaW*0.0765,net=g-k-h-fed-st-fica-post;
   if(net<0){b.innerHTML='<p class="err">Your deductions and taxes are more than your pay. Please check your numbers.</p>';return;}
