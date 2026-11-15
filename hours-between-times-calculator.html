@@ -36,7 +36,7 @@ if(y>last+8&&y>90)h.classList.add('hide');else if(y<last-8||y<90)h.classList.rem
 <main id="main" class="wrap">
 <p class="crumb"><a href="index.html">Home</a> / Hours Between Times Calculator</p>
 <div class="pagehead"><img src="icon-hours-between.svg" alt="Hours Between Times Calculator logo" width="60" height="60"><h1>Hours Between Times Calculator</h1></div>
-<p class="meta">By <a href="about.html">Muddasir Riaz</a> &middot; Updated November 12, 2026</p>
+<p class="meta">By <a href="about.html">Muddasir Riaz</a> &middot; Updated November 15, 2026</p>
 <p class="lede">Enter a start time and an end time to see the hours and minutes between them, in decimal hours too. Add an unpaid break to see your hours worked.</p>
 <div class="calc" id="tool">
 <form onsubmit="calcBetween();return false" novalidate>
@@ -144,7 +144,8 @@ function calcBetween(){
   if(!a||!o){b.innerHTML='<p class="err">Please choose both a start time and an end time.</p>';return;}
   var s=tm(a),e=tm(o);if(e<=s)e+=1440;
   var t=e-s;
-  if(br>=t){b.innerHTML='<p class="err">The break is as long as the whole time span. Please check the break minutes.</p>';return;}
+  if(br<0){b.innerHTML='<p class="err">Break minutes cannot be negative.</p>';return;}
+if(br>=t){b.innerHTML='<p class="err">The break is as long as the whole time span. Please check the break minutes.</p>';return;}
   var n=t-br,h='<div class="big">'+(n/60).toFixed(2)+' hours</div><p>'+hm(n)+'</p><table><tr><th>Result</th><th>Value</th></tr>'+
   '<tr><td>Total time between</td><td>'+hm(t)+' ('+(t/60).toFixed(2)+' hours)</td></tr>';
   if(br>0)h+='<tr><td>Break subtracted</td><td>'+br+' minutes</td></tr>';
